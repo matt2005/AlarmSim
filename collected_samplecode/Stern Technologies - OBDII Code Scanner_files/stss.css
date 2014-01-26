@@ -1,0 +1,331 @@
+/*** Below style places image to create color behind the menu and sets text style.***/
+body {
+	background-image: url("images/menu.jpg");
+	background-repeat: repeat-x;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: Black;
+	font-size: 14px;
+	}
+
+H2 { text-align: center }
+
+.red {
+	font-size: x-large;
+	color: #FF0000;
+}
+
+/*** NOTE on BORDERS:  All box borders are arbitrary and should be commented out in the finial style sheet.  Un-comment them to view box edges for troubleshooting. ***/
+		
+/*** *** Define two MAIN PAGE BOXES. *** Everything fits in these three boxes - except for the background image defined in the body above. ***/
+/* Menu Box */
+div#menubox {
+/*	border: 1px solid black;*/
+	position: absolute; top: 0%; 
+	height: 109px; width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	}
+/* Side Navigation Box */
+div#sidebox {
+/*	border: 1px solid black;*/
+	position: absolute; top:115px;
+	/*height: 350px;*/ width: 20%;  /*min-height: 300px;*/
+	/* It would be most ideal to set a minimum height, not a fixed one.  But most browsers do not support min-height at this time. 2/1/03. */
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: Black;
+	font-size: 14px;
+	}
+/* Content Box */
+div#contentbox {
+/*	border: 1px solid black;*/
+	position: absolute; top:115px; left: 21%;
+	/*height: 350px;*/ width: 80%;  /*min-height: 300px;*/
+	/* It would be most ideal to set a minimum height, not a fixed one.  But most browsers do not support min-height at this time. 2/1/03. */
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: Black;
+	font-size: 16px;
+	}
+
+	
+/*** *** Define MENU BOXES. *** There are three menu boxes.  One main, one sub below main, and one at the top right for not-really main or sub topics. ***/
+/* Define location, size, and specific font characteristics for main menu. */
+div#mainmenu {
+/*	border: 1px dashed black;*/
+	position: absolute; bottom: 56px; left: 20%;
+	height: 25px; width: 50%;
+	font-size: 17px;	 		
+	}
+/* Define location, size, and specific font characteristics for sub menu. */
+div#submenu {	
+/*	border: 2px dashed red;*/
+	position: absolute; bottom: 0%;
+	height: 18px; width: 78%;
+	font-size: 14px;
+	}
+/* Define location, size, and specific font characteristics for top menu. */
+	div#topmenu {
+/*	border: 1px dashed orange;*/
+	position: absolute; top: 14%; right: 10%;
+	padding-right: 10px;
+	height: 20px; width: 30%;
+	font-size: 14px;
+	font-weight: normal;
+	}
+	
+/*** Define MENU LINKS. *** Links for all three menu boxes will behave the same:
+	Normal link is "link" color - standard.
+	Visted link is same as "link" color - standard.
+	Active link is "active" or "em" color - highlighted.
+	Hover link is same as "active" color - highlighted. ***/
+/** Define link colors for main and top menu boxes. **/
+div#mainmenu a:link, div#topmenu a:link {
+	color: #003366;
+/*	text-decoration: none;*/
+}
+div#mainmenu a:visited, div#topmenu a:visited {
+	color: #333366;
+/*	text-decoration: none;*/
+}
+/* "em" used to mark active link. */
+div#mainmenu em, div#topmenu em {
+	color: #CC3333;
+	font-style: normal;
+	text-decoration: none;
+}
+div#mainmenu a:hover, div#topmenu a:hover {
+	color: #CC3333;
+}
+/** Define link colors for sub menu box. **/
+div#submenu a:link {
+	color: white;
+/*	text-decoration: none;*/
+}
+div#submenu a:visited {
+	color: white;
+/*	text-decoration: none;*/
+}
+/* "em" used to mark active link. */
+div#submenu em {
+	color: #FFCC33;
+	font-style: normal;
+	text-decoration: none;
+}
+div#submenu a:hover {
+	color: #FFCC33;
+}
+
+
+/*** *** Define SIDE BOXES. ***  ***/
+/* Define the location, size, and specific font characteristics for the PAGE NAVIGATION. */
+div#pagenav {
+/*	background: #FFFFCC;*/
+}
+/* Define the location for the PAGE items. */
+div.page {
+/*	border: 1px dashed Fuchsia;*/
+	margin: 5px 0 5px 0;
+	width: 100%;
+}
+/* Define the location for the PAGE SECTION items. */
+div.section {
+/*	border: 1px dashed Purple;*/
+	margin: 5px 0 5px 0;
+	width: 91%;
+	position: relative; left: 9%;
+}
+
+div.section2 {
+/*	border: 1px dashed Purple;*/
+	margin: 5px 0 5px 0;
+	width: 84%;
+	position: relative; left: 18%;
+}
+
+div.section3 {
+/*	border: 1px dashed Purple;*/
+	margin: 5px 0 5px 0;
+	width: 77%;
+	position: relative; left: 25%;
+}
+
+
+/* Define the location, size, and specific font characteristics for the RELATED LINKS. */
+div.relatedlinks {
+	margin: 40px 5px 20px 0px;
+	text-align: left;
+}
+div.relatedlinkstitle{
+	padding: 2px;
+	color: #666666;
+	font-weight: bold;
+}
+div.relatedlinkstetext{
+	padding: 2px;
+}
+/* Define the location, size, and specific font characteristics for the SIDE NOTE. */
+div.sidenote {
+	margin: 30px 5px 20px 0px;
+	text-align: center;
+}
+div.sidenotetitle{
+	padding: 4px;
+	background: #999999;
+	color: #FFCC33;
+	font-weight: bold;
+}
+div.sidenotetext{
+	padding: 2px;
+	border: 2px solid #999999;
+	background: #FFFFCC;
+}
+
+/*** *** Define CONTENT BOXES. ***  ***/
+/* Content boxes are defined as classes (".") so that more than one may exist on a page.  There can be only one ID ("#") per page. */
+
+/* Define the location, size, and specific font characteristics for the section TITLE. */
+div.titlepage {
+/*	border: 2px dashed red;*/
+	width: 100%;
+	font-size: 32px;
+}
+div.titlesection{
+/*	border: 2px dashed red;*/
+	margin: 30px 0 10px 0;
+	width: 100%;
+	font-size: 22px;
+	font-weight: bold;
+}
+/* Define the location, size, and specific font characteristics for IMAGEs. */
+span.image {
+/*	background: Lime;*/
+/*	float: left;*/
+	margin: 3px;
+}
+div.image {
+/*	background: Lime;*/
+/*	position: relative; left: 10%;*/
+	margin: 20px 0 20px 0;
+}
+/* Define the location, size, and specific font characteristics for the section TEXT. */
+span.text {
+/*	background: Aqua;*/
+	margin: 0 0 20px 0;
+}
+
+
+/* Define the location, size, and specific font characteristics for the FOOTER. */
+div#footer {
+/*	border: 1px dashed green;*/
+	margin: 40px 0 0 0;
+	position: relative; bottom: 0%; left: 0;
+	color: #666666;
+	font-size: 10px;
+}
+/* Define the size and specific font characteristics for the RETURN to TOP of PAGE link. */
+div#toppage{
+/*	background: yellow;*/
+/*	overflow: visible;*/
+	position: absolute; /*bottom: 1%;*/ left: -20%;
+	width: 15%;
+	text-align: left;
+	font-size: 11px;
+}
+/* Define the location, size, and specific font characteristics for the CALL OUT. */
+span.contentnote {
+	float: right;
+	margin: 15px 5px 10px 5px;
+	width: 35%;
+	text-align: center;
+}
+div.contentnotetitle{
+	padding: 4px;
+	background: #666666;
+	color: #FF9933;
+	font-weight: bold;
+}
+div.contentnotetext{
+	padding: 2px;
+	border: 2px solid #666666;
+	background: #FFFFCC;
+}
+/* Define the location, size, and specific font characteristics for LISTs. */
+div.list{
+/*	background: #FFFFCC;*/
+	position: relative; left: 10%;
+	width: 80%;
+}
+div.list p {
+/*	background: #FF9933;*/
+	margin: 20px 0 20px 0;
+}
+li.check {
+	list-style-image: url("images/check.jpg");
+	margin: 20px 0 20px 0;
+}
+li.bullet {
+	list-style-image: url("images/bullet.jpg");
+	margin: 10px 0 10px 0;
+}
+/* Define the location, size, and specific font characteristics for TABLEs. */
+table {
+	table-layout: fixed;
+	margin: 15px 0 10px 0;
+	border-collapse: collapse;
+/*	width: 90%;
+	position: relative; left: 5%;*/
+}
+td, th {
+	padding: 3px;
+	border: 2px solid #CCCCCC;
+}
+thead.one {
+	color: #FFCC33;
+	background: #999999;
+	font-weight: bold;
+}
+thead.two {
+	color: #003366;
+	background: #CCCCCC;
+	font-weight: bold;
+}
+tbody {
+	color: #003366;
+}
+
+/*** Define SIDE & CONTENT / BODY LINKS. *** Links for all content boxes will behave the same:
+	Normal link is "link" color - standard.
+	Visted link is same as "link" color - standard.
+	Active link is "active" or "em" color - highlighted, and has no underline.
+	Hover link is same as "active" color - highlighted. ***/
+/** Define link colors for page navigation and footer box. **/
+div.page a:link, div.section div.section2 a:link, div#footer a:link, body a:link  {
+	color: #0033CC;
+}
+div.page a:visited, div.section a:visited, div#footer a:visited, body a:visited {
+	color: #0033CC;
+}
+div.page a:active, div.section div.section2 a:active, div#footer a:active, body a:active {
+	color: #6699FF;
+	text-decoration: none;
+}
+div.page a:hover, div.section div.section3 a:hover, div#footer a:hover, body a:hover {
+	color: #6699FF;
+}
+/* "em" used to mark active link for page item in page navigation. Use this until next revision.*/
+div.page em {
+	color: #6699FF;
+	font-style: normal;
+	text-decoration: none;
+}
+
+div.section em {
+	color: #6699FF;
+	font-style: normal;
+	text-decoration: none;
+}
+
+div.section2 em {
+	color: #6699FF;
+	font-style: normal;
+	text-decoration: none;
+}

@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>
+		Stern Technologies - OBDII Code Scanner</title>
+   <link type="text/css" rel="stylesheet" href="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/stss.css">
+	<meta name="keywords" content="obdii obd 2 obd2 check engine light open source trouble code">
+</head>
+<body style="tab-interval:.5in" lang="EN-US">
+
+
+<!-- -*- -*- -*- -*- SIDE -*- -*- -*- -*- -->
+	<!-- -*- -*- -*- -*- MENU -*- -*- -*- -*- -->
+		<div id="menubox">
+			<a href="http://sterntech.com/index.php" name="top"><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/logo.jpg" align="top" border="0"></a>
+			<!-- -- -- -- -- Main -- -- -- -- --><!--
+			<div id="mainmenu" align="left">
+				<em>
+					Products</em>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="support.htm">
+					Service & Support</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="links.htm">
+					Fun Stuff</a>
+			</div>-->
+			<!-- -- -- -- -- Top -- -- -- -- -->
+			<div id="topmenu" align="right">
+				<a href="http://sterntech.com/news.php">
+					News</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="http://sterntech.com/contactus.php">
+					Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="http://sterntech.com/companyinfo.php">
+					Company Info</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<!--<a href="search.htm">
+					Search Site</a>-->
+			</div>
+			<!-- -- -- -- -- Sub -- -- -- -- -->
+		</div>
+	<!-- -*- -*- -*- -*- SIDE -*- -*- -*- -*- -->
+		<div id="sidebox">
+			<div id="pagenav"><div class="page"><a href="http://sterntech.com/index.php">Home</a></div><div class="page"><a href="http://sterntech.com/products.php">Products</a></div><div class="section"><a href="http://sterntech.com/pulsar200.php">Pulsar 200</a></div><div class="section"><a href="http://sterntech.com/pulsar40.php">Pulsar 40</a></div><div class="section"><a href="http://sterntech.com/obdii.php">OBDII scanner</a></div><div class="section2"><a href="http://sterntech.com/obdii_avr.php">AVR unit</a></div><div class="section2"><a href="http://sterntech.com/obdii_pic.php">PIC unit</a></div><div class="section2"><a href="http://sterntech.com/obdii_protocols.php">OBDII Protocols</a></div><div class="section3"><em>ISO</em></div><div class="section3"><a href="http://sterntech.com/obdii_protocols_pwm.php">PWM</a></div><div class="section3"><a href="http://sterntech.com/obdii_protocols_vpw.php">VPW</a></div><div class="section3"><a href="http://sterntech.com/obdii_protocols_can.php">CAN</a></div><div class="section"><a href="http://sterntech.com/contract.php">Contract Development</a></div><div class="page"><a href="http://sterntech.com/purchase.php">Purchase</a></div><div class="page"><a href="http://sterntech.com/faqs.php">FAQs</a></div><div class="section"><a href="http://sterntech.com/soldering.php">Soldering</a></div><div class="page"><a href="http://sterntech.com/contactus.php">Support</a></div><div class="page"><a href="http://sterntech.com/news.php">News</a></div> 			
+ 			</div>
+ 			
+ 			<!-- -- -- -- -- Side Note -- -- -- -- --><!--
+			<div class="relatedlinks">
+				<div class="relatedlinkstitle">
+					Related Links
+				</div>
+				<div class="relatedlinkstetext">
+					<a href="support_installation.htm">
+					Pulsar Installation</a>
+				</div>
+			</div>-->
+		</div>
+<!-- -*- -*- -*- -*- CONTENT -*- -*- -*- -*- -->
+		<div id="contentbox">
+			<!-- -- -- -- -- Title -- -- -- -- -->	 
+				<h2><a name="_Toc143446505">ISO Protocol</a></h2>
+
+			<!-- -- -- -- -- Text -- -- -- -- -->
+
+
+
+
+<div class="Section1">
+
+
+<span class="text">
+
+All the OBDII protocols are designed to have multiple
+talkers and listeners connected to the bus. Having multiple talkers and
+listeners on a bus require some method of collision detection, the ISO bus uses
+a passive and active logic levels. Specifically the ISO bus is pulled up through
+510 ohm resistor to battery voltage for a passive <span class="GramE">level<span style="mso-spacerun:yes">&nbsp; </span>and</span> then pulled low using an open
+collector<span style="mso-spacerun:yes">&nbsp; </span>to create the active
+level.<span style="mso-spacerun:yes">&nbsp; </span>This is a simple interface
+requiring only a few resistors and a transistor. However the ISO protocol
+actually has two buses a K line and <span class="GramE">a</span> L line, both use
+the same interface. 
+
+</span>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1028" type="#_x0000_t75" style='width:431.25pt;
+ height:314.25pt'>
+ <v:imagedata src="iso_protocol_files/image001.emz" o:title="" blacklevel="-9830f"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image002.gif" v:shapes="_x0000_i1028" width="575" height="419"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">As simple as the driver circuit is there are a few items
+which should be mentioned. Specifically <span class="SpellE">Volkswagon</span>
+made a few pre OBDII cars with a wiring mistake in which the K and L lines were
+actually wired directly to battery power. The result was that when a scan tool
+with the simple interface shown above was connected it would fry the
+transistors. To prevent this from happening on my scan tool, I included some
+poly fuses on the K and L line which will open long before the transistors are
+damaged. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span class="GramE">Now that the driver circuits are done it
+on to the receiver functions for the ISO.</span> A simple solution might seem
+to be a circuit as shown below: </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1025" type="#_x0000_t75"
+ style='width:297pt;height:150.75pt'>
+ <v:imagedata src="iso_protocol_files/image003.emz" o:title="" blacklevel="-15728f"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image004.gif" v:shapes="_x0000_i1025" width="396" height="201"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">In fact on the first OBDII system I made had a similar circuit.
+The problem is that the ISO specification states that threshold for logic 0 is
+when the K line is less than 10% of the battery voltage. Thus the circuit above
+would work on most cars but not all as I discovered. The solution is to use a
+comparator which compares the K or L line with the battery reference. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:430.5pt;height:122.25pt'>
+ <v:imagedata src="iso_protocol_files/image005.emz" o:title="" blacklevel="-11796f"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image006.gif" v:shapes="_x0000_i1027" width="574" height="163"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h3><a name="_Toc143446506">ISO Bus Bit Format</a></h3>
+
+<p class="MsoNormal">The ISO protocol uses an <span class="SpellE">asyn</span>
+serial transfer here if we look at the data bus as shown below, during a
+transmission. </p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:446.25pt;height:75.75pt' o:ole="">
+ <v:imagedata src="iso_protocol_files/image007.emz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image008.gif" v:shapes="_x0000_i1029" width="595" height="101"><!--[endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1029"
+  DrawAspect="Content" ObjectID="_1224739161">
+ </o:OLEObject>
+</xml><![endif]-->The bus when nothing is being transmitted is at a logic high
+level, battery voltage (12V) for the ISO bus. When a device transmits some data
+it starts with a start bit which is always active low. Then it sends the 8 bits
+of data starting with the least significant bit first. Thus in this example we
+send out the data bits 01001001 or hex 45h. One can imagine that the start bit
+is needed to signal the start of the data <span class="GramE">transmission,</span>
+the stop bit is needed such that if another byte (8 bits) of data follow it
+needs to have a high bus to signal before the start bit goes low. </p>
+
+<h3><o:p>&nbsp;</o:p></h3>
+
+<h3><a name="_Toc143446507">ISO Collision Detection</a></h3>
+
+<p class="MsoNormal">ISO protocol uses a simple method of collision detection,
+specifically when a device is attempting to communicate on the bus it will wait
+a predetermined time for the bus to become idle, which is when the bus stays at
+a passive state (12V on K/L line). Then it will start communicating by pulling
+the K line low for one bit time as a start bit. After which the device will
+start sending out <span class="GramE">it’s</span> data, however if the device is
+sending out a passive bit, then it must check to see if the K line is indeed
+passive. This is used for collision detection, to understand it lets imagine
+that we have two devices attempting to use the bus at the same time. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:342pt;height:224.25pt' o:ole="">
+ <v:imagedata src="iso_protocol_files/image009.emz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image010.gif" v:shapes="_x0000_i1030" width="456" height="299"><!--[endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1224739163">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">For example if we have two devices like above and each
+device is trying to clock out data at the same time we can get a situation as
+shown below: </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:449.25pt;height:219pt' o:ole="">
+ <v:imagedata src="iso_protocol_files/image011.emz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image012.gif" v:shapes="_x0000_i1031" width="599" height="292"><!--[endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1224739164">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">From the schematic and the above example it is easy to see
+that the simple solution is that when a device transmits a passive bit, logic
+high in example above, the device should verify that the bus is at passive
+level. When the bus is not at the passive level the device should stop
+transmitting wait for idle bus and then try again. For the above example if the
+devices checked for bit collisions our example would become. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:381pt;height:264.75pt' o:ole="">
+ <v:imagedata src="iso_protocol_files/image013.emz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img src="Stern%20Technologies%20-%20OBDII%20Code%20Scanner_files/image014.gif" v:shapes="_x0000_i1026" width="508" height="353"><!--[endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1224739165">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Here what happens is that device 2 gives up the bus to
+device 1 when it realizes that it requested the bus to be at a logic high level
+(passive state) and it was actually at logic low (active state). Thus device
+1’s data got out on the bus where as before garbage was transmitted.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>This bit level collision detection requires
+a buss to have an active and passive state as noted above. When we discuss the
+other protocols we will revisit this again as they all use a similar method for
+bit level collision detection. To implement the collision detection in software
+the code will need to monitor the bus when the code reader is transmitting a
+logic high bit. Thus what happens is that when a logic high bit is transmitted
+we wait half the bit time and check to make sure the bus is still high. If the
+bus is not high we assume that someone else got the bus and we give up and try
+again after bus goes idle.<span style="mso-spacerun:yes">&nbsp; </span></p>
+
+<h3><a name="_Toc143446508">ISO Packet format</a></h3>
+
+<p class="MsoNormal">The data packet specification that the ISO bus uses is
+referenced in J1979 standard. The packet is made up of a three byte header
+followed by up to 7 data bytes and single byte checksum as shown below.</p>
+
+<div align="center">
+
+<table class="MsoNormalTable" style="width:269.0pt;margin-left:4.65pt;border-collapse:collapse;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt" border="0" cellpadding="0" cellspacing="0" width="359">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:76.5pt">
+  <td colspan="3" style="width:69.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:76.5pt" valign="bottom" width="92">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">Message Header<o:p></o:p></span></p>
+  </td>
+  <td colspan="7" style="width:175.0pt;border:
+  solid windowtext 1.0pt;border-left:none;mso-border-top-alt:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:76.5pt" nowrap="nowrap" valign="bottom" width="233">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">Data Bytes<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext 1.0pt;mso-border-bottom-alt:
+  solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:76.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:center" align="center"><span class="SpellE"><span style="font-size:10.0pt;font-family:Arial">CheckSum</span></span><span style="font-size:10.0pt;font-family:Arial"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:31.5pt">
+  <td style="width:20.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="27">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">1<o:p></o:p></span></p>
+  </td>
+  <td style="width:23.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="31">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">2<o:p></o:p></span></p>
+  </td>
+  <td style="width:26.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="35">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">3<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">1<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">2<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">3<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">4<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">5<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">6<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">7<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.5pt" valign="bottom" width="33">
+  <p class="MsoNormal" style="text-align:right" align="right"><span style="font-size:10.0pt;font-family:Arial">1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes;height:13.5pt">
+  <td style="width:20.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="27">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">68h<o:p></o:p></span></p>
+  </td>
+  <td style="width:23.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">6Ah<o:p></o:p></span></p>
+  </td>
+  <td style="width:26.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="35">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">F1h<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style="width:25.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.5pt" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h3><a name="_Toc143446509">ISO Initiation of Communication</a></h3>
+
+<p class="MsoNormal">When the OBDII code reader connects to the cars computer
+system it must follow some detail steps in order to initiate the
+communications. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<ol style="margin-top:0in" start="1" type="1">
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     code reader must first send out 33h on the K and L lines at rate of 5
+     baud, which 5 bits/sec. </li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     ECU response is 55h at rate of 10400 bits/sec (baud). At this point all
+     further communications is at 10400 bits/sec on the K line only unless
+     other wise noted.</li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     ECU then sends out keyword 1, 08h<span style="mso-spacerun:yes">&nbsp; </span></li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     ECU then sends out keyword 2, 08h </li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     OBDII code reader response with which the inverse of last keyword or F7h. </li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">The
+     ECU response with a <span class="SpellE">CCh</span> </li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">At
+     this point the code reader can now send out a request for information
+     using the packet format above. </li>
+</ol>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Of course with all protocols the steps above need to be
+followed with in certain timing parameters. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<table class="MsoNormalTable" style="width:366.15pt;margin-left:4.65pt;border-collapse:collapse;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt" border="0" cellpadding="0" cellspacing="0" width="488">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:12.75pt">
+  <td style="width:50.65pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="68">
+  <p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:Arial">Source<o:p></o:p></span></b></p>
+  </td>
+  <td style="width:33.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">Tester<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">W1<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">ECU<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">W2<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">ECU<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">W3<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">ECU<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">W4<o:p></o:p></span></p>
+  </td>
+  <td style="width:33.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">Tester<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">W4<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">ECU<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="width:20.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="28">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">P3<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.75pt">
+  <td style="width:50.65pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="68">
+  <p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:Arial">Parameter<o:p></o:p></span></b></p>
+  </td>
+  <td style="width:33.9pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">33h<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">55h<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">08h<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">08h<o:p></o:p></span></p>
+  </td>
+  <td style="width:33.85pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">F7h<o:p></o:p></span></p>
+  </td>
+  <td style="width:28.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="37">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">CC<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The above table show the initiation sequence where W1<span class="GramE">,W2,W3,W4</span>, and P3 are timing requirements shown below. </p>
+
+<div align="center">
+
+<table class="MsoNormalTable" style="width:151.0pt;margin-left:4.65pt;border-collapse:collapse;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt" border="0" cellpadding="0" cellspacing="0" width="201">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-bottom:none;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><b><span style="font-size:10.0pt;font-family:Arial">Parameter<o:p></o:p></span></b></p>
+  </td>
+  <td style="width:46.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><b><span style="font-size:10.0pt;font-family:Arial">min (ms)<o:p></o:p></span></b></p>
+  </td>
+  <td style="width:49.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><b><span style="font-size:10.0pt;font-family:Arial">max (ms)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:15.0pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W0<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">2<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-family:Arial">&#8734;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W1<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">60<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">300<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W2<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">5<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">20<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W3<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">0<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">20<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W4<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">25<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">50<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:6;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">W5<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">300<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:7;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">P1<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">0<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">20<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:8;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">P2<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">0<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">50<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:9;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">P3<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">55<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">5 <span class="SpellE">secs</span><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:10;mso-yfti-lastrow:yes;height:12.75pt">
+  <td style="width:56.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="75">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">P4<o:p></o:p></span></p>
+  </td>
+  <td style="width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="61">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">5<o:p></o:p></span></p>
+  </td>
+  <td style="width:49.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt" nowrap="nowrap" valign="bottom" width="65">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:10.0pt;font-family:Arial">20<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Additionally when sending out <span class="GramE">a data
+packet there are</span> some additional timing parameters. When the OBDII code
+reader (tester) is sending out a data packet for example: </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<div align="center">
+
+<table class="MsoNormalTable" style="width:131.0pt;margin-left:4.65pt;border-collapse:collapse;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt" border="0" cellpadding="0" cellspacing="0" width="175">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:15.0pt">
+  <td style="width:21.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="28">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">69h<o:p></o:p></span></p>
+  </td>
+  <td style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">6Ah<o:p></o:p></span></p>
+  </td>
+  <td style="width:22.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="29">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">F1h<o:p></o:p></span></p>
+  </td>
+  <td style="width:21.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="28">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">01h<o:p></o:p></span></p>
+  </td>
+  <td style="width:21.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="28">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">00h<o:p></o:p></span></p>
+  </td>
+  <td style="width:23.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:15.0pt" nowrap="nowrap" valign="bottom" width="31">
+  <p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">C5h<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Then the time between each byte is required to be P4 from
+the table above. Once the ECU gets the message it will send a response with in
+P2. Finally the code reader must make any further requests with in P3 time
+period. If the code reader waits any long than 5 seconds between requests it
+must go through the 5 <span class="SpellE">buad</span> initiation again.<span style="mso-spacerun:yes">&nbsp; </span>Finally before the tester can send out a
+packet of data it must wait at least W5 time period. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h3><a name="_Toc143446510"></a><span class="SpellE"><span style="mso-bookmark:
+_Toc143446510">Autobaud</span></span><span style="mso-bookmark:_Toc143446510"></span></h3>
+
+<p class="MsoNormal">As a side note you will notice that when the ECU response to
+the 5 baud initiation sequence it sends out 55h this since the LSB of 55h is a
+one we can time the period the K line is low for the start bit to determine the
+baud rate. This technique of determining baud rate is called auto baud and had
+been used for years in modems. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+		</div>
+
+
+</div></body></html>

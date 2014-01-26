@@ -1,0 +1,164 @@
+.gensmall {
+  font-size: 12px;
+}
+
+.forumline {
+  background-color: #C8C7C7;
+}
+
+.forumline th {
+  background-color: #EBECF0;
+  border: 0;
+  text-align: center;
+}
+
+.forumline td {
+  background-color: #FDFDFD;
+  font-size: 12px;
+}
+
+/* LINKS */
+#maincolumn .forumline a:link, 
+#maincolumn .forumline a:visited {
+  color: #566D91;
+}
+
+#maincolumn .forumline a.nav:link, 
+#maincolumn .forumline a.nav:visited {
+  font-weight: bold;
+}
+
+.forumline th.thCornerL {
+  text-align: left;
+}
+
+.forumline .cat {
+  background-color: #EBECF0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.forumline .rowpic {
+  background-color: #EBECF0;
+}
+
+.forumline .row1 {
+  background-color: #FDFDFD;
+  padding: 5px;
+  text-align: left;
+}
+.forumline .row2 {
+  background-color: #F4F5F7;
+  padding: 5px;
+  text-align: left;
+}
+
+.forumline .postbody {
+  text-align: left;
+}
+
+/* NESTED TABLES */
+.cat table {
+  width: 100%;
+  padding: 5px;
+  background-color: #EBECF0;
+}
+.cat table td {
+  background-color: #EBECF0;
+}
+.forumline .row1 table td {
+  background-color: #FDFDFD;
+
+}
+.forumline .row2 table td {
+  background-color: #F4F5F7;
+}
+
+.forumline .codetitle, 
+.forumline .quotetitle {
+  margin: 10px 5px 0 10px;
+}
+
+.forumline .codecontent, 
+.forumline .quotecontent {
+  margin: 0 5px 10px 10px;
+  padding: 5px;
+  border: 1px solid #C8C7C7;
+}
+.forumline .codecontent {
+  font-family:"Courier New", Courier, mono;
+  color: green;
+}
+
+.forumline .row1 .codecontent, 
+.forumline .row1 .quotecontent,
+.forumline .row2 .quotecontent .codecontent,
+.forumline .row2 .quotecontent .quotecontent,
+.forumline .row1 .quotecontent .quotecontent .codecontent,
+.forumline .row1 .quotecontent .quotecontent .quotecontent,
+.forumline .row2 .quotecontent .quotecontent .quotecontent .quotecontent,
+.forumline .row2 .quotecontent .quotecontent .quotecontent .codecontent {
+  background-color: #F4F5F7;
+}
+
+.forumline .row2 .codecontent, 
+.forumline .row2 .quotecontent,
+.forumline .row1 .quotecontent .codecontent,
+.forumline .row1 .quotecontent .quotecontent,
+.forumline .row2 .quotecontent .quotecontent .codecontent,
+.forumline .row2 .quotecontent .quotecontent .quotecontent,
+.forumline .row1 .quotecontent .quotecontent .quotecontent .quotecontent,
+.forumline .row1 .quotecontent .quotecontent .quotecontent .codecontent {
+  background-color: #FDFDFD;
+}
+
+hr {
+  border: 0px solid #C8C7C7;
+  border-top-width:1px;
+  height:0px
+}
+
+.maintitle {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.forumline .attachtable {
+  border: 1px solid #C8C7C7;
+}
+
+.forumline img {
+  max-width: 400px;
+}
+
+.forumline .attachtable .attachheader {
+  font-weight: bold;
+  text-align: left;
+}
+
+.forumline .row1 .attachheader {
+  background-color: #F4F5F7;
+}
+
+.forumline .row2 .attachheader {
+  background-color: #FDFDFD;
+}
+
+.forumline .row1 .attachrow {
+  background-color: #F4F5F7;
+}
+.forumline .row2 .attachrow {
+  background-color: #FDFDFD;
+}
+
+.bodyline .bodyline {
+background-color: #c8c7c7;
+}
+
+.bodyline .bodyline .row1 {
+  background-color: #FDFDFD;
+}
+
+.bodyline .bodyline .row2 {
+  background-color: #F4F5F7;
+}
