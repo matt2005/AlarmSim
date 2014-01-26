@@ -1,0 +1,178 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>OBDuino Hardware</title>
+<link rel="stylesheet" href="index_data/default.css" type="text/css">
+<script src="index_data/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1513157-4']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script></head>
+<body class="Amstrad">
+<div align="center">
+<img src="index_data/OBDuino_logo.gif" alt="OBDuino" border="0"><br>
+Contact : <a href="mailto:info@obduino.ca">info@obduino.ca</a><br>
+<br>
+<table border="1" width="100%">
+<tbody><tr>
+<td class="menu"><a href="http://pages.videotron.com/frelyne/OBDuino/index.html">Home</a></td>
+<td class="menu"><a href="http://pages.videotron.com/frelyne/OBDuino/config.html">Configuration</a></td>
+<td class="menu"><a href="http://pages.videotron.com/frelyne/OBDuino/logging.html">Logging</a></td>
+<td class="menu"><a href="http://pages.videotron.com/frelyne/OBDuino/hw.html">Hardware</a></td>
+<td class="menu"><a href="http://pages.videotron.com/frelyne/OBDuino/tools.html">Tools</a></td>
+</tr>
+</tbody></table>
+<hr>
+</div>
+
+<h1>Hardware</h1>
+<h2>Details</h2>
+<p>The name OBDuino comes from OBD, which means On Board Diagnostics and
+ from the development board which was an Arduino (a clone, in fact). 
+Some technical info: it was based on an Atmel AVR ATMEGA168 chip that 
+contains 16K of flash, 1K of RAM and 512bytes of EEPROM (now I am using a
+ 328P), an LCD display, 3 buttons and others electronics components. 
+Firmware has evolved so much that nothing from the Arduino/Wiring API is
+ left.<br>
+The OBDuino connects to the car on its OBD-II plug which is, in general,
+ under the dash. A lot of signals are on this plug as well as battery 
+voltage and ground.<br>
+The interface to the car is made with a pair of Microchip 2515/2551 for CAN only protocol.</p>
+
+<h2>Second version of PCB</h2>
+<p>
+<img src="index_data/PCB_V1.jpg" alt="OBDuino" border="0">
+<br>
+I reduced the size especially for the height which is now less than 2" 
+so it can fit in a 1 DIN size empty tray slot for instance.<br>
+The 3 buttons are on the side and can be separated from the main PCB, 
+they are connected with wires so they can be put anywhere on the dash or
+ even the steering wheel, being creative.
+<br>
+Full schematic:<br>
+<a href="http://pages.videotron.com/frelyne/OBDuino/obduino_sch.png"><img src="index_data/obduino_sch.png" border="0" width="25%" height="25%"></a><br>
+<br>
+Populated:<br>
+<img src="index_data/OBDuinoV1_002.jpg" alt="OBDuino" border="0"><br>
+<br>
+<img src="index_data/OBDuinoV1.jpg" alt="OBDuino" border="0"><br>
+</p>
+<h2>Cable</h2>
+<p>
+A CAN only cable, small and thin, use a 4P4C <i>telephone handset</i> plug:<br>
+<br>
+<table border="1">
+<tbody><tr><th>4P4C</th><th>OBDII</th></tr>
+<tr><td>1 (black)</td><td>5  (Signal ground)</td></tr>
+<tr><td>2 (red)</td><td>14 (CAN Low)</td></tr>
+<tr><td>3 (green)</td><td>6  (CAN High)</td></tr>
+<tr><td>4 (yellow)</td><td>16 (Battery)</td></tr>
+</tbody></table>
+<br>
+source: <a href="http://www.controllerareanetwork.com/CANcables.htm">http://www.controllerareanetwork.com/CANcables.htm</a>.
+<br>
+<br>
+Example cable I made:<br>
+<img src="index_data/obduino_cable.jpg" alt="OBDuino" border="0">
+</p>
+
+<h2>First version of PCB</h2>
+<p>
+<img src="index_data/PCB_V1_002.jpg" alt="OBDuino" border="0">
+<br>
+<br>
+Populated:<br>
+<img src="index_data/obduino_front.jpg" alt="OBDuino" border="0"><br>
+<br>
+<img src="index_data/obduino_back.jpg" alt="OBDuino" border="0"><br>
+<br>
+<img src="index_data/obduino_back2.jpg" alt="OBDuino" border="0"><br>
+</p>
+
+<h2>DIY Interface</h2>
+<p>
+<a href="http://www.catb.org/hacker-emblem/"><img src="index_data/glider.png" alt="hacker emblem"></a><br>
+For development, the interface connects to the Arduino on a few pins as 
+well as the LCD and the buttons, and to the OBD-II plug with a serial 
+cable. It looks like a rats' nest as is but this is what I used to 
+develop!<br>
+<br>
+Whole setup with Arduino board, interface, LCD, buttons:<br>
+<img src="index_data/MCP_Interface_duino_lcd2.jpg" alt="OBDuino" border="0"><br>
+<br>
+CAN Interface that also takes the +12V from the OBD2 plug, it also includes a voltage divider and a on/off switch:<br>
+<img src="index_data/MCP_Interface_front.jpg" alt="CAN Interface" border="0"><br>
+<br>
+You want to test it with an Arduino? You need to make a small 
+daughterboard with the CAN chips and a few components, an LCD display, 3
+ buttons.<br>
+<a href="http://pages.videotron.com/frelyne/OBDuino/CAN_interface.png"><img src="index_data/CAN_interface.png" border="0" width="25%" height="25%"></a><br>
+Connect like this:<br>
+</p><pre>Arduino
+0 (RXD/PD0)  - nothing
+1 (TXD/PD1)  - nothing
+2 (INT0/PD2) - LCD VCC (pin 2)
+3 (INT1/PD3) - MCP2515/INT (pin 12)
+4 (T0/PD4)   - LCD Register Select (pin 4)
+5 (T1/PD5)   - LCD Brightness (pin 15) 
+6 (AIN0/PD6) - LCD Contrast (pin 3) 
+7 (AIN1/PD7) - Button Right
+8 (ICP/PB0)  - Button Middle         
+9 (OC1/PB1)  - Button Left          
+10 (SS/PB2)   - MCP2515/CS (pin 16)
+11 (MOSI/PB3) - MCP2515/SI (pin 14)
+12 (MISO/PB4) - MCP2515/SO (pin 15)
+13 (SCK/PB5)  - MCP2515/SCK (pin 13)
+
+14 (ADC0/PC0) - voltage divider input
+15 (ADC1/PC1) - LCD Enable Strobe (pin 6)    
+16 (ADC2/PC2) - LCD Data4 (pin 11)        
+17 (ADC3/PC3) - LCD Data5 (pin 12)
+18 (ADC4/PC4) - LCD Data6 (pin 13)
+19 (ADC5/PC5) - LCD Data7 (pin 14)
+</pre>
+You can use something like the <a href="http://www.mikroe.com/en/tools/can2/">CANSPI Extra Development Board</a> from mikroElektronika to help you.<br>
+Here is a limited firmware to test, it is functionnal but removes some features.<br>
+<a href="http://pages.videotron.com/frelyne/OBDuino/OBDuinoLite.hex">OBDuino Lite</a><br>
+For a 16MHz ATMEGA168, set your fuses to E:0x01 H:0xD4 L:0xDF. For the 328 use E:0x04 H:0xD7 L:0xFF.
+<p></p>
+
+<hr>
+<p><i>
+CAN library courtesy of Fabian Greif, see <a href="http://www.kreatives-chaos.com/artikel/universelle-can-bibliothek">http://www.kreatives-chaos.com/artikel/universelle-can-bibliothek</a> for more details<br>
+<small>
+/*<br>
+ * Copyright (c) 2007 Fabian Greif, Roboterclub Aachen e.V.<br>
+ *  All rights reserved.<br>
+ *<br>
+ * Redistribution and use in source and binary forms, with or without<br>
+ * modification, are permitted provided that the following conditions<br>
+ * are met:<br>
+ * 1. Redistributions of source code must retain the above copyright<br>
+ *    notice, this list of conditions and the following disclaimer.<br>
+ * 2. Redistributions in binary form must reproduce the above copyright<br>
+ *    notice, this list of conditions and the following disclaimer in the<br>
+ *    documentation and/or other materials provided with the distribution.<br>
+ *<br>
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND<br>
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE<br>
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE<br>
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE<br>
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL<br>
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS<br>
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)<br>
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT<br>
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY<br>
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF<br>
+ * SUCH DAMAGE.<br>
+ *<br>
+ * $Id: mcp2515.c 6927 2008-12-03 22:42:59Z fabian $<br>
+ */<br>
+</small>
+</i></p>
+
+</body></html>

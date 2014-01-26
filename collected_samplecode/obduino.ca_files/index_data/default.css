@@ -1,0 +1,35 @@
+html, body, frame {
+	border: none;
+}
+
+BODY.Amstrad {
+	background-color: rgb(0,0,170);
+	color: rgb(255,255,0);
+/*
+	background-image: url("obduino-tron.jpg");
+	background-attachment: fixed;
+	background-size: 100%;
+	font-family: "Baskerville BT", "Times New Roman", serif;
+*/
+	font-family: "Humanist 777 BT","Trebuchet MS", sans-serif;
+}
+
+BODY.Astro {
+	color: white;
+	background: black url("stars.gif");
+	background-attachment: fixed;
+	font-family: "Humanist 777 BT","Trebuchet MS", sans-serif;
+}
+
+P {text-align: justify}
+a {text-decoration: none}
+a:link {color: rgb(0,255,64)}
+a:visited {color: rgb(255,0,255)}
+a:active {color: rgb(255,0,64)}
+a:hover {text-decoration: underline overline}
+H1,H2,H3 {text-decoration: underline}
+
+td.menu {
+	font-size: 120%;
+	text-align: center;
+} 
