@@ -1,0 +1,355 @@
+/*
+Sketch to read information from a cars ECU via the STN1110 IC.
+
+Created by - Andrew Hughes
+Created on - 21 July 2012
+Changed on - 31 July 2012
+
+Software version - v0_1_0
+*/
+
+#define Device_Name "...STNunioOBD...\r"
+#define Software_Version "v0_1_0\r"
+
+//Includes and inculed setups.
+#include <avr/pgmspace.h>
+#include <SoftwareSerial.h>
+SoftwareSerial SoftwareSerial(2, 3); //Rx pin 2, Tx pin 3.
+
+//Define pin names.
+#define pin_Heartbeat_LED     13
+#define pin_STN_Enable        4
+#define pin_Ignition_Monitor  5
+
+//Setup globle variables.
+//byte HeartbeatLED = HIGH;
+//int HeartbeatOldMillis = 0;
+
+byte IgnitionStatusNew = HIGH;
+byte IgnitionStatusOld = HIGH;
+
+//unsigned long SupportedPID00 = 0;
+//unsigned long SupportedPID20 = 0;
+//unsigned long SupportedPID40 = 0;
+
+//STN AT cmd's.
+//Asterisk (*) marks default setting.
+#define STN_D    "ATD\r"   //Set all settings to defaults.
+#define STN_DPN  "ATDPN\r" //Describe current protocol by number.
+#define STN_E0   "ATE0\r"  //Echo off.
+#define STN_E1   "ATE1\r"  //Echo on*.
+#define STN_L0   "ATL0\r"  //Linefeeds off*.
+#define STN_L1   "ATL1\r"  //Linefeeds on.
+#define STN_M0   "ATM0\r"  //Memory off.
+#define STN_M1   "ATM1\r"  //Memory on*.
+#define STN_RV   "ATRV\r"  //Read voltage.
+#define STN_WS   "ATWS\r"  //Warm start.
+#define STN_S0   "ATS0\r"  //Printing of spaces off.
+#define STN_S1   "ATS1\r"  //Printing of spaces on*.
+#define STN_SP0  "ATSP0\r" //Protocol - Automatic.
+#define STN_SP1  "ATSP1\r" //Protocol - SAE J1850 PWM (41.6 kbaud).
+#define STN_SP2  "ATSP2\r" //Protocol - SAE J1850 VPW (10.4 kbaud).
+#define STN_SP3  "ATSP3\r" //Protocol - ISO 9141-2 (5 baud init, 10.4 kbaud).
+#define STN_SP4  "ATSP4\r" //Protocol - ISO 14230-4 KWP (5 baud init, 10.4kbaud).
+#define STN_SP5  "ATSP5\r" //Protocol - ISO 14230-4 KWP (fast init, 10.4 kbaud).
+#define STN_SP6  "ATSP6\r" //Protocol - ISO 15765-4 CAN (11 bit ID, 500 kbaud).
+#define STN_SP7  "ATSP7\r" //Protocol - ISO 15765-4 CAN (29 bit ID, 500 kbaud).
+#define STN_SP8  "ATSP8\r" //Protocol - ISO 15765-4 CAN (11 bit ID, 250 kbaud).
+#define STN_SP9  "ATSP9\r" //Protocol - ISO 15765-4 CAN (29 bit ID, 250 kbaud).
+#define STN_Z    "ATZ\r"   //Reset device.
+
+//PID list.
+#define PID00   0x00 //PIDs supported [01 - 20].
+#define CEL     0x04 //Calculated engine load value.
+#define ECT     0x05 //Engine coolant temperature.
+#define FP      0x0A //Fuel pressure.
+#define ERPM    0x0C //Engine RPM.
+#define VS      0x0D //Vehicle speed.
+#define MAF     0x10 //MAF air flow rate.
+#define TP      0x11 //Throttle position.
+#define PID20   0x20 //PIDs supported [21 - 40].
+#define FLI     0x2F //Fuel Level Input.
+#define PID40   0x40 //PIDs supported [41 - 60].
+#define AAT     0x46 //Ambient air temperature.
+#define EOT     0x5C //Engine oil temperature.
+#define EFR     0x5E //Engine fuel rate.
+
+//Setup.
+void setup()
+{
+  //Setup pin states.
+  //pinMode(pin_Heartbeat_LED, OUTPUT);
+  //digitalWrite(pin_Heartbeat_LED, HIGH);
+  pinMode(pin_Ignition_Monitor, INPUT_PULLUP);
+  pinMode(pin_STN_Enable, OUTPUT);
+  digitalWrite(pin_STN_Enable, LOW);
+  
+  //Initialize the hardware and software serial ports.
+  Serial.begin(9600);
+  Serial.println(F(Device_Name));
+  SoftwareSerial.begin(9600);
+  
+  //Check if ignition is on and enable the STN IC if it is.
+  if(Ignition_Status_check() == 0)
+  {
+    Serial.println(F("Ignition........"));
+    while(Ignition_Status_check() == 0)
+    {
+      delay(1000); //Wait for ignition to be turned on.
+      //Heartbeat(); //Heartbeat will run once a second.
+    }
+  }
+  
+  Serial.println(freeRam());
+}
+
+//Main.
+void loop()
+{
+  long result = 0;
+  char result_str[16];
+  
+  //Heartbeat();
+  
+  get_PID(ERPM, &result, result_str);
+  Serial.print(result_str);
+  delay(100);
+
+}
+
+//Heartbeat to show program is alive.
+/*void Heartbeat()
+{
+  int HeartbeatNewMillis = millis();
+  if(HeartbeatNewMillis - HeartbeatOldMillis > 500)
+  {
+    HeartbeatOldMillis = HeartbeatNewMillis;
+    if(HeartbeatLED == LOW)
+    {
+      HeartbeatLED = HIGH;
+    }
+    else
+    {
+      HeartbeatLED = LOW;
+    }
+    digitalWrite(pin_Heartbeat_LED, HeartbeatLED);
+  }
+}*/
+
+//Check ignition status.
+byte Ignition_Status_check()
+{
+  IgnitionStatusNew = digitalRead(pin_Ignition_Monitor);
+  if(IgnitionStatusNew == LOW && IgnitionStatusOld == HIGH)
+  {
+    Serial.println(F("Ignition on....."));
+    digitalWrite(pin_STN_Enable, HIGH); //Enable the STN IC.
+    IgnitionStatusOld = IgnitionStatusNew;
+    delay(1000); //Wait for STN IC to power up.
+    while(STN_Setup() == 0) //Call the STN_Setup function.
+    {
+      Serial.println(F("STN setup fail.."));
+      delay(1000);
+      //Heartbeat(); //Heartbeat will run once a second.
+    }
+    return 1;
+  }
+  else if(IgnitionStatusNew == HIGH && IgnitionStatusOld == LOW)
+  {
+    Serial.println(F("Ignition off...."));
+    digitalWrite(pin_STN_Enable, LOW); //Disable the STN IC.
+    IgnitionStatusOld = IgnitionStatusNew;
+    return 0;
+  }
+  else
+  {
+    return 0; //No change.
+  }
+}
+
+//Setup the STN IC ready for use.
+byte STN_Setup()
+{
+  char str_cmd[16];
+  
+  Serial.println(F("STN setup......"));
+  SoftwareSerial.flush();
+  if(STN_Command(str_cmd, PSTR(STN_M0)) != 1 || str_cmd[4] != 'O' || str_cmd[5] != 'K')
+  {
+    return 0;
+  }
+  Serial.println(str_cmd);
+  STN_Command(str_cmd, PSTR(STN_SP0));
+  Serial.println(str_cmd);
+  STN_Command(str_cmd, PSTR(STN_E0));
+  Serial.println(str_cmd);
+  Serial.println(F("STN setup done.."));
+  return 1;
+}
+//Requests the PID and returns the calculated PID result.
+byte get_PID(byte PID, long *result, char *result_str)
+{
+  byte str_cr[16]; //String for compact response data.
+  char str_tx[16]; //String for STN transmit data.
+  char str_rx[16]; //String for STN receive data.
+  
+  sprintf_P(str_tx, PSTR("01%02X\r"), PID);
+  STN_Transmit(str_tx);
+  if(STN_Read(str_rx) == 0)
+  {
+    Serial.print(str_rx);
+    strcpy_P(result_str, PSTR("rERR"));
+    return 0;
+  }
+  Serial.print(str_rx);
+  if(STN_Response_Header_Check(str_tx, str_rx) == 0)
+  {
+    strcpy_P(result_str, PSTR("hERR"));
+    return 0;
+  }
+  STN_Response_Convert(str_cr, str_rx);
+  switch(PID)
+  {
+    case CEL:
+    *result = (str_cr[0] * 100) / 255;
+    sprintf_P(result_str, PSTR("%ld %%"), *result);
+    break;
+    case ECT:
+    *result = str_cr[0] - 40;
+    break;
+    case FP:
+    *result = str_cr[0] * 3;
+    sprintf_P(result_str, PSTR("%ld kPa"), *result);
+    break;
+    case ERPM:
+    *result = ((str_cr[0] * 256) + str_cr[1]) / 4;
+    sprintf_P(result_str, PSTR("%ld RPM"), *result);
+    break;
+    case VS:
+    *result = (str_cr[0] * 10000U) / 16090U;
+    sprintf_P(result_str, PSTR("%ld MPH"), *result);
+    break;
+    case MAF:
+    *result = ((str_cr[0] * 256) + str_cr[1]) / 100;
+    sprintf_P(result_str, PSTR("%ld g/s"), *result);
+    case TP:
+    *result = (str_cr[0] * 100) / 255;
+    sprintf_P(result_str, PSTR("%ld %%"), *result);
+    break;
+    case FLI:
+    *result = (100 * str_cr[0]) / 255;
+    sprintf_P(result_str, PSTR("%ld %%"), *result);
+    break;
+    case AAT:
+    *result = str_cr[0] -40;
+    break;
+    case EOT:
+    *result = str_cr[0] - 40;
+    break;
+    case EFR:
+    *result =((str_cr[0] * 256) + str_cr[1]) * 0.05;
+    sprintf_P(result_str, PSTR("%ld L/h"), *result);
+    break;
+  }
+  return 0;
+}
+
+boolean Check_Supported_PID(byte PID)
+{
+  if(PID == 0)
+  {
+    return true;
+  }
+  else if(PID >= 0x21 && PID <= 0x20)
+  {
+    
+  }
+  else if(PID >= 0x21 &&PID <= 0x40)
+  {
+    
+  }
+  else if(PID >= 0x41 && PID <= 0x60)
+  {
+    
+  }
+}
+
+//Transmits ASCII encoded HEX data to the ELM IC.
+//For example 010C\r.
+void STN_Transmit(char *str)
+{
+  SoftwareSerial.print(str);
+}
+
+//Places a command into a string to be transmitted.
+byte STN_Command(char *str_cmd, char *cmd)
+{ 
+  strcpy_P(str_cmd, cmd);
+  STN_Transmit(str_cmd);
+  
+  return STN_Read(str_cmd);
+}
+
+//Reads data from the ELM IC.
+//For example 41 0C 7B 7B>.
+byte STN_Read(char *str)
+{
+  byte i = 0;
+  char temp;
+  
+  while((temp = Serial.read()) != '>')
+  {
+    if(temp >= ' ' && temp <= '~')
+    {
+      Serial.println(i);
+      Serial.println(temp);
+      str[i++] = temp;
+    }
+    if(i == 16)
+    {
+      return 0;
+    }
+  }
+  str[i] = '\0';
+  return 1; //No data to read or buffer full.
+}
+
+//Checks the ELM response header against the transmited header.
+byte STN_Response_Header_Check(char *str_tx, char *str_rx)
+{
+  if(str_rx[1] == str_tx[1] && str_rx[3] == str_tx[2] && str_rx[4] == str_tx[3])
+  {
+    return 1; //Header check is good.
+  }
+  else
+  {
+    return 0; //Header check is bad.
+  }
+}
+
+//Skips the header and converts the received string to HEX.
+//For example 7B 7B to 0x7B7B.
+void STN_Response_Convert(byte *str_cr, char *str_rx)
+{
+  byte i = 0;
+  
+  str_rx += 6;
+  while(*str_rx != '\0')
+  str_cr[i++] = strtoul(str_rx, &str_rx, 16);
+}
+
+int freeRam(void)
+{
+  extern unsigned int __heap_start;
+  extern void *__brkval;
+
+  int free_memory;
+  int stack_here;
+
+  if (__brkval == 0)
+    free_memory = (int) &stack_here - (int) &__heap_start;
+  else
+    free_memory = (int) &stack_here - (int) __brkval; 
+
+  return (free_memory);
+}
