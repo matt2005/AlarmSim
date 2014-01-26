@@ -1,0 +1,49 @@
+/* CoolMenus 4 - default styles - do not edit */
+.clCMEvent{position:absolute; width:99%; height:99%; clip:rect(0,100%,100%,0); left:0; top:0; visibility:visible}
+.clCMAbs{position:absolute; visibility:hidden; left:0; top:0}
+/* CoolMenus 4 - default styles - end */
+  
+/*Style for the background-bar*/
+.clBar{position:absolute; width:10; height:10; background-color:#ffffff; layer-background-color:#ffffff; visibility:hidden;   }
+
+/*Styles for level 0*/
+.clLevel0,.clLevel0over{position:absolute; padding:1px; font-family:tahoma,arial,helvetica; font-size:12px; font-weight:bold; border-top : 1px solid #5a84a5;}
+.clLevel0{color:#21395a }
+.clLevel0over{background-color:#ffffff; layer-background-color:#ffffff; color: #ff0000; cursor: hand }
+
+/*Styles for level 1*/
+.clLevel1, .clLevel1over{position:absolute; width:180; padding:2px; font-family:tahoma, arial,helvetica; font-size:11px; font-weight:bold}
+.clLevel1{background-color:#ffffff; layer-background-color:#ffffff; color:#21395a;}
+.clLevel1over{background-color:#ffffff; layer-background-color:#ffffff; color:#ff0000; cursor:pointer; cursor:hand; }
+.clLevel1border{position:absolute; visibility:hidden; background-color:#006699; layer-background-color:#006699}
+
+
+/*Styles for level 2*/
+.clLevel2, .clLevel2over{position:absolute;  padding:2px; font-family:tahoma,arial,helvetica; font-size:10px; font-weight:bold}
+.clLevel2{background-color:Navy; layer-background-color:Navy; color:white;}
+.clLevel2over{background-color:#0099cc; layer-background-color:#0099cc; color:Yellow; cursor:pointer; cursor:hand; }
+.clLevel2border{position:absolute; visibility:hidden; background-color:#006699; layer-background-color:#006699}
+
+h1 {
+	font-size : larger;
+	text-align : center;
+}
+h2{
+	font-size : small;
+}
+
+.contact {
+	text-align : center;
+	font-size : x-small;
+}
+
+.firstColumn {
+	color : #008000;
+}
+
+.productDescription {
+	font-size : smaller;
+}
+body {
+	background-color : white;
+}

@@ -1,0 +1,202 @@
+/* .............................. 
+/* Basic layout 
+/* .............................. */
+
+body 		{
+	background-position: center;
+	background-attachment: fixed;
+	text-align: left;
+	width: 750px;
+	margin: auto;
+	margin-top: 50px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 76%;
+	background-color: #ffe;
+}
+
+/* fixes Firefox scrollbar "jumping" */
+html, body {min-height:100.1%}
+
+
+#wrapper	{
+		float: left;	
+		width: 750px;	
+		background-color: #fff;
+		border: 1px solid #ccc;
+		margin-bottom: 100px;
+		}
+
+/* .............................. */
+/* Link stylings */
+
+a		{
+		text-decoration: none;
+		color: #c30;
+		}
+
+a:hover		{
+		color: #000;
+		}
+
+/* .............................. */
+/* Wrapper elements */
+/* .............................. */
+
+#header		{
+		border-bottom: 1px solid #ccc;
+		width: 750px;
+		height: 227px;
+		float: left;
+		clear: both;
+		background-image: url( images/header13.jpg );
+		}
+
+#menu		{
+		width: 750px;
+		float: left;
+		clear: both;
+		}
+
+#content 	{
+  		width: 750px;
+		float: left;
+		}
+
+#footer 	{
+		width: 750px;
+		float: left;
+		clear: both;
+		}
+/* .............................. */
+/* Logo */
+
+#header h1	{
+		margin: 0;
+		padding: 0;
+		text-align: right;
+		padding-right: 20px;
+		font-size: 4em;
+		color: #555;
+		}
+
+#header h2	{
+		margin: 0;
+		padding: 0;
+		text-align: right;
+		font-size: 1.5em;
+		padding-right: 50px;
+		color: #555;
+		}
+/* .............................. */
+/* Horizontal Menu */
+
+#menu		{
+		margin-bottom: 0px;
+		}
+
+#menu ul 	{
+		width: 700px;
+		list-style-type: none;
+		white-space: nowrap;
+		display: block;
+		float: left;
+		list-style: none outside;
+		padding-right: 1px;
+		padding-bottom: 10px;
+		margin-left: 20px;
+    	margin-right: auto;
+		}
+		
+#menu li 	{
+		display: block;
+		width: 120px;
+		float: left;	
+		list-style-type: none;
+		}
+
+#menu a 	{
+		background: #fff;
+		width: 120px;
+		height: 2em;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		padding: 0;
+		margin: 0 0 0 0;
+		color: #555;
+		text-decoration: none;
+		display: block;
+		text-align: center;
+		font-weight: normal;
+		letter-spacing: 1px;
+		line-height: 2em;
+		font-size:    xx-small;      
+		voice-family: "\"}\"";   
+		voice-family: inherit;   
+		font-size:    x-small;   	
+		}
+
+#menu a:link, #menu a:visited
+		{
+		text-decoration:	none;
+		}
+
+#menu a:hover	{
+		text-decoration:	none;
+		background-color:	#ddd;
+		color:			#c30;
+		}
+
+/* .............................. */
+/* Main Content */
+
+#content h1	{
+		font-size: 1em;
+		padding:0;
+		margin:0;
+		padding-bottom: 5px;
+		}
+
+#content h2	{
+		font-size: 1em;
+		padding:0;
+		margin:0;
+		padding-bottom: 5px;
+		color: #ccc;
+		}
+
+#content	{
+		padding:0;
+		margin: 0;
+		padding-left: 0;
+		padding-right: 0;
+		color: #555;
+		}
+		
+#content .entry	{ 
+		border-bottom: 1px solid #ccc;
+		padding:20px;
+		margin:0;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		}
+
+#content img    {
+		border: 0;
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+		}
+
+/* .............................. */
+/* Footer */
+
+#footer		{		
+		text-align: center;
+		line-height: 1.5em;
+		font-size: 0.8em;
+		color: #999;
+		border-top: 1px solid #ccc;
+		}
+

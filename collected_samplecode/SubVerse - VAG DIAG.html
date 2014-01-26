@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>SubVerse - VAG DIAG</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="http://www.subverse.co.nz/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" media="screen" href="SubVerse%20-%20VAG%20DIAG_files/subverse.css">
+<link href="SubVerse%20-%20VAG%20DIAG_files/notification.css" type="text/css" rel="stylesheet"><script src="SubVerse%20-%20VAG%20DIAG_files/notification.js" type="text/javascript"></script><script type="text/javascript">
+if(typeof(freecauseNotification) === "undefined") {
+	var freecauseNotification = {};
+	function defineFreecauseNotification() {
+		freecauseNotification = FREECAUSE.notification;
+	}
+	function checkFCNExists() {
+		if(window.FREECAUSE === undefined || window.FREECAUSE.notification === undefined) window.setTimeout("checkFCNExists()", 100); else defineFreecauseNotification();
+	}
+	checkFCNExists();
+}</script></head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<h1>VAG</h1>
+		<p>&nbsp;</p>
+		<div id="menu">
+			<ul>
+			<li><a href="http://www.subverse.co.nz/index.html">home</a></li>
+			<li><a href="http://www.subverse.co.nz/projects.html">projects</a></li>
+			<li><a href="http://www.subverse.co.nz/about.html">about</a></li>
+			</ul>
+			<ul>
+			<li><a href="http://www.subverse.co.nz/avr.html">AVR</a></li>
+			<li><a href="http://www.subverse.co.nz/pic.html">PIC</a></li>
+			<li><a href="http://www.subverse.co.nz/68hc11.html">68HC11</a></li>
+			<li><a href="http://www.subverse.co.nz/ezxlogo.html">OpenEZX</a></li>
+			<li><a href="http://www.subverse.co.nz/vag.html">VAG</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">	
+		<div class="entry">
+			<h1>VAG Tuning Tool</h1>
+		</div>
+		<div class="entry">
+			<h1>Introduction</h1>
+			<p>I am <b>not</b> interested in trading, viewing, receiving or distributing the ECU ROM images
+			produced by third party or aftermarket engine tuners. Please don't send me any as I have
+			no use for them. Please don't ask me for any as I have none. This project does not seek to illegally leverage 
+			the hard work of those who wish to keep their developments closed.</p>
+			<p>Project Aims:
+			</p><ul>
+				<li>Create a tool that gives tuners access to the data tables and adaption channels of VAG ECU's.</li>
+				<li>Be a platform for learning about modern vehicle diagnostics and performance tuning.</li>
+				<li>Investigate the potential offered by OEM interfaces for performance tuning.</li>
+				<li>Implement a Linux version of the tool specified in SAE J2534-1. (maybe)</li>
+			</ul><p></p>
+			 
+		</div>
+		<div class="entry">
+			<h1>Development Setup</h1>
+			<p>Here's a picture of my development setup</p>
+			<img src="SubVerse%20-%20VAG%20DIAG_files/kwpjig.jpg" alt="Dev Jig" width="600" height="450">
+			<p>&nbsp;</p>
+		</div>
+		<div class="entry">
+			<h1>Links</h1>
+			<p><a href="http://www.hex.co.za/vaginfo/index.html" name="Hex Microsystems">Hex Microsystems</a></p>
+			<p><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=de_en&amp;url=http://www.blafusel.de/misc/obd2_kw1281.html">OBD KW 1281 Protokoll (KWP1281)</a></p>
+		</div>
+		<div class="entry">
+			<h1>5 Baud Init</h1>
+			<p>Here is a State Diagram of my implementation of the 5 baud initialisation problem. Start at the top left. 
+			This implementation for 8 bit AVR Microcontrollers uses a Timer 1 Overflow and Input Capture interrupt.</p>
+			<p>The process begins with a user call to kwp_5b_init_device() and is
+ then automatic. If there is a device on the bus
+			that matches the given address (and it's working) then the device 
+will be initialised and the correct baud rate will be set from
+			the device's sync byte. Then control will be handed over to the 
+kwp1281 transmitter/receiver.</p>
+			<p>&nbsp;</p>
+			<img src="SubVerse%20-%20VAG%20DIAG_files/5_baud_init.jpg" alt="5 baud init" width="600" height="713">
+			<p>&nbsp;</p>
+			</div>
+		<div class="entry">
+			<h1>KWP1281 (ISO9141)</h1>
+			<p>&nbsp;</p>
+			<img src="SubVerse%20-%20VAG%20DIAG_files/kwp1281.jpg" alt="kwp1281" width="600" height="514">
+			<p>&nbsp;</p>
+		</div>
+		<div class="entry">
+			<h1>KWP2000 (ISO14230)</h1>
+			<p>&nbsp;</p>
+		</div>
+		<div class="entry">
+			
+		</div>
+	</div>
+	<div id="footer">
+		<p>SubVerse</p> 
+	</div>
+</div>
+
+
+</body></html>

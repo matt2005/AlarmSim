@@ -1,0 +1,3448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  
+  
+  <title>Hex Microsystems</title>
+  <meta content="Hex Microsystems" name="description">
+
+  
+  <meta content="solutions, car, vag, VAG-COM,VAGCOM,VW,Volkswagen,Audi,Diagnostics,DTC,Fault Codes,Data Logging,	VWTool,VDS-PRO,CarComp" name="keywords">
+
+  
+  <link rel="stylesheet" href="Hex%20Microsystems_files/hex.css" type="text/css">
+
+  
+  <script language="JavaScript1.2" src="Hex%20Microsystems_files/coolmenus4.js"></script>
+<link href="Hex%20Microsystems_files/notification.css" type="text/css" rel="stylesheet"><script src="Hex%20Microsystems_files/notification.js" type="text/javascript"></script><script type="text/javascript">
+if(typeof(freecauseNotification) === "undefined") {
+	var freecauseNotification = {};
+	function defineFreecauseNotification() {
+		freecauseNotification = FREECAUSE.notification;
+	}
+	function checkFCNExists() {
+		if(window.FREECAUSE === undefined || window.FREECAUSE.notification === undefined) window.setTimeout("checkFCNExists()", 100); else defineFreecauseNotification();
+	}
+	checkFCNExists();
+}</script></head>
+
+
+<body>
+
+<script language="JavaScript1.2" src="Hex%20Microsystems_files/menuvi.js"></script><div style="z-index: 1; clip: rect(0px, 90px, 80px, 0px); width: 90px; height: 80px; left: 10px; top: 120px; visibility: visible;" id="oCMenubbar" class="clBar"><div style="clip: rect(0px, 90px, 80px, 0px); width: 90px; height: 80px; left: 0px; top: 0px; visibility: visible;" id="oCMenubbar_0" class="clBar"></div></div><div style="z-index: 2; clip: rect(0px, 90px, 30px, 0px); width: 90px; height: 30px; left: 10px; top: 120px; visibility: visible;" id="oCMenu_top1_0" class="clLevel0"><div style="z-index: 4; clip: rect(0px, 90px, 30px, 0px); width: 90px; height: 30px; left: 0px; top: 0px;" id="oCMenu_top1" class="clLevel0">&nbsp;Home</div></div><div style="z-index: 3; clip: rect(0px, 90px, 30px, 0px); width: 90px; height: 30px; left: 10px; top: 170px; visibility: visible;" id="oCMenu_top2a_0" class="clLevel0"><div style="z-index: 5; clip: rect(0px, 90px, 30px, 0px); width: 90px; height: 30px; left: 0px; top: 0px;" id="oCMenu_top2a" class="clLevel0">&nbsp;<b><i><font color="#0000FF" face="Arial">VCDS SouthAfrica</font></i></b></div></div>
+<img src="Hex%20Microsystems_files/hex_logo.gif" border="0">
+<table style="position: absolute; left: 149px; top: 5px;" width="75%">
+
+  <tbody>
+
+    <tr>
+
+      <td align="center"><img src="Hex%20Microsystems_files/hex_name.gif" border="0"></td>
+
+    </tr>
+
+    <tr>
+
+      <td>
+      
+      <p align="center"><font size="4"><strong>Welcome to the </strong></font><font style="color: rgb(255, 0, 0);" color="#0000ff" size="6"><strong>VAG
+info</strong></font><font size="4"><strong> page...</strong></font></p>
+
+      
+      <p style="color: rgb(0, 0, 0);" align="center"><font size="2">To
+the </font><font size="2"><strong>opendiag group</strong></font><font size="2"> guys and gals - This obviously then goes for </font><font size="2"><strong>VW</strong></font><font size="2">, </font><font size="2"><strong>Audi</strong></font><font size="2">, </font><font size="2"><strong>Seat</strong></font><font size="2"> and </font><font size="2"><strong>Skoda</strong></font><font size="2">.</font></p>
+
+      
+      <p align="left">I don't realy update the technical detail in this
+page anymore,
+but decided to mirror it Geocities (Yes, that gives you an idea how long this has been up here)
+as I've been getting some hassles, but I know many people still visit
+it to get
+their first basic understanding of the VAG KeyWord1281 protocol.<br>
+
+      </p>
+
+      
+      <p align="left"><b>Some other interesting links (non-VAG-related):</b></p>
+
+		
+      <blockquote>
+			
+        <p align="left"><a href="http://www.2ridetheworld.com/">http://www.2ridetheworld.com</a>
+- Simon and Lisa Thomas, traveling around the world on their BMW bikes - help 
+			them by <a href="http://www.2ridetheworld.com/donation_page.htm">
+			donating to there fuel fund</a>! Every $10 helps!!!</p>
+
+			
+        <p align="left"><a href="http://www.hex.co.za/gs911/index.html">
+			<img src="Hex%20Microsystems_files/gs911interfacetiny.png" border="0" width="63" height="50"></a><b><a href="http://www.hexcode.co.za/">GS-911</a></b> 
+			- <a href="http://www.hexcode.co.za/">http://www.hexcode.co.za</a> : The best aftermrket Diagnostic tool for BMW motorcycles - Read fault 
+			codes on your mobile phone and reset service reminders etc.!</p>
+        <p align="left"></p>
+      </blockquote>
+
+      
+      <p align="left"><font color="#ff0000">Some things to keep in mind
+before <em><strong>mailing</strong></em> me at : <img src="Hex%20Microsystems_files/email3.png" border="0" width="162" height="16"> </font></p>
+
+      
+      <ul>
+
+        <li><font color="#ff0000">I don't have all the time in the
+world, and hence I urge you <strong>NOT</strong> to send me any <strong>general</strong>
+questions.</font> </li>
+
+        <li><font color="#ff0000">I will only answer a very select few.</font>
+        </li>
+
+      
+      </ul>
+
+      
+      <p>For those of you who wondered what the VAG 1552 looks like:</p>
+
+      
+      <p align="center"><img src="Hex%20Microsystems_files/vag1552.gif" border="0" width="360" height="300"></p>
+
+      
+      <p>&nbsp;</p>
+
+      
+      <p>As a start, here is a picture of the VAG connector and cable.</p>
+
+      
+      <p align="center"><img src="Hex%20Microsystems_files/VAG.jpg" border="0" width="332" height="227"></p>
+
+      
+      <p>&nbsp;</p>
+
+      
+      <p>And here are the pinouts as seen on the vehicle:</p>
+
+      
+      <p align="center"><img src="Hex%20Microsystems_files/j1962.gif" border="0" width="162" height="60"></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="2" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td align="center"><strong>Chamber</strong></td>
+
+                  <td><strong>Allocation</strong></td>
+
+                  <td><strong>Description</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">1</td>
+
+                  <td>nc</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">2</td>
+
+                  <td>nc</td>
+
+                  <td>reserved [+] SAE J1850</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">3</td>
+
+                  <td>reserved</td>
+
+                  <td>vehicle bus (ODB-II DV)</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">4</td>
+
+                  <td>Output Earth</td>
+
+                  <td>VAG1551/2 and OST</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">5</td>
+
+                  <td>Signal Earth</td>
+
+                  <td>Spesification for OST</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">6</td>
+
+                  <td>nc</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">7</td>
+
+                  <td>K-line</td>
+
+                  <td>VAG1551/2 and OST</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">8</td>
+
+                  <td>nc</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">9</td>
+
+                  <td>nc</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">10</td>
+
+                  <td>nc</td>
+
+                  <td>reserved [-] SAE J1850</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">11</td>
+
+                  <td>reserved</td>
+
+                  <td>vehicle bus (ODB-II DV)</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">12</td>
+
+                  <td>reserved</td>
+
+                  <td>screen (ODB-II DV)</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">13</td>
+
+                  <td>nc</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">14</td>
+
+                  <td>Signal Code</td>
+
+                  <td>VAG1551/2 LA</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">15</td>
+
+                  <td>L-line</td>
+
+                  <td>VAG1551/2 and OST</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">16</td>
+
+                  <td>U_bat</td>
+
+                  <td>VAG1551/2 and OST</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>&nbsp;</p>
+
+      
+      <p>Everyone wants to know what the K-line interface looks like...
+well, it can take many shapes, depending on the complexity that you
+would like to add, but essentially it is a bidirectional communication
+bus (K-line) with an optional initialization line (L-line - optional,
+and if used, then only to output the 5 bps address byte). The interface
+described below, can be used for ISO:9141:1989, ISO:9141-2, KeyWord82,
+KeyWor1281, KeyWord2000 and other K-line protocols.</p>
+
+      
+      <p align="left">&nbsp;</p>
+
+      
+      <p align="left"><strong>and here is<span style="color: rgb(51, 0, 153);"> </span></strong><font style="color: rgb(51, 0, 153);" color="#ffff00">some of the protocol</font><strong><span style="color: rgb(51, 0, 153);"> </span>to get you all going....</strong></p>
+
+      
+      <p align="left">The Baud rates are generally between 1k and 10,4k
+bit/s. Common today are 4800, 9600 and 10400 (for most OBD-II equipped
+ECUs), however they could be any non-standard baudrate, with an
+interbyte time of approximately 10ms.</p>
+
+      
+      <p align="left">&nbsp;</p>
+
+      
+      <p><strong>some definitions first:</strong></p>
+
+      
+      <ul>
+
+        <li>The smallest repeatable transmission unit is a "<font style="color: rgb(51, 0, 153);" color="#ffff00">BLOCK</font>". </li>
+
+        <li>The sum of all blocks transmitted within the framework of
+communication with a control unit is a "<font style="color: rgb(51, 0, 153);" color="#ffff00">TELEGRAM</font>". </li>
+
+        <li>The unit (ECU or tester), which is authorized to output a
+block, is termed "<font style="color: rgb(51, 0, 153);" color="#ffff00">MASTER</font>".
+Correspondingly, the receiverof a block is called a "<font style="color: rgb(51, 0, 153);" color="#ffff00">SLAVE</font>". </li>
+
+      
+      </ul>
+
+      
+      <p><strong>BLOCK Transfer:</strong></p>
+
+      
+      <ul>
+
+        <li>The bytes of a block that are transmitted by the master are
+returned <u>by the slave</u> <strong><u>complemented</u></strong> in
+bytes, i.e. the 1st byte of the master leads to the complemented 1st
+byte of the slave, upon which the master transmits the second byte to
+the slave, and so on. </li>
+
+        <li>With this form of transmission the master will always know
+after every byte whether the transmitted byte has been correctly
+received. </li>
+
+        <li>The last byte of the block <u>is not returned by the slave</u>,
+it answers by transmitting the "<font style="color: rgb(51, 0, 153);" color="#ffff00">Block end</font><span style="color: rgb(51, 0, 153);">"
+          </span><font style="color: rgb(51, 0, 153);" color="#ffff00">$03</font>
+(if you like Pascal/Delphi) or <font style="color: rgb(51, 0, 153);" color="#ffff00">0x03</font> (if your more C inclined) ;-) </li>
+
+      
+      </ul>
+
+      
+      <p><strong>Blocks are built up of five parts.</strong> (<font color="#ff0000"> Please note: For the <strong><u>protocol</u></strong>,
+I will always be using <strong><u>hexadecimal values</u></strong> !</font>
+)</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="2" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td><strong>Type</strong></td>
+
+                  <td style="color: rgb(0, 0, 0);"><strong>Acronym</strong></td>
+
+                  <td><strong>description</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td>1.</td>
+
+                  <td style="color: rgb(51, 0, 153);"><strong>Block
+length</strong></td>
+
+                  <td>number of bytes in block - excluding the "Block
+end" byte</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>2.</td>
+
+                  <td style="color: rgb(51, 0, 153);"><strong>Block
+counter</strong></td>
+
+                  <td>inc by 1 with every block - wraps from FF to 00</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>3.</td>
+
+                  <td style="color: rgb(51, 0, 153);"><strong>Block
+title</strong></td>
+
+                  <td>this is the command-type</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>4.</td>
+
+                  <td style="color: rgb(51, 0, 153);"><strong>data</strong></td>
+
+                  <td>a block could have NO data, i.e. the ACK block</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>5.</td>
+
+                  <td style="color: rgb(51, 0, 153);"><strong>Block end</strong></td>
+
+                  <td>value of 03 hex</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p><font style="color: rgb(51, 0, 153);" color="#0000ff"><strong>example:</strong></font>
+An Acknowledge block would look like this:</p>
+
+      
+      <p>Note: the <strong><u>Block title</u></strong> (command) for
+the Acknowledge block is <strong>09</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#808080" border="2" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td align="center"><strong>value</strong></td>
+
+                  <td style="color: rgb(0, 0, 0);"><strong>comment</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">03</td>
+
+                  <td style="color: rgb(51, 0, 153);">Block length</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">ZZ</td>
+
+                  <td style="color: rgb(51, 0, 153);">Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">09</td>
+
+                  <td style="color: rgb(51, 0, 153);">Block title (<u>Acknowledge</u>)</td>
+
+                </tr>
+
+                <tr>
+
+                  <td align="center">03</td>
+
+                  <td style="color: rgb(51, 0, 153);">Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now that we've covered the basics, you should easily
+understand the following communication. This is an example of a log
+I've taken from entering the Engine Controller (address 01) of a <strong>VW
+Polo Classic.</strong> The only deviation from what I have described
+above, is the 5 bps initialization. It works as follows:</p>
+
+      
+      <ul>
+
+        <li>the tester issues the 5 baud address of the controller it
+would like to initiate communication with. </li>
+
+        <li>should the ECU recognize its address, it will reply with a
+sync byte (55), which is used by the tester to determine the baudrate
+that the ECU would like to communicate at. </li>
+
+        <li>following a short delay, the ECU will send a Key word
+(consisting of 2 Key bytes, first the Least Significat Byte, followed
+by the MSB) </li>
+
+        <li>the tester replies with the complement of the Key MSB byte.
+This hands master mode to the ECU, and it starts outputting the ECU
+info. </li>
+
+      
+      </ul>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">01</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>5 bps address of the Engine Controller 1start,
+7data, odd parity, 1stop</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">55</td>
+
+                  <td>this is the sync byte to determine the baudrate
+(01010101) 1start, 8data, 1stop</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">01</td>
+
+                  <td>Key word LSB 1start, 7data, odd parity, 1stop</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">8A</td>
+
+                  <td>Key word MSB 1start, 7data, odd parity, 1stop</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">75</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Complement of Key word MSB</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Here follows the first ECU info Block. The first one is the <strong>Controller
+ID #: </strong><font style="color: rgb(51, 0, 153);" color="#ffffff"><strong>''</strong></font><font style="color: rgb(51, 0, 153);" color="#ffff00"><strong>RSU906258? </strong></font><strong>"</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0F</td>
+
+                  <td>Block length - ECU is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">01</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FE</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>Block title - ASCII text follows</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">52</td>
+
+                  <td>'R'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">53</td>
+
+                  <td>'S'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">55</td>
+
+                  <td>'U'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">39</td>
+
+                  <td>'9'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C6</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">30</td>
+
+                  <td>'0'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">36</td>
+
+                  <td>'6'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C9</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">35</td>
+
+                  <td>'5'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">38</td>
+
+                  <td>'8'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C7</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' ' </td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester (PC in our case) and
+it replies with the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">02</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FD</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now the ECU replies with the <strong>Component #</strong>: <strong>"</strong><font color="#ffff00"><strong> <span style="color: rgb(51, 0, 153);">2.0
+MP9.0 </span></strong></font><strong>"</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0F</td>
+
+                  <td>Block length - ECU is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>Block title - ASCII text follows</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">2E</td>
+
+                  <td>'.'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">D1</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">30</td>
+
+                  <td>'0'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">4D</td>
+
+                  <td>'M'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">B2</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">50</td>
+
+                  <td>'P'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">39</td>
+
+                  <td>'9'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C6</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">2E</td>
+
+                  <td>'.'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">D1</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">30</td>
+
+                  <td>'0'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' ' </td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester and it replies with
+the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">04</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FB</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now the ECU replies with the<strong> Software Coding</strong>:
+      <strong>"</strong><font style="color: rgb(51, 0, 153);" color="#ffff00"><strong>2PZARSU3 </strong></font><strong>"</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0F</td>
+
+                  <td>Block length - ECU is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">05</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>Block title - ASCII text follows</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">50</td>
+
+                  <td>'P'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">5A</td>
+
+                  <td>'Z'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">A5</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">41</td>
+
+                  <td>'A'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">BE</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">52</td>
+
+                  <td>'R'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">53</td>
+
+                  <td>'S'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">55</td>
+
+                  <td>'U'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">AA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">33</td>
+
+                  <td>'3'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' '</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">20</td>
+
+                  <td>' ' </td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">DF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">00</td>
+
+                  <td>Cut-off signal (NULL) - when NOT Coding </td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester and it replies with
+the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">06</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F9</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now the ECU replies with the <strong>Dealer Part #</strong>: <strong>"</strong><font style="color: rgb(51, 0, 153);" color="#ffff00"><strong>0261204???</strong></font><strong>"</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0D</td>
+
+                  <td>Block length - ECU is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F2</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">07</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F8</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>Block title - ASCII text follows</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">30</td>
+
+                  <td>'0'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">36</td>
+
+                  <td>'6'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C9</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">31</td>
+
+                  <td>'1'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CE</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">30</td>
+
+                  <td>'0'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CF</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">34</td>
+
+                  <td>'4'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CB</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester and it replies with
+the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">08</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F7</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now the ECU replies with the <strong>Additional Info1</strong>:
+      <strong>"</strong><font style="color: rgb(51, 0, 153);" color="#ffff00"><strong>2227355???</strong></font><strong>"</strong></p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0D</td>
+
+                  <td>Block length - ECU is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F2</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">09</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F6</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>Block title - ASCII text follows</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">32</td>
+
+                  <td>'2'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CD</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">37</td>
+
+                  <td>'7'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C8</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">33</td>
+
+                  <td>'3'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">35</td>
+
+                  <td>'5'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">35</td>
+
+                  <td>'5'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">CA</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">3F</td>
+
+                  <td>'?'</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">C0</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester and it replies with
+the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">0A</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F5</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the ECU and it replies with the <strong>Ack
+Block</strong>. This implies that the ECU info Telegram is now
+complete, and the ECU and Tester will exchange <strong>Ack Blocks</strong>
+until comms is <strong>lost</strong>, <strong>ended</strong> or <strong>another
+command</strong> is issued from the tester.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0B</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F4</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">09</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F6</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the Tester and it replies with
+the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">0C</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F3</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">09</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F6</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>Now master mode is handed to the <strong><u>ECU</u></strong>
+and it replies with the <strong>Ack Block</strong>.</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">FC</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">0B</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F4</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">09</td>
+
+                  <td>Block title - ACK command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">F6</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">03</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>As mentioned before, this goes on ad infinitum......</p>
+
+      
+      <p>Next I will end the communication to the ECU with the <strong>END
+OUTPUT</strong> command:</p>
+
+      
+      <table border="0">
+
+        <tbody>
+
+          <tr>
+
+            <td width="100">&nbsp;</td>
+
+            <td>
+            
+            <table bordercolordark="#ffffff" bordercolorlight="#c0c0c0" border="3" bordercolor="#ffffff">
+
+              <tbody>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center"><strong>from
+PC</strong></td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center"><strong>from
+ECU</strong></td>
+
+                  <td><strong>comments</strong></td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block length - PC is master</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">FC</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">40</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block counter</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">BF</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">06</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block title - END OUTPUT command</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);">&nbsp;</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">F9</td>
+
+                  <td>&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                  <td style="color: rgb(255, 0, 0);" align="center">03</td>
+
+                  <td style="color: rgb(51, 51, 255);" align="center">&nbsp;</td>
+
+                  <td>Block end</td>
+
+                </tr>
+
+              
+              </tbody>
+            
+            </table>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p>&nbsp;</p>
+
+      
+      <p align="left"><br>
+
+      </p>
+
+      
+      <p align="center"><br>
+
+&nbsp; </p>
+
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+
+</body></html>
