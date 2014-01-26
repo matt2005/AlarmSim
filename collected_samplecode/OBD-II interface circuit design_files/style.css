@@ -1,0 +1,63 @@
+/*
+# ------------------------------------------------------------------------
+# JA Thumbnail plugin for Joomla 1.5
+# ------------------------------------------------------------------------
+# Copyright (C) 2004-2010 JoomlArt.com. All Rights Reserved.
+# @license - PHP files are GNU/GPL V2. CSS / JS are Copyrighted Commercial,
+# bound by Proprietary License of JoomlArt. For details on licensing, 
+# Please Read Terms of Use at http://www.joomlart.com/terms_of_use.html.
+# Author: JoomlArt.com
+# Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+# Redistribution, Modification or Re-licensing of this file in part of full, 
+# is bound by the License applied. 
+# ------------------------------------------------------------------------
+*/
+
+.ja-thumbnailwrap { margin-bottom: 10px; }
+
+.thumb-left { float: left; margin-right: 15px; }
+.thumb-right { float: right; margin-left: 15px; }
+
+.ja-thumbnail { position: relative; }
+
+.thumbnail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.thumbnail * { float: none !important; margin: 0 !important; }
+
+/* img navigation ---*/
+.ja-thumbnailwrap ul.nav {
+	font-size: 92%;
+	text-transform: uppercase;
+	margin: 1px 0 0;
+	padding: 0 0 2px;
+	background: #f7f7f7;
+	color: #999;
+	position: relative;
+	text-align: center;
+}
+
+.ja-thumbnailwrap ul.nav li 		{ margin: 0; padding: 1px 5px; background: none; cursor: pointer; display: inline; }
+.ja-thumbnailwrap ul.nav li.next { position: absolute; right:0; top: 0; text-align: right; }
+.ja-thumbnailwrap ul.nav li.prev	{ position: absolute; left:0; top: 0;}
+
+.ja-thumbnailwrap ul.nav li.counter {
+	margin: 0 !important;
+	float: none;	
+	text-align: center;
+	text-transform: lowercase;
+	display: inline;
+}
+
+.ja-thumbnailwrap ul.nav li.counter span {
+	background: none;
+	border: none;
+	padding: 0;
+	color: #666;
+}
+
+.ja-thumbnailwrap ul.nav li.next:hover, .ja-thumbnailwrap ul.nav li.prev:hover { color: #000; } 

@@ -1,0 +1,1563 @@
+/* @override http://forum.todo.arduino.cc/Themes/arduinoWide/style.css
+  http://id.todo.arduino.cc/css/forum-style.css
+  https://id.todo.arduino.cc//css/forum-style.css
+	https://id.arduino.cc//css/forum-style.css
+	http://arduino.cc/en/pub/skins/arduinoWide_SSO/css/forum-style.css */
+
+
+
+/* Normal, standard links. */
+a:link {
+ color: #FD6400;
+ text-decoration: none;
+
+}
+.post a:link {
+ color: #FD6400;
+ text-decoration: none;
+ border-bottom: 1px dotted #FD6400;
+
+}
+a:visited {
+ color: #FD6400;
+ text-decoration: none;
+
+}
+a:hover {
+ color: #FD6400;
+
+}
+a:hover img {
+  border-bottom:none;
+}
+/* Navigation links - for the link tree. */
+#navBreadCrumb {
+
+  color:#555;
+  margin-top: 0ex; 
+
+  padding:10px 0; 
+  font-weight: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 14px;
+  font-size: .777777778rem;
+  letter-spacing: 1px;
+  clear: right;
+}
+
+
+#navBreadCrumb span.homeIcon{
+  position:relative;
+  top:-2px;
+}
+
+#navBreadCrumb a {
+  text-decoration:none;
+  color:#555;
+  font-size: 14px;
+  font-size: .777777778rem;
+  letter-spacing: 1px;
+}
+
+
+.nav:link, .nav:visited {
+ color: #777777;
+ text-decoration: none;
+
+}
+a.nav:hover {
+ color: #FD6400;
+ text-decoration: underline;
+
+}
+/* Navigation links - for the link tree. */
+span.pathway 
+{
+  display: block;
+  height: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #212B32;
+  font-weight: normal;
+}
+span.pathway img 
+{
+  margin: 0px 10px;
+  vertical-align: middle;
+}
+div#pathway 
+{
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+/* Tables should show empty cells. */
+table {
+ empty-cells: show;
+}
+/* By default (td, body..) use verdana in black. */
+body, td, th, tr 
+{
+  color: #666666;
+  font-size: 95%;
+  line-height: 1.70;
+/*  font-size: 12px;
+*/
+line-height: 19px;
+/*      */
+}
+/* The main body of the entire forum. */
+body 
+{
+  /*  background: #fff url(images/Untitled-1_02f.gif) repeat-x;*/
+  /*background: #EFEFEF url(images/bg.gif) repeat-y 0% 0%;*/
+/*  background: #FFF;*/
+  margin: 0;
+  padding: 0;
+  /*  background: #fff url(images/nav.png) repeat-x center 149px;*/
+  color: #202020;
+  /*      padding: 0 30px 15px 30px;*/
+}
+/* Input boxes - just a bit smaller than normal so they align well. */
+#mainarea input, #mainarea textarea, #mainarea button
+{
+  color: #000;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+
+#mainarea input[type="file"]{
+	background: transparent;
+	border: 0;
+}
+
+#mainarea input[type="submit"]{
+	padding: .5em .888888889em;
+	background: #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+ 	color: #555;
+}
+
+#mainarea input[type="submit"]:hover{
+ background-color: #999;
+ color:  #ffffff;
+}
+
+#mainarea input, #mainarea button
+{
+  font-size: 90%;
+}
+textarea
+{
+  font-size: 100%;
+  color: #222;
+  
+  background: #dddddd;
+}
+/* All input elements that are checkboxes or radio buttons. */
+#mainarea input.check
+{
+}
+/* Selects are a bit smaller, because it makes them look even better 8). */
+select
+{
+  font-size: 90%;
+  font-weight: normal;
+  color: #000000;
+  background: #fff;
+  width: inherit;
+}
+/* Standard horizontal rule.. ([hr], etc.) */
+hr, .hrcolor
+{
+  height: 1px;
+  border: 0;
+  color: #666666;
+  background-color: #666666;
+}
+/* No image should have a border when linked */
+
+a img {
+ border: 0;
+}
+/* A quote, perhaps from another post. */
+.quote
+{
+  color: #000000;
+  background-color: #dddddd;
+  margin: 1px;
+  padding: 10px;
+  font-style: italic;
+  line-height: 1.4em;
+  /* Put a nice border around it. */
+  border-bottom: 1px dashed #FD6400;
+  border-right: 1px dashed #FD6400;
+  border-left: 1px dashed #FD6400;
+}
+
+/* A code block - maybe even PHP ;). */
+.code
+{
+  color: #000000;
+  background-color: #fff;
+  font-style: normal;
+
+  /*font-size: x-small;*/
+  line-height: 1.4em;
+  /* Put a nice border around it. */
+  border-bottom: 1px dashed #FD6400;
+  border-right: 1px dashed #FD6400;
+  border-left: 1px dashed #FD6400;
+  /*margin: 1px auto 1px auto;*/
+  padding: 10px;
+  /*width: 100%;*/
+  /* Don't wrap its contents, and show scrollbars. */
+  white-space: nowrap;
+  overflow: auto;
+  /* Stop after about 24 lines, and just show a scrollbar. */
+  max-height: 24em;
+  font-family: monospace;
+}
+
+/* The "Quote:" and "Code:" header parts... */
+.quoteheader, .codeheader
+{
+  /* Put a nice border around it. */
+  border-top: 1px dashed #FD6400;
+  border-right: 1px dashed #FD6400;
+  border-left: 1px dashed #FD6400;
+  background: #FFEFD7;
+  color: #111111;
+  padding: 5px;
+  text-decoration: none;
+  font-style: normal;
+  font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: x-small;
+  line-height: 1.2em;
+}
+.inputs { 
+  color: #212B32;
+  border: 2px solid #EFF7EF;
+  background: url(images/bgsearch.gif);
+  text-indent: 0.2cm;
+}
+.inputs:hover {
+  border: 2px solid  #fff;
+}
+.submit:hover {
+  background: url(images/bgsearch.gif);
+  border: 2px solid #fff;
+}
+/* Generally, those [?] icons.  This makes your cursor a help icon. */
+
+.help {
+ cursor: help;
+}
+/* /me uses this a lot. (emote, try typing /me in a post.) */
+.meaction {
+ color: red;
+}
+/* The main post box - this makes it as wide as possible. */
+.editor {
+ width: 96%;
+ font-size:1em;
+ height: 250px;
+}
+.subject {
+ font-size:1.2em;
+} 
+/* Highlighted text - such as search results. */
+.highlight {
+ background-color: yellow;
+ font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+ color: black;
+}
+/* Alternating backgrounds for posts, and several other sections of the forum. */
+.windowbg, .windowbg-l {
+  background: #f5f5f5;
+  color: #111111;
+  font: 11px;
+  
+}
+.windowbg2, .windowbg2-l {
+  background: #f5f5f5;
+  color: #111111;
+  font: 11px;
+  padding: 10px 10px 5px 10px;
+}
+.windowbg2 .boardName, .windowbg2 .boardName a, .windowbg2 .boardName a:link, .windowbg2 .boardName a:hover .windowbg2 .boardName a:active,  .windowbg2 .boardName a:visited  {
+
+  font-size: 1.05em;
+  line-height: 1.3em;
+  text-decoration:none;
+  color: #fd6400;
+  font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+.windowbg3 {
+  background: #f5f5f5;
+  color: #444444;
+  font: 11px;
+}
+.windowbg-l, .windowbg2-l {
+  border-bottom: 1px solid #fff;
+  padding: 20px 15px 20px 15px;
+}
+.windowbg, .windowbg2,  .windowbg3 {
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 10px 10px 5px 10px;
+  
+}
+/* the today container in calendar */
+.calendar_today {
+ background-color: #f6f6f6;
+}
+/* These are used primarily for titles, but also for headers (the row that says what everything in the table is.) */
+.titlebg, .titlebg-l, .titlebg-r, tr.titlebg th, tr.titlebg td, .titlebg2, tr.titlebg2 th, tr.titlebg2 td, .catbg3, tr.catbg3 td,  tr.catbg3-p td {
+ color: #656565;
+ background:  #dddddd;
+ padding:4px;
+ line-height: 14px;
+}
+.titlebg, .titlebg a:link, .titlebg a:visited {
+ color: #656565;
+ font-style: normal;
+ font-size: 12px;
+}
+.titlebg a:hover {
+ color: #353535;
+}
+.titlebg-l{
+  border-bottom: 1px solid #fff;
+}
+.titlebg-r{
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.titlebg, .catbg3, tr.catbg3 td, tr.catbg3-p td{
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+/* same as titlebg, but used where bold text is not needed */
+
+.titlebg2 a:link, .titlebg2 a:visited {
+ color: #151515;
+ font-style: normal;
+ text-decoration: underline;
+}
+.titlebg2 a:hover {
+ text-decoration: underline;
+}
+/* This is used for categories, page indexes, and several other areas in the forum.
+.catbg and .catbg2 is for boardindex, while .catbg3 is for messageindex and display headers*/
+.catbg, tr.catbg td {
+ color: #fff;
+ padding-left: 10px;
+ padding-right: 10px;
+ background: url(./images/catbg.jpg) repeat-x;
+}
+.catbg2, tr.catbg2, .catbg3 td { 
+ color: #fff;
+ padding-left: 10px;
+ padding-right: 10px;
+ background: url(./images/catbg.jpg) repeat-x;
+}
+tr.catbg3-p td {
+ color: black;
+ padding-left: 10px;
+ padding-right: 10px;
+}
+.catbg, .catbg2 {
+}
+.catbg, .catbg2 {
+ font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+ font-size: 12px;
+}
+.catbg3, tr.catbg3 td, .catbg3 a:link, .catbg3 a:visited {
+ font-size: 95%;
+ color: #fff;
+ text-decoration: none;
+}
+.catbg a:link, .catbg a:visited, .catbg2 a:link, .catbg2 a:visited {
+ color: #fff;
+ text-decoration: none;
+}
+.catbg a:hover, .catbg2 a:hover, .catbg3 a:hover {
+ text-decoration: underline;
+}
+.catbg, .catbgf, .catbgf-m, .catbgnew {
+  background-clip: border-box;
+  background-color: #00979C;
+  background-image: none;
+  border-collapse: separate;
+  border-color: white;
+  color: white;
+  display: block;
+  font-size: 1em;
+  font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  margin: 0;
+  padding: 15px 10px 15px 15px;
+}
+.catbg-postlist {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #00979C;
+  background-image: none;
+  background-origin: padding-box;
+  border-bottom-color: white;
+  border-collapse: separate;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+  color: white;
+
+  font-size: 14px;
+  font-weight: normal;
+  height: 17px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+td .catbg-p {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  background-clip: border-box;
+  background-color: #00979C;
+  background-image: none;
+  background-origin: padding-box;
+  border-bottom-color: white;
+  border-collapse: separate;
+  border-left-color: white;
+  border-right-color: white;
+  border-top-color: white;
+  color: white;
+
+  font-size: 14px;
+  font-weight: normal;
+  min-height: 17px; 
+  height:auto !important; 
+  height: 17px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  text-align: left;
+}
+.catbg, .catbgnew {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  min-height: 17px;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.catbgf-m {
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-bottom: 9px;
+  padding-top: 1px;
+  text-align: left;
+}
+
+.moderator {
+  float:right;
+}
+
+.catbgf-l {
+  background: #B3B2B2 url(./images/katsol.png) no-repeat 0 0;
+  padding-left: 8px;
+  position: relative
+}
+.catbgf-r {
+  background: #B3B2B2 url(./images/katsag.png) no-repeat 100% 0;
+  padding-right: 8px;
+  position: relative
+}
+.catbgf a:link, .catbg-p a:link
+{
+
+  color: white;
+  text-decoration: none;
+}
+.catbgf a:visited, .catbg-p a:visited
+{
+
+  color: white;
+  text-decoration: none;
+}
+.catbgf a:hover, .catbg-p a:hover
+{
+
+  color: white;
+  text-decoration: none;
+}
+
+/* This is used for tables that have a grid/border background color (such as the topic listing.) */
+.bordercolor {
+
+ padding: 0px; 
+ background: #D6D6D6; 
+}
+/* This is used on tables that should just have a border around them. */
+.tborder {
+ padding: 0px;
+ /*   border: solid 1px #f5f5f5; */
+}
+/* Default font sizes: small (8pt), normal (10pt), and large (14pt). */
+.smalltext
+{
+  font-size: .85em;
+  line-height: 1.60em;
+}
+.smalltext a {
+  color:#fc6400;
+}
+.middletext
+{
+  font-size:13px;
+}
+.middletext a {
+  color:#fc6400;
+}
+.normaltext
+{
+  font-size: small;
+}
+.largetext
+{
+  font-size: large;
+}
+/* Posts and personal messages displayed throughout the forum. */
+.post, .personalmessage 
+{
+ width: 100%;
+ overflow: auto;
+ line-height: 1.4em;
+
+ font-size:1.2em;
+}
+.postlist 
+{
+ padding:10px;
+ overflow: auto;
+ line-height: 1.4em;
+
+ font-size:1.2em;
+}
+.postSubject {
+ font-family: "TyponineSans Text 16";
+ font-style: normal;
+ font-weight: normal;
+ font-stretch: normal;
+ line-height: 1.3em;
+ font-size:1.8em;
+ padding-left: 5px;
+}
+.postReportIp {
+
+ font-size:0.9em;
+}
+.postDate {
+
+ font-size:11px;
+ margin-top:3px;
+}
+.profile {
+
+ line-height: 15px;
+ font-size:9px;
+}
+.postLastModified {
+
+ font-size:9px;
+ margin-top:3px;
+ text-decoration:italic;
+}
+
+.postIconMenu{
+	width: 240px;
+}
+.postIconMenu a {
+ 
+ font-size:13px;
+ font-weight:normal;
+}
+.postIconMenu a b {
+ position:relative;
+ top:1px;
+ font-weight: normal;
+}
+.msgBoardPostDate {
+ font-size:.7777em;
+}
+/* All the signatures used in the forum.  If your forum users use Mozilla, Opera, or Safari, you might add max-height here ;). */
+.signature 
+{
+ width: 100%;
+ overflow: auto;
+
+ font-size:11px;
+ padding-bottom: 3px;
+ line-height: 1.3em;
+}
+/* Sometimes there will be an error when you post */
+.error {
+ color: red;
+}
+/* definitions for the main tab, active means the tab reflects which page is displayed */
+.maintab_first, .mirrortab_first
+{
+  display: none;
+}
+.maintab_last, .mirrortab_last
+{
+  display: none;
+}
+.maintab_active_first, .mirrortab_active_first
+{
+  display: none;
+}
+.maintab_active_last, .mirrortab_active_last
+{
+  display: none;
+}
+
+/* how links behave in main tab. */
+.maintab_back a, .mirrortab_back a
+{
+  padding: 5px;
+  background: #e0e0e0;
+  border-bottom: solid 1px #bbb;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-size: 11px;
+  margin-left: 1px;
+}
+.maintab_active_back a, .mirrortab_active_back a
+{
+  padding: 5px;
+  background: #FD6400;
+  border-bottom: solid 1px orange;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  margin-left: 1px;
+}
+.maintab_back a:hover, .maintab_back a.chosen:hover,.maintab_back a.chosen,.mirrortab_back a:hover, .mirrortab_back a.chosen:hover,.mirrortab_back a.chosen
+{
+  color: #fff;
+  background: #FD6400;
+  border-bottom: solid 1px orange;
+}
+.maintab_active_back a:hover, .maintab_active_back a.chosen:hover,.maintab_active_back a.chosen,.mirrortab_active_back a:hover, .mirrortab_active_back a.chosen:hover,.mirrortab_active_back a.chosen
+{
+  color: #fff;
+  background: #FD6400;
+  border-bottom: solid 1px orange;
+}
+#wrapper {
+  width:960px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#headerim {
+  padding-bottom: 30px;
+  height: 27px;
+  margin:0px;
+}
+#sidebar {
+  background: #EFEFEF;
+  float: right;
+  font-size: 0.9em;
+  margin-top: -135px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 250px;
+}
+#searchform{margin:10px auto;}
+#sidebar #searchform #search{
+  width:178px;
+  background-color:white;
+  
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: 15px;
+  padding:3px;
+}
+#sidebar #searchform #submit{padding:1px;}
+
+#hello {
+ float: left;
+ padding-left:10px;
+ padding-top:10px;
+ font-size: 14px;
+ color: #6A0101;
+
+ font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+#header {
+ position: relative;
+ height: 79px; 
+ margin-top:40px;
+ margin-bottom:40px;
+ overflow: hidden;
+ width:400px;
+ /*   background: url(./images/logo.png) no-repeat; */
+ /*   width:730px;*/
+}
+#head-r {
+ padding-right: 5px;
+ background: none;
+}
+#head-l {
+ padding-left: 0px;
+ background: none;
+}
+#logo {
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ display: block;
+ width: 116px;
+ height: 79px;
+ cursor: pointer;
+ background: url(./images/logo.png) no-repeat;
+}
+#logo_tagline {
+ position: absolute;
+ top: 0px;
+ left: 116px;
+ display: block;
+ width: 140px;
+ height: 79px;
+ cursor: pointer;
+ background: url(./images/logo_forum_arduino_tagline.png) no-repeat;
+}
+#userarea {
+  /*   height: 78px; */
+  margin-bottom: 20px;
+  float: left;
+  font-size: 13px;
+  color: #222;
+  /*       */
+}
+#userarea a:link, #userarea a:visited {
+  /*   color: #333;*/
+  text-decoration: none;
+}
+#userarea a:hover {
+  /*   color: orange;*/
+  text-decoration: none;
+}
+#search {
+ float: right;
+ padding-top: 5px;  
+
+ font-size: 11px;
+ clear: both;
+}
+
+#toolbar {
+  font-size: 1.0em;
+  height: 43px;
+  background: #3A73A5 url(images/blue3_nav.gif) no-repeat;
+
+}
+
+#nav li.active_menu a {
+  height: 42px;
+
+}
+#nav {
+
+  height: 42px;
+
+}
+#nav li {
+
+}
+#nav li a {
+  color: #e1e1e1;
+  
+  font-size: 12px; 
+  font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  text-align: center;
+
+}
+#nav a:hover {
+  color: yellow;
+  text-align: center;
+  border-bottom: 2px solid red;
+}
+#nav {
+  margin: 0 0 0 15px;
+  padding-left: 15px;
+  padding-top: 3px;
+
+}
+#nav ul {
+  padding: 0;
+  margin: 0;
+}
+#nav li {
+  margin: 0;
+  padding: 0;
+  float: left; 
+  display: block;
+  height: 42px;
+  text-align: center;
+}
+#nav a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: normal;
+  text-align: center;
+  height: 10px;
+}
+#nav ul li a:hover, #nav #active a {
+  background: url(images/nava.gif) no-repeat top center;;
+  color: red;
+  height: 42px;
+  text-align: right;
+}
+#nav li a {
+  display: block;
+  float: left;
+  line-height: 42px;
+  padding: 1px 10px;
+}
+#mainarea, #mainareaFoundation {
+ float:left;
+ margin: 0;
+ padding: 0;
+/*   width: 730px;
+min-width: 730px;*/
+width: 100%;
+min-width: 100%;
+}
+
+
+
+#footer {
+  /*   background: url(images/Untitled-1_49.gif) 0 0 repeat-x;*/
+}
+#foot-r {
+/*   padding-right: 30px;
+   height: 64px;
+   background: url(images/Untitled-1_52.gif) 100% 0 no-repeat;*/
+ }
+ #foot-l {
+/*   background: url(images/Untitled-1_48.gif) 0 0 no-repeat;
+padding-left: 30px;*/
+}
+#footerarea {
+  clear: both;
+  height: 30px;
+  margin-top: 25px;
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-bottom: 60px;
+  font-size: 80%;
+  border-top: dotted 1px #999;
+  text-align:center;
+}
+#footerarea a {
+  color: #666;
+  border: none;
+  padding: 2px;
+}
+#footerarea a:hover {
+  color: #111;
+  background-color: #eee;
+}
+/* The AJAX notifier */
+#ajax_in_progress {
+ background: #002962;
+ color: white;
+ text-align: center;
+ font-family: "TyponineSans Text 16";
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+ font-size: 18pt;
+ padding: 3px;
+ width: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+}
+#sag {
+  background: #fff url(images/layout1_20.jpg) 100% 0 repeat-y;
+}
+
+#sol {
+  background: url(images/layout1_13.png) 0 0 repeat-y;
+}
+
+/*XXX this was the orange bottom in the original css*/
+#alt {
+  /*  background: url(images/altorta.png) 0 100% repeat-x;*/
+}
+
+#altsag {
+  background: url(images/altsag.png) 100% 100% no-repeat;
+}
+
+#altsol {
+  background: url(images/altsol.png) 0 100% no-repeat;
+}
+
+#ust {
+  /*  background: url(images/layout1_10.png) 0 0 repeat-x;*/
+}
+
+#ustsag {
+  /*  background: url(images/layout1_12.png) 100% 0 no-repeat;*/
+}
+
+#ustsol {
+  /*  background: url(images/layout1_09.png) 0 0 no-repeat;*/
+  padding: 20px 20px 40px 20px;
+}
+
+.forumara {
+ border-top: solid 1px #121212;
+ border-bottom: solid 1px #333333;
+
+}
+.titlebg3 {
+ color: #454545;
+ font-style: normal;
+ background: #000;
+ padding-left: 10px;
+ line-height: 10px;
+ font-size: 11px;
+}
+/* Login  */
+span.quick span.yoo-login span.login {
+ height: 21px;
+ width: 500px;
+ font-size: 100%;
+}
+
+span.quick span.yoo-login span.login .username,
+span.quick span.yoo-login span.login .password,
+span.quick span.yoo-login span.login .login-button-text,
+span.quick span.yoo-login span.login .login-button-icon,
+span.quick span.yoo-login span.login .lostpassword,
+span.quick span.yoo-login span.login .activatecode,
+span.quick span.yoo-login span.login .registration,
+span.quick span.yoo-login span.logout .greeting,
+span.quick span.yoo-login span.logout .logout-button-text,
+span.quick span.yoo-login span.logout .logout-button-icon {
+ padding-right: 4px;
+ float: left;
+ text-align: center;
+}
+
+span.quick span.yoo-login span.login .username input, span.quick span.yoo-login span.login .password input {
+ width: 75px;
+ height: 21px;
+ padding: 4px 0px 0px 30px;
+ border: none;
+ outline: none;
+ float: left;
+ color: #777;
+ font-size: 12px;
+}
+
+span.quick span.yoo-login span.login .username input {
+ background: url('images/username_bg.png') no-repeat 0 0;
+}
+
+span.quick span.yoo-login span.login .password input {
+ background: url('images/password_bg.png') no-repeat 0 0;
+}
+
+span.quick span.yoo-login span.login .username input:hover, span.quick span.yoo-login span.login .username input.sfhover {
+ background: url('images/username_bg.png') no-repeat 0 -24px;
+ color: #777;
+}
+
+span.quick span.yoo-login span.login .password input:hover, span.quick span.yoo-login span.login .password input.sfhover {
+ background: url('images/password_bg.png') no-repeat 0 -24px;
+ color: #777;
+}
+
+span.quick span.yoo-login span.login .username input:focus, span.quick span.yoo-login span.login .username input.sffocus {
+ background: url('images/username_bg.png') no-repeat 0 -24px;
+ color: #777;
+}
+
+span.quick span.yoo-login span.login .password input:focus, span.quick span.yoo-login span.login .password input.sffocus {
+ background: url('images/password_bg.png') no-repeat 0 -24px;
+ color: #777;
+}
+
+span.quick span.yoo-login span.login .login-button-text button {
+ margin-top: 0px;
+ cursor: pointer;
+}
+
+span.quick span.yoo-login span.login .login-button-icon button {
+ display: block;
+ height: 23px;
+ width: 24px;
+ padding: 0px;
+ border: medium none;
+ background: url('images/login_button_bg.png') no-repeat 0 0;
+}
+
+span.quick span.yoo-login span.login .login-button-icon button:hover, span.quick span.yoo-login span.login .login-button-icon button.sfhover  {
+ background: url('images/login_button_bg.png') no-repeat 0 -23px;
+}
+
+span.quick span.yoo-login span.login .lostpassword a, span.quick span.yoo-login span.login .activatecode a, span.quick span.yoo-login span.login .registration a {
+ display: block;
+ height: 21px;
+ width: 25px;
+}
+
+span.quick span.yoo-login span.login .lostpassword a  {
+ background: url('images/lost_password_bg.png') no-repeat 0 0px;
+}
+
+span.quick span.yoo-login span.login .activatecode a  {
+ background: url('images/activatecode.png') no-repeat 0 0px;
+}
+
+span.quick span.yoo-login span.login .registration a  {
+ background: url('images/registration_bg.png') no-repeat 0 0px;
+}
+
+
+#fancymenu {
+/*  position:absolute;
+  top:20px;
+  left:160px;*/
+  /*margin:0;*/
+  /*background: #00979C;*/
+  /*float:left;*/
+  height: 27px;
+}
+
+#fancymenu ul {
+  list-style:none;
+  margin:0;
+  padding:0px;
+  /*padding-left: 50px;*/
+}
+
+#fancymenu li {
+  float:left;
+}
+
+#fancymenu li a {
+  overflow:hidden;
+  z-index:4;
+  outline: none;
+  background: #00979c;
+  float: left;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 8px;
+  color: #FFF;
+  border-bottom: none;
+  border: 1px solid #00868c;
+  border-right: solid 1px #00757a;
+  border-left: 1px solid #4dafb7;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#fancymenu li a:active {
+  text-decoration:none;
+  background: #E34C00;
+  border: 1px solid;
+  border-left: 1px solid #3CBAA9;
+  border-right: 1px solid #D09B09;
+  line-height: 27px;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#fancymenu li a:hover {
+  text-decoration:none;
+  background: #3FADB5;
+  border: 1px solid #00757A;
+  border-left: 1px solid #4DAFB7;
+  border-right: 1px solid #00757A;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#fancymenu li.current a, #fancymenu li a.selflink {
+  text-decoration:none;
+  background: #00757A;
+  border: 1px solid #00757A;
+  border-left: 1px solid #00757A;
+  border-right: 1px solid #4DAFB7;
+  line-height: 27px;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#fancymenu li.background {
+  /*background:url(images/menu-r.png) 100% 0 no-repeat;*/
+  position:absolute;
+  visibility:hidden;
+  z-index:2;
+}
+
+#fancymenu li.background .left {
+/*background:url(images/menu-l.png) 0 0 no-repeat;
+height:48px;*/
+margin-right:5px;
+}
+
+#navbar_external {
+  float: right;
+  height: 27px;
+}
+
+#navbar_external a {
+  border: 1px solid #00868c;
+  outline: none;
+  padding: 0 5px;
+  display: inline-block;
+  color: #FFF;
+  height: 25px;
+  line-height: 25px;
+  border-right: solid 1px #00757a;
+  border-left: 1px solid #4dafb7;
+  text-decoration:none;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#navbar_external a:hover {
+  padding: 0 5px;
+  display: inline-block;
+  border: 0;
+  color: #FFF;
+  height: 25px;
+  line-height: 25px;
+  background: #3fadb5;
+  border-right: solid 1px #00757a;
+  border-left: 1px solid #4dafb7;
+  text-decoration:none;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+#navbar_external a:active {
+  height: 25px;
+  line-height: 25px;
+  background: #e34c00;
+  border: 1px solid #dfa70a;
+  border-left: 1px solid #3cbaa9;
+  border-right: 1px solid #d09b09;
+  text-decoration:none;
+  clear: both;
+
+  font-size: 0.8em;
+}
+
+.copyright {
+}
+
+.copyright br {
+  /*  display:none; */
+}
+
+.msgMenu {
+  float:right; 
+  /*  padding-right: 1ex;*/
+}
+
+.nav {
+  font-size:12px;
+  padding: 10px 0;
+}
+
+.markReadMenu {
+  float:right;
+}
+
+.categoryDownMenu {
+  padding-left:5px;
+}
+
+.topicMenu {
+  margin-top:25px;
+  margin-left:0px;
+}
+
+.topicMenu td.maintab_back a
+{
+  margin-left:0px;
+  margin-right:1px;
+}
+
+#legendBox {
+  margin-top:15px;
+  padding: 10px;
+}
+
+#legendBoard {
+  position:relative;
+  top:4px;
+}
+
+#helpmain {
+  font-size:0.8em;
+}
+
+#collapse_button {
+  float:right;
+}
+
+.profile {
+  font-size:12px;
+}
+.profile .memberName {
+  font-size:16px;
+  vertical-align:bottom;
+}
+.profile .memberGroup {
+  font-weight:bold;
+  font-size:11px;
+}
+.profile .memberPostGroup, .profile .memberPosts , .profile .memberKarma {
+  margin-top:10px;
+}
+.profile .karmaButtons img {
+  vertical-align:bottom;
+}
+.profile .karmaButtons #plus {
+  color:green;
+}
+.profile .karmaButtons #minus {
+  color:red;
+}
+.profile .memberAvatar {
+  margin-bottom:20px;
+}
+.profile .memberIM, .profile .memberIcons, .profile .memberIcons .memberWeb, .profile .memberIcons .memberIM, .profile .memberIcons .memberViewProfile, .profile .memberIcons .memberPM, .profile .memberIcons .memberEmail   {
+  display:inline;
+}
+#profileTable {
+  margin-left:20px;
+  width:90%;
+}
+#searchTable {
+  width:90%;
+}
+#pageCount {
+  float:left;
+}
+#delButton {
+  float:right;
+  margin-right:0px;
+  top:0px;
+}
+.genderIcon {
+  display:inline;
+  top:8px;
+  margin-left:10px;
+}
+.resizeTextBar {
+}
+
+table{
+  border: inherit;
+  background: inherit;
+  margin: inherit;
+}
+
+table table  {
+  border: none;
+  background: inherit!important;
+  margin: inherit;
+  
+}
+
+table small{
+  font-size: 12px;
+}
+
+#userPosts ul.inline-list{
+font-size: 13px;
+color: #FD6400;
+}
+
+#userPosts ul.inline-list li + li{
+border-left: 1px solid;
+padding-left: 10px;
+}
+
+#userPosts{
+margin-top: 0;
+margin-bottom: 10px;
+height: 35px;
+border-bottom: 1px solid #eee;
+}
+
+
+
+
+#userPosts ul.inline-list{
+font-size: 13px;
+color: #FD6400;
+}
+
+#userPosts ul.inline-list li + li{
+border-left: 1px solid;
+padding-left: 10px;
+}
+
+
+label{
+	display: inline;
+}
+
+
+table ul{
+ padding: 10px!important;
+ margin: 10px!important;
+}
+
+ul.button-group li a.small.button {
+ font-family: "TyponineSans Monospace Regular 4", "TyponineSans Monospace Light 5";
+ font-weight: normal;
+ font-stretch: normal;
+ text-transform: uppercase;
+ font-size: 12px;
+ font-size: .666666667rem;
+}
+
+#forumActions ul.button-group, #forumActions{
+	margin: 0!important;
+	padding: 0!important;
+}
+
+#forumActions ul.button-group li a.small.button{
+ border: 1px solid #dddddd;
+ background-color: #f5f5f5;
+ color: #555;
+ margin: 0;
+ text-decoration: none;
+ padding-left: .888888889em;
+ padding-right: .888888889em;
+	margin-bottom: 1px;
+}
+
+#forumActions ul.button-group li a.small.button:hover{
+ background-color: #999;
+ color:  #ffffff;
+}
+
+/*	================= 	advancedSearch 	================*/
+
+#advancedSearch .header{
+	background-color: #00979C;
+	padding: 20px;
+}
+
+
+#advancedSearch .body{
+  border: 1px solid #00979C;
+  margin-bottom: 30px;
+  padding: 30px 40px 30px 0;
+}
+
+#advancedSearch .header h4{
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+#advancedSearch .searchFor{
+	margin-bottom: 20px;
+}
+
+#advancedSearch .messageDays{
+	margin-top: 20px;
+}
+
+#advancedSearch h5, #advancedSearch .messageDays span{
+	font-family: "TyponineSans Monospace Regular 4", "TyponineSans Monospace Light 5";
+	font-weight: normal;	
+}
+
+#advancedSearch .messageDays span{
+	font-style: italic;
+	background: #fafafa;
+	color: #777;
+	height: 34px;
+	font-size: .777777778em;
+}
+
+#advancedSearch div.row.messageDays div.small-5.columns {
+	margin-left: -16px;
+}
+
+#advancedSearch div.row.messageDays span{
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+#advancedSearch div.row.messageDays span.first{
+	border-left: 1px solid #ccc;
+}
+
+#advancedSearch div.row.messageDays span.last{
+	border-right: 1px solid #ccc;
+	margin-left: -1px;
+}
+
+#advancedSearch fieldset{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#advancedSearch .panel{
+	margin-top: 20px;
+}
+
+
+
+#advancedSearch h5{
+	font-size: 1em;
+}
+
+#advancedSearch .right.inline{
+	font-family: "TyponineSans Monospace Regular 4", "TyponineSans Monospace Light 5";
+	line-height: 1.2em;
+	font-size: .8333em;	
+	font-weight: normal;
+	font-style: italic;
+	margin-bottom: 4px;
+	color: #777;
+}
+
+	#advancedSearch input[type="text"]{
+		background-color: white;
+		  font-family: inherit;
+		  border: 1px solid #cccccc;
+		/*  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+		  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);*/
+		  color: rgba(0, 0, 0, 0.75);
+		  display: block;
+		  font-size: 0.94444em;
+		  margin: 0 0 1em 0;
+		  padding: 0.5em;
+		  height: 2.1225em;
+		  width: 100%;
+		  -moz-box-sizing: border-box;
+		  -webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+		  -webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+		  -moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
+		  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+	}
+
+	#searchBoardsExpand{
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+		
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid #ccc;
+	}
+	
+	#searchBoardsExpand tbody tr td a {
+		padding-top: 10px;
+		padding-bottom: 5px;
+		display: inline-block;
+		block;
+	}
+
+
+#advancedSearch .button:focus, #advancedSearch .button, {
+  text-transform: uppercase;
+  background-color: #E9F5F5;
+  color:  #00797d;
+  border: 1px solid #99D5D7;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  display: inline-block;
+  padding-top: 0.75em;
+  padding-right: 1.5em;
+  padding-bottom: 0.8125em;
+  padding-left: 1.5em;
+  font-size: 1em;
+}
+
+#mainarea form input[type="button"]{
+	padding: .3em .8em;
+	text-transform: uppercase;
+}
+
+#advancedSearch .button:hover{
+	background-color: #00979C;
+	color:  #ffffff;
+}

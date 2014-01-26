@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb"><head>
+	<script src="OBD-II%20interface%20circuit%20design_files/analytics.js" async=""></script><script type="text/javascript">
+var siteurl='/';
+var tmplurl='/templates/ja_t3_blank/';
+var isRTL = false;
+</script>
+  <!-- base href="http://www.kitarm.com/news/329-obd-ii-interface-circuit-design.html" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="OBDII interface  VPW PWM CAN Schematic circuit adapter elm327  cp2102 LP1295 MCP2551 LP2951">
+  <meta name="title" content="OBD-II interface circuit design">
+  <meta name="author" content="Administrator">
+  <meta name="description" content="OBDII interface  VPW PWM CAN Schematic circuit adapter elm327  cp2102 LP1295 MCP2551 LP2951">
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management">
+  <title>OBD-II interface circuit design</title>
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/system.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/general.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/style.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/ja_tabs.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/addons.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/layout.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/template_002.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/usertools.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/css3.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/mega.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/template.css" type="text/css">
+  <link rel="stylesheet" href="OBD-II%20interface%20circuit%20design_files/mega_002.css" type="text/css">
+  <script type="text/javascript" src="OBD-II%20interface%20circuit%20design_files/mootools.js"></script>
+  <script type="text/javascript" src="OBD-II%20interface%20circuit%20design_files/core.js"></script>
+  <script type="text/javascript" src="OBD-II%20interface%20circuit%20design_files/mega.js"></script>
+  <script type="text/javascript" src="OBD-II%20interface%20circuit%20design_files/caption.js"></script>
+  <script type="text/javascript" src="OBD-II%20interface%20circuit%20design_files/ja_tabs.js"></script>
+
+
+
+
+<link href="http://www.kitarm.com/plugins/system/jat3/base-themes/default/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		
+	<style type="text/css">
+/*dynamic css*/
+
+	body.bd .main {width: 950;}
+	body.bd #ja-wrapper {min-width: 950;}
+</style><link href="OBD-II%20interface%20circuit%20design_files/notification.css" type="text/css" rel="stylesheet"><script src="OBD-II%20interface%20circuit%20design_files/notification.js" type="text/javascript"></script><script type="text/javascript">
+if(typeof(freecauseNotification) === "undefined") {
+	var freecauseNotification = {};
+	function defineFreecauseNotification() {
+		freecauseNotification = FREECAUSE.notification;
+	}
+	function checkFCNExists() {
+		if(window.FREECAUSE === undefined || window.FREECAUSE.notification === undefined) window.setTimeout("checkFCNExists()", 100); else defineFreecauseNotification();
+	}
+	checkFCNExists();
+}</script></head>
+
+<body id="bd" class="bd fs3 com_content">
+<div id="ja-wrapper">
+	<a name="Top" id="Top"></a>
+	
+	<div id="ja-header" class="wrap ">		
+				
+			
+					<div class="main">
+		
+				
+		 
+			<div class="main-inner1 clearfix">
+		
+		<h1 class="logo">
+		<a href="http://www.kitarm.com/index.php" title="kitarm"><span>kitarm</span></a>
+	</h1>
+		
+		
+			<div id="ja-top" class="clearfix">
+			
+<form action="index.php" method="post" class="search">
+	<label for="mod_search_searchword">
+		Search	</label>
+	<input name="searchword" id="mod_search_searchword" maxlength="20" class="inputbox" size="25" value="Type keywords search" onblur="if(this.value=='') this.value='Type keywords search';" onfocus="if(this.value=='Type keywords search') this.value='';" type="text">	<input name="option" value="com_search" type="hidden">
+	<input name="task" value="search" type="hidden">
+</form>
+<p>
+
+<a href="skype:kitarm2013?call" title="serviceshardware designprototype"><img alt="electronics design services Tablet product design serviceshardware designprototype manufacturingpcb design" src="OBD-II%20interface%20circuit%20design_files/skype.png"> </a> 
+
+ 
+
+<a target="blank" href="http://wpa.qq.com/msgrd?V=1&amp;Uin=737464767&amp;Site=www.kitarm.com&amp;Menu=yes" title="manufacturingpcb design"><img alt="electronics design services Tablet product design serviceshardware designprototype manufacturingpcb design" src="OBD-II%20interface%20circuit%20design_files/qq.png"> </a> 
+
+	<a href="https://twitter.com/kitarm2013" title="electronics design services Tablet product design serviceshardware designprototype manufacturingpcb design"><img alt="electronics design services Tablet product design serviceshardware designprototype manufacturingpcb design" src="OBD-II%20interface%20circuit%20design_files/twitter.jpg"> </a> 
+<a href="http://www.youtube.com/user/blogmerimobiles" title="PC|UMPC|MID|DVR|GPS tracker|ARM|arm9|arm11|DSP|PowerPC|Intel atom">
+ <img alt="PC|UMPC|MID|DVR|GPS tracker|ARM|arm9|arm11|DSP|PowerPC|Intel atom" src="OBD-II%20interface%20circuit%20design_files/youtube.jpg"> </a>
+
+<a href="https://zh-cn.facebook.com/Merimobiles" title="Electronic circuit design, electronic product design, printed circuit board design"><img alt="Electronic circuit design, electronic product design, printed circuit board design" src="OBD-II%20interface%20circuit%20design_files/facebook.png"></a>
+
+
+<a href="http://www.kitarm.com/hot-topics.feed?type=rss" title="Electronic circuit design, electronic product design, printed circuit board design"><img alt="Electronic circuit design, electronic product design, printed circuit board design" src="OBD-II%20interface%20circuit%20design_files/rss.jpg"></a>
+
+</p>
+		</div>
+	
+			 
+			</div>
+		 
+		
+				
+					</div>
+		
+			
+				</div>				<div id="ja-mainnav" class="wrap ">		
+				
+			
+					<div class="main">
+		
+				
+		 
+			<div class="main-inner1 clearfix">
+		<div class="ja-megamenu clearfix" id="ja-megamenu">
+<ul class="megamenu level0"><li class="mega first"><a href="http://www.kitarm.com/" class="mega first" id="menu1" title="Home"><span class="menu-title">Home</span></a></li><li class="mega haschild"><a href="http://www.kitarm.com/product.html" class="mega haschild" id="menu54" title="Product"><span class="menu-title">Product</span></a><div style="width: 412px; height: 114px; left: auto; overflow: hidden; display: none;" class="childcontent cols2 ">
+<div style="width: 402px; margin-top: -134px;" class="childcontent-inner-wrap">
+<div class="childcontent-inner clearfix" style="width: 400px;"><div class="megacol column1 first" style="width: 200px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.kitarm.com/product/tablet-pc.html" class="mega first" id="menu56" title="Tablet PC"><span class="menu-title">Tablet PC</span></a></li><li class="mega"><a href="http://www.kitarm.com/product/mid.html" class="mega" id="menu57" title="MID"><span class="menu-title">MID</span></a></li><li class="mega"><a href="http://www.kitarm.com/product/ebook.html" class="mega" id="menu70" title="EBook"><span class="menu-title">EBook</span></a></li></ul></div><div class="megacol column2 last" style="width: 200px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.kitarm.com/product/gps-tracker.html" class="mega first" id="menu76" title="GPS tracker"><span class="menu-title">GPS tracker</span></a></li><li class="mega"><a href="http://www.kitarm.com/product/evms-a-prototypes.html" class="mega" id="menu91" title="EVMs &amp; Prototypes"><span class="menu-title">EVMs &amp; Prototypes</span></a></li><li class="mega"><a href="http://www.kitarm.com/product/pcba-a-skd-kits.html" class="mega" id="menu109" title="PCBA &amp; SKD Kits"><span class="menu-title">PCBA &amp; SKD Kits</span></a></li></ul></div></div>
+</div></div></li><li class="mega active"><a href="http://www.kitarm.com/news.html" class="mega active" id="menu78" title="News"><span class="menu-title">News</span></a></li><li class="mega"><a href="http://www.kitarm.com/hot-topics.html" class="mega" id="menu121" title="Hot Topics"><span class="menu-title">Hot Topics</span></a></li><li class="mega"><a href="http://www.kitarm.com/contact-us.html" class="mega" id="menu88" title="Contact Us"><span class="menu-title">Contact Us</span></a></li><li class="mega"><a href="http://www.kitarm.com/downloads.html" class="mega" id="menu156" title="Downloads"><span class="menu-title">Downloads</span></a></li><li class="mega"><a href="http://www.kitarm.com/blog/" class="mega" id="menu160" title="Blog"><span class="menu-title">Blog</span></a></li><li class="mega last"><a href="http://www.kitarm.com/forum/" class="mega last" id="menu161" title="Forum"><span class="menu-title">Forum</span></a></li></ul>
+</div>			<script type="text/javascript">
+			var megamenu = new jaMegaMenuMoo ('ja-megamenu', {
+				'bgopacity': 0, 
+				'delayHide': 300, 
+				'slide': 1, 
+				'fading': 0,
+				'direction':'down',
+				'action':'mouseover',
+				'tips': false,
+				'duration': 300,
+				'hidestyle': 'fastwhenshow'
+			});			
+			</script>
+			<!-- jdoc:include type="menu" level="0" / -->
+
+<ul class="no-display">
+    <li><a href="#ja-content" title="Skip to content">Skip to content</a></li>
+</ul>		 
+			</div>
+		 
+		
+				
+					</div>
+		
+			
+				</div>		
+				
+	<!-- MAIN CONTAINER -->
+	<div id="ja-container" class="wrap ja-r1">
+					
+			
+					<div class="main clearfix">
+		
+				
+				<div id="ja-mainbody" style="width:80%">
+			<!-- CONTENT -->
+			<div id="ja-main" style="width:100%">
+			<div class="inner clearfix">
+				
+				
+				
+				<div id="ja-contentwrap" class="clearfix ">
+					<div id="ja-content" class="column" style="width:100%">
+						<div id="ja-current-content" class="column" style="width:100%">
+														
+														<div id="ja-content-main" class="ja-content-main clearfix">
+								
+<div class="item-page">
+
+
+<h1 class="contentheading clearfix">
+			OBD-II interface circuit design	</h1>
+
+
+
+
+<div class="article-content">
+<p>&nbsp;</p>
+<p>atmega644 + elm327 + mcp2551 chip sets</p>
+<p><img alt="obdii_interface_circuit_-1" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-1.jpg" width="384" height="317"></p>
+<p><img alt="obdii_interface_circuit_-2" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-2.jpg" width="473" height="152"></p>
+<p>elm327 demonstration board diagram</p>
+<p><img alt="obdii_interface_circuit_-4" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-4.jpg" width="520" height="216"></p>
+<p>elm327 demonstration board circuit schematic</p>
+<p>&nbsp;</p>
+<p><img alt="obdii_interface_circuit_-3" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-3.jpg" width="504" height="656"></p>
+<p>elm327 + cp2102 as usb convert to uart</p>
+<p><img alt="obdii_interface_circuit_-5" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-5.jpg" width="532" height="488"></p>
+<p>LP2951</p>
+<p><img alt="obdii_interface_circuit_-6" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-6.jpg" width="561" height="677"></p>
+<p>Schematic circuit of OBDII interface adapter</p>
+<p><img alt="obdii_interface_circuit_-7" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-7.jpg" width="658" height="565"></p>
+<p>The vehicle on-board diagnostics system (OBDII) provides a serial 
+diagnostic link for communication with scan tools. There are 4 
+diagnostic interfaces: ISO 9141-2, KWP 2000, SAE J1850 and ISO 15765. A 
+PC-based scan tool consists of an interface adapter and specialized 
+diagnostic software. This paper presents the implementation of a smart 
+OBDII interface adapter. The adapter is build of a protocol converter, 
+interface transceivers and protective devices. The full schematic 
+circuit of the adapter is presented and explained in detail. The 
+protocol converter (MCU) processes and transfers diagnostic messages. It
+ communicates with PC via serial port using ASCII messages. The software
+ for the protocol converter has been developed in C language. A state 
+diagram of software is presented. The functions performed by the 
+software for different interfaces are explained in detail. The adapter 
+is successfully verified in practice.</p>
+<p>1. INTRODUCTION<br>The OBDII (On-Board Diagnostics II) system 
+represents the capability of vehicle electronic systems to diagnose 
+itself and its components. The output from the OBD system is presented 
+to the driver as a warning light with an engine symbol. When a fault has
+ been detected, a diagnostic trouble code is set and stored in the 
+computer memory. OBD provides a serial diagnostic link for communication
+ with external test equipment (scan tool). One of the following 
+communication protocols is used [2, 5]:<br>1) ISO 9141-2 – baud rate 10.4 kbit/s;<br>2) ISO 14230 (KWP 2000 – Keyword protocol 2000) – the same baud rate;<br>3) SAE J1850 (Class B data communication interface) – rates 10.4/41.6 kbit/s;<br>4) ISO 15765 (CAN – Controller area network) – baud rates 250/500 kbit/s.<br>The
+ ISO 9141-2 and KWP 2000 interfaces are the most common diagnostic 
+interfaces in Europe (KWP 2000 is newer). They share the same physical 
+interface, called K-Line interface. SAE J1850 is mostly used in the 
+American vehicles. It has two alternative physical layers: VPW and PWM. 
+CAN is mainly used in new cars with model year after 2003.<br>The scan 
+tool should obtain and display diagnostic information stored [5]. A 
+PC-based scan tool consists of an interface adapter and specialized 
+diagnostic software. The interface adapter provides a connection between
+ the vehicle and the PC. The connection to PC is most often via RS 232 
+interface. One ore more diagnostic interfaces can be supported. In case 
+only K-Line interface is used, the adapter can be implemented as a 
+simple electrical converter to RS 232. When CAN or J1850</p>
+<p>OBDII interface for VPW, PWM,&nbsp; and ISO 9141-2 Vehicles</p>
+<p>interfaces are used, the adapter should contain a protocol converter, implemented by means of MCU.<br>The
+ protocol converter processes and transfers diagnostic messages 
+according to the data link layer of the respective protocol. If the 
+protocol converter is utilized for processing of K-Line messages, this 
+leads to improved message timing and decreased PC load as well [1, 4].<br>This
+ paper presents a method for implementation of a smart OBD interface 
+adapter for connection between all 4 diagnostic interfaces and the PC 
+serial port. The adapter is called smart because of the presence of MCU.
+ The adapter is build of a protocol converter (MCU), interface 
+transceivers and protective devices (Fig. 1). This method of 
+implementation uses an intermediate conversion of the electrical levels 
+to TTL level that is necessary for connection of MCU. The protective 
+devices suppress the overvoltages, coming from the vehicle lines. The 
+interface transceivers are two-way converters of electrical levels 
+between TTL and the respective interface signals.</p>
+<p>2. SCHEMATIC CIRCUIT OF INTERFACE ADAPTER<br>The schematic circuit of
+ the adapter shall conform to the requirements for the physical layer of
+ diagnostic interfaces and RS 232.<br>The full schematic circuit of the 
+interface adapter is presented at Fig. 2. The signals coming from the 
+vehicle diagnostic connector are fed to connector J1 via a standard 
+diagnostic cable. The protective devices of the circuit are D1 (TVS) and
+ D3-D10 (voltage delimiters). The adapter is powered by the vehicle 
+battery. A power supply +5 V (U1) necessary for MCU, RS 232- and CAN 
+transceivers is provided.<br>The K-Line transceiver is implemented by an
+ open collector comparator (U3A) and transistor inverter stages (Q1/Q2).
+ The RxK signal is for receiving information from K-line. The TxLTxK/ 
+signals are for transmitting information to K/L lines. The comparator 
+has a reference voltage of +5V and is used for reading information from K
+ line. The transistors are used for sending information on K/L lines.<br>At
+ this stage of project the J1850 transceiver is not implemented. It is a
+ subject of future work. Nevertheless five J1850 communication signals 
+are provided: for VPW physical layer – TxVPW, RxVPW; for PWM physical 
+layer – RxPWM, )(/)(−+TxPWMTxPWM.<br>The CAN transceiver U2 connects 
+with 2 signals to the protocol converter U5: TxCAN and RxCAN. U2 has an 
+AC termination circuit (R2-C4/R3-C5) according to ISO 15765-4 
+requirements. U2 is enabled by the signal EN_CAN [3].</p>
+<p><img alt="obdii_interface_circuit_-8" src="OBD-II%20interface%20circuit%20design_files/obdii_interface_circuit_-8.jpg" width="502" height="571"></p>
+<p>ELECTRICAL and PHYSICAL CHARACTERISTICS:<br>This device is a CMOS microcontroller produced by Microchip Technologies. You can obtain detailed<br>specifications for the chip from Microchip data books, or on the Microchip website, so this section will only<br>provide a brief summary. It is available in several package designs and temperature ratings. The baseline<br>BR16F84-1.07 chip is a microchip 16F84A-20/P part, which is a commercial temperature range plastic 18 pin<br>DIP rated at 20 MHz. The device can be special ordered if other package designs, temp ratings, etc are<br>desirable.<br>TYPICAL APPLICATION CIRCUIT:<br>The typical application is a simple automotive scan tool using a PC or laptop as the host machine. The<br>interface to the PC is a serial link running at 19200 baud. Only 3 wires are needed, as no handshaking<br>signals are used. The serial output from the interface circuit is a 5 volt signal, which works well with most<br>PC's and laptops. The serial input is clipped and current limited, so it is capable of accepting almost any<br>signal voltage. The interface to the vehicle OBD bus is accomplished with a few external components and an<br>LM339 comparator chip. The connection to the vehicle uses 6 wires, assuming all three OBD protocols are to<br>be implemented. Operating voltage for the chip and associated circuits is small, and is derived from the<br>vehicle's 12V system on pin 16 of the OBD connector.<br>Refer to the schematic of a typical application. This design uses readily available components.<br>APPLICATION HINTS<br>(1) The cable to vehicle can be simple unshielded wires. This cable should be kept as short as possible, and<br>definitely no longer than 4 feet, especially for PWM operation. Somewhat longer cables could be used if the<br>circuit's termination resistors are replaced with lower values.<br>(2) The cable to Computer serial port can also be unshielded. The application circuit has been tested with<br>unshielded cables up to 30 Ft., but specific implementations may vary, so you may want to experiment if you<br>are attempting long runs. For every long runs, you might also wish to use an RS 232 transceiver chip in your<br>design.<br>(3) Circuit layout is not critical. The circuit has been tested on both hard wired perfboard prototypes and<br>plugboard breadboards. However, if your layout is very sloppy, you may want to add additional bypass<br>capacitors.<br>(4) Free software to utilize the application circuit is available for download. The program will run under DOS,<br>so it can be used on older computers as well as newer machines running windows. It is small enough that it<br>will fit on a DOS boot floppy, so you can still run it if your main operating system is not DOS compatible. The<br>computer need not even have a hard drive.</p>
+
+
+<div class="getaq">
+<a href="http://www.kitarm.com/component/chronoforms/?chronoform=getaqo">
+Get A Quote
+</a>
+</div>
+
+</div>
+
+
+
+</div>
+							</div>
+							
+													</div>
+						
+											</div>
+
+										
+				</div>
+
+							</div>
+			</div>
+			<!-- //CONTENT -->
+						
+		</div>
+				<!-- RIGHT COLUMN--> 
+		<div id="ja-right" class="column sidebar" style="width:20%">
+
+			
+						<div class="ja-colswrap clearfix ja-r1">
+								<div id="ja-right1" class="ja-col  column" style="width:100%">
+						<div class="ja-moduletable moduletable  clearfix" id="Mod103">
+						<div class="ja-box-ct clearfix">
+		<div class="rrafp">
+	<a href="http://www.kitarm.com/technology-consulting.html" target="_blank">
+	<img alt="Free Engineer Service" src="OBD-II%20interface%20circuit%20design_files/Free%2520Engineer%2520Service.jpg" style="float: left;"></a>
+	<a href="http://www.kitarm.com/pcb-design-service.html" target="_blank"> 
+	<img alt="Design Service" src="OBD-II%20interface%20circuit%20design_files/Design%2520Service.jpg" style="float: left;"></a> <a href="http://www.kitarm.com/odm-oem-ems.html" target="_blank"> 
+	<img src="OBD-II%20interface%20circuit%20design_files/Manufacture%2520Service.jpg" style="float: left;" alt="Manufacture Service" border="0"></a>
+	<a href="http://www.kitarm.com/" target="_blank"> 
+	<img alt="Online Sample" src="OBD-II%20interface%20circuit%20design_files/Online%2520Sample.jpg" style="float: left;"></a></div>
+
+
+
+
+<!--
+<p><a href="/technology-consulting.html" target="_blank"><img src="/images/stories/a1.jpg" alt="" border="0" /></a><br /><a href="/pcb-design-service.html" target="_blank"><img src="/images/stories/a2.jpg" alt="" border="0" /></a><br /><a href="/odm-oem-ems.html" target="_blank"><img src="/images/stories/a3.jpg" alt="" border="0" /></a><br /><a href="/kopad-tablet-pc-shopping.html"><img src="/images/stories/a4.jpg" alt="" border="0" /></a><br /><br /><br /></p>
+-->		</div>
+    </div>
+						
+				</div>
+				
+							</div>
+								</div>
+		<!-- //RIGHT COLUMN--> 
+					 
+		
+				
+					</div>
+		
+			
+					</div>
+		<!-- //MAIN CONTAINER -->
+
+					<div id="ja-botsl" class="wrap ">		
+				
+			
+					<div class="main">
+		
+				
+		 
+			<div class="main-inner1 clearfix">
+		<!-- SPOTLIGHT -->
+<div class="ja-box column ja-box-left" style="width: 33.3%; min-height: 44px;">
+		<div class="ja-moduletable moduletable  clearfix" id="Mod29">
+						<div class="ja-box-ct clearfix">
+		<ul class="menu-nav"><li class="item159"><a href="http://www.kitarm.com/login.html"><span>Login</span></a></li><li class="item28"><a href="http://www.kitarm.com/about-us.html"><span>About us</span></a></li><li class="item89"><a href="http://www.kitarm.com/contact.html"><span>Contact</span></a></li><li class="item29"><a href="http://www.kitarm.com/sitemap.html"><span>Sitemap</span></a></li></ul>		</div>
+    </div>
+	
+</div>
+<div class="ja-box column ja-box-center" style="width: 33.3%; min-height: 44px;">
+		<div class="ja-moduletable moduletable  clearfix" id="Mod149">
+						<div class="ja-box-ct clearfix">
+		<p>
+	粤ICP备05041282号.</p>		</div>
+    </div>
+		<div class="ja-moduletable moduletable  clearfix" id="Mod152">
+						<div class="ja-box-ct clearfix">
+		<style type="text/css">
+.getaq {
+display:none;
+}</style>		</div>
+    </div>
+	
+</div>
+<div class="ja-box column ja-box-right" style="width: 33.3%; min-height: 44px;">
+		<div class="ja-moduletable moduletable  clearfix" id="Mod150">
+						<div class="ja-box-ct clearfix">
+		<p>
+	Copyright © 2009-2014 KITARM</p>		</div>
+    </div>
+	
+</div>
+<!-- SPOTLIGHT -->
+
+<script type="text/javascript">
+	window.addEvent('load', function (){ equalHeight ('#ja-botsl .ja-box') });
+</script>		 
+			</div>
+		 
+		
+				
+					</div>
+		
+			
+				</div>		
+								<div id="ja-navhelper" class="wrap ">		
+				
+			
+					<div class="main">
+		
+				
+		 
+			<div class="main-inner1 clearfix">
+		<div class="ja-breadcrums">
+	<strong>You are here:</strong> 
+</div>
+
+<ul class="ja-links">
+		<li class="top"><a href="#Top" title="Back to Top">Top</a></li>
+</ul>
+
+<ul class="no-display">
+	<li><a href="#ja-content" title="Skip to content">Skip to content</a></li>
+</ul>		 
+			</div>
+		 
+		
+				
+					</div>
+		
+			
+				</div>		
+				<div id="ja-footer" class="wrap ">		
+				
+			
+					<div class="main clearfix">
+		
+				
+		    
+		<div class="ja-footnav">
+		<div class="tags">
+	<a href="http://www.kitarm.com/" title="MID">MID</a>, <a href="http://www.kitarm.com/" title="MTK 3G GPS BT">MTK 3G GPS BT</a>, <a href="http://www.kitarm.com/" title="cortex A7">cortex A7</a>, <a href="http://www.kitarm.com/" title="cortex A9">cortex A9</a>, <a href="http://www.kitarm.com/" title="cortex A12">cortex A12</a>, <a href="http://www.kitarm.com/" title="平板电脑">平板电脑</a>, <a href="http://www.kitarm.com/" title="平板">平板</a>, <a href="http://www.kitarm.com/" title="掌上电脑">掌上电脑</a>, <a href="http://www.kitarm.com/" title="gps导航平板">gps导航平板</a>, <a href="http://www.kitarm.com/" title="可打电话的平板电脑">可打电话的平板电脑</a>, <a href="http://www.kitarm.com/" title="3G平板电脑">3G平板电脑</a>, <a href="http://www.kitarm.com/" title="Samsung">Samsung</a>, <a href="http://www.kitarm.com/" title="Qualcomm">Qualcomm</a>, <a href="http://www.kitarm.com/" title="Murata">Murata</a>, <a href="http://www.kitarm.com/" title="Dialog">Dialog</a>, <a href="http://www.kitarm.com/" title="Texas Instruments">Texas Instruments</a>, <a href="http://www.kitarm.com/" title="STMicroelectronics">STMicroelectronics</a>, <a href="http://www.kitarm.com/" title="Cirrus Logic">Cirrus Logic</a>, <a href="http://www.kitarm.com/" title="Avago">Avago</a>, <a href="http://www.kitarm.com/" title="Skyworks">Skyworks</a>, <a href="http://www.kitarm.com/" title="NXP and AKM">NXP and AKM</a>
+<br>
+<p align="center">Technical Support <a href="http://www.w8web.com/" title="joomla web design" target="_blank">http://www.w8web.com</a></p></div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45576940-1', 'kitarm.com');
+  ga('send', 'pageview');
+
+</script>
+	</div>
+			 
+		
+				
+					</div>
+		
+			
+				</div>
+</div>
+
+
+
+
+
+</body></html>
