@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Reading/writing/cloning your immobilizer: A beginners guide.">
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum">
+	<script src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ga.js" async="" type="text/javascript"></script><script language="JavaScript" type="text/javascript" src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://nefariousmotorsports.com/forum/Themes/nefmoto";
+		var smf_images_url = "http://nefariousmotorsports.com/forum/Themes/nefmoto/images";
+		var smf_scripturl = "http://nefariousmotorsports.com/forum/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+	// ]]></script>
+	<title>Reading/writing/cloning your immobilizer: A beginners guide.</title>
+	<link rel="stylesheet" type="text/css" href="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/style.css">
+	<link rel="stylesheet" type="text/css" href="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/print.css" media="print">
+	<link rel="help" href="http://nefariousmotorsports.com/forum/index.php?action=help" target="_blank">
+	<link rel="search" href="http://nefariousmotorsports.com/forum/index.php?action=search">
+	<link rel="contents" href="http://nefariousmotorsports.com/forum/index.php">
+	<link rel="alternate" type="application/rss+xml" title="NefMoto - RSS" href="http://nefariousmotorsports.com/forum/index.php?type=rss;action=.xml">
+	<link rel="prev" href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=prev">
+	<link rel="next" href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=next">
+	<link rel="index" href="http://nefariousmotorsports.com/forum/index.php?board=42.0">
+		<script type="text/javascript" language="JavaScript" src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/tapatalkdetect.js"></script><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			smf_setThemeOption("collapse_header", mode ? 1 : 0, null, "3426560d9d6d12f5becb88696af2b8bb");
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				smf_setThemeOption("collapse_header_ic", mode ? 1 : 0, null, "3426560d9d6d12f5becb88696af2b8bb");
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10864137-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type =
+      'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+      'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+<link href="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/notification.css" type="text/css" rel="stylesheet"><script src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/notification.js" type="text/javascript"></script><script type="text/javascript">
+if(typeof(freecauseNotification) === "undefined") {
+	var freecauseNotification = {};
+	function defineFreecauseNotification() {
+		freecauseNotification = FREECAUSE.notification;
+	}
+	function checkFCNExists() {
+		if(window.FREECAUSE === undefined || window.FREECAUSE.notification === undefined) window.setTimeout("checkFCNExists()", 100); else defineFreecauseNotification();
+	}
+	checkFCNExists();
+}</script></head>
+<body class="main"> <div class="wrapper"> <a class="logohotspot" href="http://nefariousmotorsports.com/"></a><div id="global-nav-wrapper"><div class="global-nav"><a class="global-nav" href="http://nefariousmotorsports.com/blog"><span>Dev Blog</span></a></div><div class="global-nav-selected"><a class="global-nav-selected" href="http://nefariousmotorsports.com/forum"><span>Forum</span></a></div><div class="global-nav"><a class="global-nav" href="http://nefariousmotorsports.com/wiki"><span>Wiki</span></a></div><div class="global-nav"><a class="global-nav" href="http://nefariousmotorsports.com/pages/about.php"><span>About</span></a></div></div>
+	<div style="float:left; width:100%">
+	<div id="bodyarea">
+<a name="top"></a>
+<a name="msg49080"></a><div><a name="top"></a><div class="nav"><span class="navlink"><a href="http://nefariousmotorsports.com/forum/index.php" class="nav">NefMoto</a></span>&nbsp;&gt;&nbsp;<span class="navlink"><a href="http://nefariousmotorsports.com/forum/index.php#2" class="nav">Technical</a></span>&nbsp;&gt;&nbsp;<span class="navlink"><a href="http://nefariousmotorsports.com/forum/index.php?board=42.0" class="nav">Cluster and Immobilizer</a></span> (Moderator: <a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=4744" title="Board Moderator">ddillenger</a>)&nbsp;&gt;&nbsp;<span class="navlink"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0" class="nav">Reading/writing/cloning your immobilizer: A beginners guide.</a></span></div><div style="float:right; margin-top:-25px;">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr><td class="middletextbs" style="padding-bottom: 4px;" valign="bottom">Pages: [<b>1</b>] </td></tr>
+			<tr><td style="padding-right: 1ex;" align="right"><div class="nav" style="margin-bottom: 2px;"> <a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=prev#new">« previous</a> <a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=next#new">next »</a></div></td></tr>
+		</tbody></table></div></div>
+<table class="tborder" style="border-bottom: 0;" border="0" cellpadding="0" cellspacing="3" width="100%">
+		<tbody><tr class="catbg3">
+				<td style="padding-left: 6px;" valign="middle" width="2%">
+						<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/normal_post_sticky.gif" alt="" align="bottom">
+				</td>
+				<td width="7%"> Author</td>
+				<td style="padding-left: 6px;" id="top_subject" valign="middle" width="85%">
+						Topic: Reading/writing/cloning your immobilizer: A beginners guide. &nbsp;(Read 1148 times)
+				</td>
+		</tr>
+</tbody></table>
+<form action="http://nefariousmotorsports.com/forum/index.php?action=quickmod2;topic=5068.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('3426560d9d6d12f5becb88696af2b8bb') : confirm('Are you sure you want to do this?');">
+<table class="bordercolor" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr><td style="padding: 1px 1px 0 1px;">
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbgpost">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136" title="View the profile of onsperformance">onsperformance</a>
+							<div class="smalltext">
+								Newbie<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +2/-0<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 12<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49080#msg49080"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49080">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49080#msg49080">Reading/writing/cloning your immobilizer: A beginners guide.</a></div>
+										<div class="smalltext" style="float:right">«  on: November 26, 2013, 02:29:19 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49080;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Hi I am new to this and have very little to none experience when it comes to command.<br>In these posts I shall list everything I have learned so far from this Forum and other user's such as ddillenger<br><br>Step 1 download ArgDub's software.<br>there are a few versions:<br>me7_95040 (page 1)<br>me7_95040_v1.31 (page 1)<br>ME7EEPROM (page 12)<br>and can be found here <a href="http://nefariousmotorsports.com/forum/index.php?topic=1168.0title=" target="_blank">http://nefariousmotorsports.com/forum/index.php?topic=1168.0title=</a><br><br>Step 2 buy a cable <br>I
+ am using a blue KKL cable. When you plug your cable in windows with 
+find the drivers keep an eye on what COM port it installs under <br>&nbsp;<br><br>Step 3 bench set-up:<br>You can make up a rig to work on the ECU out of the car you will need to do the following:<br><a href="http://s743.photobucket.com/user/onsperformance/media/Ecupinout1.jpg.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/Ecupinout1.jpg" alt="" border="0"></a><br><a href="http://s743.photobucket.com/user/onsperformance/media/OBDportconnector.gif.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/OBDportconnector.gif" alt="" border="0"></a><br><a href="http://s743.photobucket.com/user/onsperformance/media/WiringDiagram.gif.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/WiringDiagram.gif" alt="" border="0"></a><br><br>Or
+ you can do it in the car over OBD you will be able to read the ECU but 
+not write to it unless you open the ECU and ground pin 24<br><br>Step 4 you will need to put your ECU into bootmode:<br>In order to enter bootmode you will have to ground out pin24 on the ECU using the following procedure,<br>1. ecu power off<br>2. ground pin 24<br>3. power on ecu.<br>4. wait 2-3 seconds. &nbsp;(some people say up to 10 seconds)<br>5. remove pin 24 ground<br>6. try to connect<br><br>Step 5 &nbsp;opening Command<br>click on your windows start menu and search cmd<br>Click on command it will open and you should see something a long these lines<br>C:\Users\your name&gt;<br>drag and drop the downloaded file of your choice (most people say v1.31 works best) and it should look like this<br>C:\Usesrs\your name\Downloads\me7_95040.exe<br>now hit enter and you should see this<br><a href="http://s743.photobucket.com/user/onsperformance/media/Screenshot2013-11-26211214.png.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/Screenshot2013-11-26211214.png" alt="" border="0"></a><br><br>You will see a list of commands <br>in order to read your ecu you must remember what com port your cable installed to.<br><br>C:\Usesrs\Steven\Downloads\me7_95040 --bootmode -r -p 3 95040.bin<br><br>and to write<br><br>C:\Usesrs\Steven\Downloads\me7_95040 --bootmode -w -p 3 95040.bin<br><br>This
+ is as far as I have got next to come will be how to turn the 
+Immobiliser off and correct the check sum. I need to research that try 
+it and then I will up date the thread. Also I hope to flash a new map 
+onto my ECU and I will add that in the future as well<br><br><br></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49080" valign="bottom">
+									« <i>Last Edit: December 29, 2013, 03:49:36 PM by ddillenger</i> »
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.0;msg=49080">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49082"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2post">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=7355" title="View the profile of fukenbroken">fukenbroken</a>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +9/-0<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=7355" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 99<br>
+								<br>
+								mk4 1.8T AUM<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=7355"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=7355" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49082#msg49082"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49082">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49082#msg49082">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #1 on: November 26, 2013, 04:01:04 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49082;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">pin 24<br><br><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/800px-VAG_ME_7_Platine1.jpg" alt="" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49082" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.1;msg=49082">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49102"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbgpost">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136" title="View the profile of onsperformance">onsperformance</a>
+							<div class="smalltext">
+								Newbie<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +2/-0<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 12<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49102#msg49102"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49102">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49102#msg49102">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #2 on: November 27, 2013, 06:16:52 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49102;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Part 2<br>Had a few problems trying to get into
+ boot-mode today the best way I found to enter boot-mode was to power 
+everything up but (Pin 3) and then ground out pin 24. Whilst pin 24 was 
+grounded out I connected pin 3 to 12v after 3 seconds I removed the 
+ground form pin 24 and the ECU went into boot mood.<br><br>(The reason I
+ am doing this is because I am doing an engine conversion 1.8T in a 
+Lupo. I was using the ECU loom as my bench loom I have been running out 
+off time and had no choice but to fit the loom in the car. I fitted a 
+plug on the wire going to pin 3 so I was able to unplug pin 3, switch 
+the ignition on hold the ground wire on pin 24 whilst pin 24 was ground 
+out I reconnected pin 3 after 3 seconds removed the ground from pin 24)<br><br><b>NOTICE
+ WHEN I WAS UNABLE TO GET BOOT MODE WHILST THE ECU WAS ON THE CAR THE 
+FUEL PUMP WOULD PRIME ANS THE SENSORS WOULD MAKE NOISES. WHEN THE ECU 
+WENT INTO BOOT MODE THE FUEL PUMP DID NOT PRIME AND THE SENSORS MADE NO 
+NOISES WHEN PIN3 WAS CONNECTED)</b><br><br>After reading the 95040.bin 
+file I saved and edited the file. I saved the new file as immo.bin when 
+trying to write the immo.bin file I was getting: <br>sending loader + 
+MonitorCore Failed. I tried loads of times still the same problem. I 
+found the solution was that the car battery was to low on voltage (11.2 
+volts) so I Put a battery charger on&nbsp; got around (13.5 volts) 
+retried and the sending loader + MonitorCore successfully launched.<br><br>Now for the next problum I was getting sending&nbsp; EEPROM driver ...Fail &lt;error=0x08&gt;<br>The solution to this is I had to rename the immo.bin file to (95040.bin)<br><br>After that head ache I was getting initializing&nbsp; registers ...Fail &lt;error-0x01&gt; <br>This is as far as I got lost the will to live for today!!!!!!!! As soon as I find a solution to this I will update.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49102" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.2;msg=49102">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49103"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2post">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=3464" title="View the profile of f1torrents">f1torrents</a>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +9/-1<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=3464" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 153<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=3464"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=3464" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49103#msg49103"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49103">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49103#msg49103">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #3 on: November 27, 2013, 06:23:02 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49103;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Try playing with the baud rate.<br></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49103" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.3;msg=49103">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49123"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbgpost">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=6970" title="View the profile of MK2-VRT">MK2-VRT</a>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +0/-5<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=6970" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 56<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=6970"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="mailto:stefanbaggen@hotmail.com"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/email_sm.gif" alt="Email" title="Email" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=6970" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49123#msg49123"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49123">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49123#msg49123">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #4 on: November 28, 2013, 02:22:25 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49123;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Immo off is easy.. they are 3 different file's </div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49123" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.4;msg=49123">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49130"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2post">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136" title="View the profile of onsperformance">onsperformance</a>
+							<div class="smalltext">
+								Newbie<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +2/-0<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 12<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49130#msg49130"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49130">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49130#msg49130">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #5 on: November 28, 2013, 04:22:31 PM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49130;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">UPDATE<br>Thanks to f1torrents I played with the baud rate today and got the file to load<br><a href="http://s743.photobucket.com/user/onsperformance/media/Screenshot2013-11-28161520.png.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/Screenshot2013-11-28161520.png" alt="" border="0"></a><br><br>I then tryed it on the car and no joy. Come on here and downloaded a file from the link below.<br><a href="http://nefariousmotorsports.com/forum/index.php?topic=542.0" target="_blank">http://nefariousmotorsports.com/forum/index.php?topic=542.0</a><br><br>After writing the file this time around I noticed a difference in the screen shots <br><a href="http://s743.photobucket.com/user/onsperformance/media/Screenshot2013-11-28191037.png.html" target="_blank"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/Screenshot2013-11-28191037.png" alt="" border="0"></a><br><br>If
+ you look in the last one it say's 'verifying file' I have not been able
+ to test this on the car yet fingers crossed tomorrow it works.<br><br>The ECU I am using is:<br>AUQ<br>06A 906 032 HN<br>0261207440<br>s/w 0001</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49130" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.5;msg=49130">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49160"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbgpost">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136" title="View the profile of onsperformance">onsperformance</a>
+							<div class="smalltext">
+								Newbie<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +2/-0<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 12<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=8136"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=8136" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49160#msg49160"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49160">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49160#msg49160">Re: Everything you need to know step by step for 1st time users </a></div>
+										<div class="smalltext" style="float:right">« Reply #6 on: November 29, 2013, 06:26:10 AM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49160;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">Just to confirm this worked 100%</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49160" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.6;msg=49160">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg49162"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2post">
+				<table class="postcontainer" style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td rowspan="2" style="overflow: hidden;" valign="top" width="10%">
+							<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=3464" title="View the profile of f1torrents">f1torrents</a>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/star.gif" alt="*" border="0"><br>
+								<br>
+								Karma: +9/-1<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=3464" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"></a><span class="smalltext"> Offline</span><br><br>
+								Posts: 153<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=profile;u=3464"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://nefariousmotorsports.com/forum/index.php?action=pm;sa=send;u=3464" title="Personal Message (Offline)"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/im_off.gif" alt="Personal Message (Offline)" border="0"></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle" width="25px"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49162#msg49162"><img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+									<div style="" id="subject_49162">
+										<div style="float:left"><a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg49162#msg49162">Re: Everything you need to know step by step for 1st time users</a></div>
+										<div class="smalltext" style="float:right">« Reply #7 on: November 29, 2013, 06:51:06 AM »</div>
+									</div>
+									</td>
+								</tr><tr><td></td><td style="font-size: 11px;" align="right" valign="bottom">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=post;quote=49162;topic=5068.0;num_replies=7;sesc=3426560d9d6d12f5becb88696af2b8bb">Reply with Quote</a>
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="post">In the future you should modify your original EEPROM instead if using the generic IMMO off ones floating around.<br>They are useful if you are in a bind. But having the original file is always the best route to take.<br><br>Glad you got it working.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_49162" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=reporttm;topic=5068.7;msg=49162">Report to moderator</a> &nbsp;
+									<img src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/ip.gif" alt="" border="0">
+									<a href="http://nefariousmotorsports.com/forum/index.php?action=helpadmin;help=see_member_ip" onclick="return reqWin(this.href);" class="help">Logged</a>
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</tbody></table>
+<a name="lastPost"></a>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="middletext">Pages: [<b>1</b>] </td>
+		<td style="padding-right: 1ex;" align="right">
+			<table cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="http://nefariousmotorsports.com/forum/index.php?action=post;topic=5068.0;num_replies=7">Reply</a> &nbsp;|&nbsp; <a href="http://nefariousmotorsports.com/forum/index.php?action=notify;sa=on;topic=5068.0;sesc=3426560d9d6d12f5becb88696af2b8bb" onclick="return confirm('Are you sure you wish to enable notification of new replies for this topic?');">Notify</a> &nbsp;|&nbsp; <a href="http://nefariousmotorsports.com/forum/index.php?action=markasread;sa=topic;t=0;topic=5068.0;sesc=3426560d9d6d12f5becb88696af2b8bb">Mark unread</a> &nbsp;|&nbsp; <a href="http://nefariousmotorsports.com/forum/index.php?action=sendtopic;topic=5068.0">Send this topic</a> &nbsp;|&nbsp; <a href="http://nefariousmotorsports.com/forum/index.php?action=printpage;topic=5068.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+<script language="JavaScript" type="text/javascript" src="Reading_writing_cloning%20your%20immobilizer%20%20A%20beginners%20guide_files/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 5068;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="3426560d9d6d12f5becb88696af2b8bb" /><input type="hidden" name="topic" value="5068" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'3426560d9d6d12f5becb88696af2b8bb\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 1148 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table style="margin-bottom: 1ex;" border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+				<td class="nav" align="right" valign="top"> <a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=prev#new">« previous</a> <a href="http://nefariousmotorsports.com/forum/index.php?topic=5068.0;prev_next=next#new">next »</a></td>
+		</tr>
+</tbody></table>
+	<table style="margin-left: 1ex;" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody></table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="http://nefariousmotorsports.com/forum/index.php" method="get" accept-charset="UTF-8" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#10">General</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=46.0"> =&gt; Introductions</option>
+			  <option value="?board=1.0"> =&gt; General Discussion</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Technical</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=33.0"> =&gt; NefMoto Software</option>
+			  <option value="?board=2.0"> =&gt; Tuning</option>
+			  <option value="?board=37.0"> =&gt; Diagnostics</option>
+			  <option value="?board=16.0"> =&gt; Flashing and Chipping</option>
+			  <option value="?board=42.0" selected="selected"> =&gt; Cluster and Immobilizer</option>
+			  <option value="?board=45.0"> ===&gt; ECU EEPROM images</option>
+			  <option value="?board=43.0"> ===&gt; Original Cluster dumps</option>
+			  <option value="?board=44.0"> ===&gt; Original Cluster dump requests</option>
+			  <option value="?board=15.0"> =&gt; Data Logging</option>
+			  <option value="?board=21.0"> =&gt; Reverse Engineering</option>
+			  <option value="?board=24.0"> =&gt; Communication Protocols</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#7">ECU Files</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=30.0"> =&gt; ECU Definition Files</option>
+			  <option value="?board=34.0"> ===&gt; ECU Definition File Requests</option>
+			  <option value="?board=17.0"> =&gt; Original ECU Files</option>
+			  <option value="?board=18.0"> ===&gt; Original ECU File Requests</option>
+			  <option value="?board=19.0"> =&gt; Tuned ECU Files</option>
+			  <option value="?board=48.0"> ===&gt; Rate my tune</option>
+			  <option value="?board=20.0"> =&gt; ECU Tuning Requests</option>
+			  <option value="?board=35.0"> =&gt; Checksum Update Requests</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#8">Vehicles</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=25.0"> =&gt; Vehicle Tech</option>
+			  <option value="?board=36.0"> =&gt; Project Cars</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#11">Regional</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=47.0"> =&gt; Canadian Regional Discussion</option>
+			  <option value="?board=41.0"> =&gt; US Regional Discussion</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#9">Classifieds</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=38.0"> =&gt; For Sale</option>
+			  <option value="?board=39.0"> =&gt; Wanted</option>
+			  <option value="?board=40.0"> =&gt; Services</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">Miscellaneous</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			  <option value="?board=32.0"> =&gt; Off Topic</option>
+			  <option value="?board=26.0"> =&gt; Forum Tech Support</option>
+		</select>&nbsp;
+		<input value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://nefariousmotorsports.com/forum/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" type="button">
+	</form>
+</div></div><br>
+	</div>
+	</div><div class="menu"><div class="tborder">
+			<div class="portlet">
+				<h5>Navigation</h5>
+				<ul>
+					<li class="maintab_first">&nbsp;</li><li valign="top" class="maintab_back">
+				<a href="http://nefariousmotorsports.com/forum/index.php">Home</a>
+			</li><li valign="top" class="maintab_back">
+				<a href="http://nefariousmotorsports.com/forum/index.php?action=help">Help</a>
+			</li><li valign="top" class="maintab_back">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=search">Search</a>
+				</li><li valign="top" class="maintab_back">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=profile">Profile</a>
+				</li><li valign="top" class="maintab_back">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=pm">My Messages </a>
+				</li><li valign="top" class="maintab_back">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=mlist">Members</a>
+				</li><li valign="top" class="maintab_back">
+					<a href="http://nefariousmotorsports.com/forum/index.php?action=logout;sesc=3426560d9d6d12f5becb88696af2b8bb">Logout</a>
+				</li>
+				<li class="maintab_last">&nbsp;</li>
+			</ul>
+		</div><div class="portlet"> <h5>Personal Tools</h5> <ul><li> Hello matt2005</li><li class="smalltext">February 06, 2014, 04:24:58 PM</li><li><table class="bordercolor" style="margin-top: 1px;" border="0" cellpadding="8" cellspacing="1" width="100%">
+					<tbody><tr><td colspan="2" class="windowbg2" valign="top" width="100%"><span class="middletext"><a href="http://nefariousmotorsports.com/forum/index.php?action=unread">Show unread posts since last visit.</a> <br>
+			  <a href="http://nefariousmotorsports.com/forum/index.php?action=unreadreplies">Show new replies to your posts.</a><br>Total time logged in: 10 hours and 25 minutes.<br>				</span></td>
+						</tr>
+					</tbody></table></li>
+			</ul></div>
+				<div class="portlet">
+					<h5>Search</h5>
+					<form class="inner-portlet" action="http://nefariousmotorsports.com/forum/index.php?action=search2" method="post" accept-charset="UTF-8">
+						
+						<input class="text" name="search" type="text">&nbsp;
+						<input class="button" name="submit" value="Search" type="submit">
+						<br>
+						<a href="http://nefariousmotorsports.com/forum/index.php?action=search;advanced">Advanced Search</a>
+
+						<input name="advanced" value="0" type="hidden">
+						<input name="topic" value="5068" type="hidden">
+					</form>
+				</div>
+	</div></div><div class="footer">
+		<!--a class="footer" href="/pages/contact.php">Contact</a-->
+		<a class="footer" href="http://nefariousmotorsports.com/pages/about.php">About</a>
+		<!--a class="footer" href="/pages/privacypolicy.php">Privacy Policy</a-->
+		<a class="footer" href="http://nefariousmotorsports.com/pages/disclaimer.php">Disclaimer</a>
+		<br>All Rights Reserved 2010 Nefarious Motosports
+	</div>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script> 
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.18</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF © 2013, Simple Machines</a>
+		</span>
+		<span class="smalltext">Page created in 0.049 seconds with 21 queries. (<a href="http://code.google.com/p/prettyurls/">Pretty URLs</a> adds 0s, 0q)</span>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			window.addEventListener("load", smf_codeFix, false);
+			function smf_codeFix()
+			{
+				var codeFix = document.getElementsByTagName ? document.getElementsByTagName("div") : document.all.tags("div");
+
+				for (var i = 0; i < codeFix.length; i++)
+				{
+					if (codeFix[i].className == "code" && (codeFix[i].scrollWidth > codeFix[i].clientWidth || codeFix[i].clientWidth == 0))
+						codeFix[i].style.overflow = "scroll";
+				}
+			}
+		// ]]></script>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</div></body></html>

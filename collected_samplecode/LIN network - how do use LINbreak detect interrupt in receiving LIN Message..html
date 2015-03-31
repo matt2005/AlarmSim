@@ -1,0 +1,2820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0127)https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" id="vbulletin_html"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<!-- BEGIN TEMPLATE: headinclude -->
+
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="https://forum.pjrc.com">
+<!--<base href="https://forum.pjrc.com/">--><base href="."><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<link rel="Shortcut Icon" href="https://forum.pjrc.com/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "https://forum.pjrc.com";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "https://forum.pjrc.com/";
+// -->
+</script><script type="text/javascript" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/yuiloader-dom-event.js"></script><script type="text/javascript" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/connection-min.js"></script>
+<script type="text/javascript" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/vbulletin-core.js"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="PJRC (Teensy) Forum RSS Feed" href="https://forum.pjrc.com/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="PJRC (Teensy) Forum - Technical Support &amp; Questions - RSS Feed" href="https://forum.pjrc.com/external.php?type=RSS2&forumids=3">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/css.php">
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;langid=1&amp;d=1410308075&amp;td=ltr&amp;sheet=popupmenu-ie.css,vbulletin-ie.css,vbulletin-chrome-ie.css,vbulletin-formcontrols-ie.css,editor-ie.css" />
+	<![endif]-->
+
+
+<!-- END TEMPLATE: headinclude -->
+	<meta name="keywords" content="uart, teensy, detect, register, k20p64m72sf1rm.pdf, uart_s1, native, status, 47.3.5, handle, chip, comminication, hints, https://github.com/gandrewstone/lin, https://github.com/markuslange/lin_for_arduino_avr, document, network, reading, communication, framing-error, interrupt, linbreak, surely, check, line-break, easy, message, receiving, similar, templates, code, modify, teensy3">
+	<meta name="description" content="Hello - i have a big topic an i need help. 
+ 
+* Background 
+At my work we have some trouble with our electronics and we get some suspect error message reported from our customer as reported from field tests. 
+Our electronics component are coupled by a Lin network together. 
+One electronic component which bring the error send some internal data out in classical serial data. 
+ 
+Because we want to have this data i search for a method and suggest the OPEN LOG tool. 
+ 
+As our customer send more">
+
+	<title> LIN network - how do use LINbreak detect interrupt in receiving LIN Message.</title>
+	<link rel="canonical" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/css(1).php">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;langid=1&amp;d=1410308075&amp;td=ltr&amp;sheet=toolsmenu-ie.css,postlist-ie.css,showthread-ie.css,postbit-ie.css,poll-ie.css" /><![endif]-->
+<!-- BEGIN TEMPLATE: headinclude_bottom -->
+<link rel="stylesheet" type="text/css" href="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/css(2).php">
+
+<!-- END TEMPLATE: headinclude_bottom -->
+</head>
+
+<body>
+
+<!-- BEGIN TEMPLATE: header -->
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	<div><a name="top" href="https://forum.pjrc.com/forum.php" class="logo-image"><img src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/vbulletin4_logo.png" alt="PJRC (Teensy) Forum - Powered by vBulletin" title="PJRC (Teensy) Forum - Powered by vBulletin"></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="https://forum.pjrc.com/register.php" rel="nofollow">Register</a></li>
+			
+				<li><a rel="help" href="https://forum.pjrc.com/faq.php">Help</a></li>
+				<li>
+			<script type="text/javascript" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/vbulletin_md5.js"></script>
+			<form id="navbar_loginform" action="https://forum.pjrc.com/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input type="text" class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name">
+					<input type="password" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" style="display: none;">
+					<input type="text" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" style="display: inline;">
+					<input type="submit" class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s">
+						</div>
+					</div>
+				</fieldset>
+				<div id="remember" class="remember">
+					<label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103"> Remember Me?</label>
+				</div>
+
+				<input type="hidden" name="s" value="">
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="login">
+				<input type="hidden" name="vb_login_md5password">
+				<input type="hidden" name="vb_login_md5password_utf">
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'User Name')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='#000000';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='User Name';
+					textbox.style.color='#777777';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		<!-- BEGIN TEMPLATE: ad_global_header1 -->
+
+<!-- END TEMPLATE: ad_global_header1 -->
+		<!-- BEGIN TEMPLATE: ad_global_header2 -->
+
+<!-- END TEMPLATE: ad_global_header2 -->
+	</div>
+	<hr>
+</div>
+<!-- END TEMPLATE: header -->
+<!-- BEGIN TEMPLATE: navbar -->
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		<!-- BEGIN TEMPLATE: navbar_tabs -->
+
+	
+		<li id="vbtab_whatsnew">
+			<a class="navtab" href="https://forum.pjrc.com/activity.php">What's New?</a>
+		</li>
+		
+		
+
+	
+		<li class="selected" id="vbtab_forum">
+			<a class="navtab" href="https://forum.pjrc.com/forum.php">Forum</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						
+							<li id="vbflink_newposts"><a href="https://forum.pjrc.com/search.php?do=getnew&contenttype=vBForum_Post">New Posts</a></li>
+						
+					
+				
+					
+						
+							<li id="vbflink_faq"><a href="https://forum.pjrc.com/faq.php">FAQ</a></li>
+						
+					
+				
+					
+						
+							<li id="vbflink_calendar"><a href="https://forum.pjrc.com/calendar.php">Calendar</a></li>
+						
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_community">
+							<a href="javascript://" class="popupctrl" id="yui-gen1">Community</a>
+							<ul class="popupbody" id="yui-gen0">
+								
+									<li id="vbclink_members"><a href="https://forum.pjrc.com/memberlist.php">Member List</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_actions">
+							<a href="javascript://" class="popupctrl" id="yui-gen3">Forum Actions</a>
+							<ul class="popupbody" id="yui-gen2">
+								
+									<li id="vbalink_mfr"><a href="https://forum.pjrc.com/forumdisplay.php?do=markread&markreadhash=guest">Mark Forums Read</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_qlinks">
+							<a href="javascript://" class="popupctrl" id="yui-gen5">Quick Links</a>
+							<ul class="popupbody" id="yui-gen4">
+								
+									<li id="vbqlink_posts"><a href="https://forum.pjrc.com/search.php?do=getdaily&contenttype=vBForum_Post">Today's Posts</a></li>
+								
+									<li id="vbqlink_leaders"><a href="https://forum.pjrc.com/showgroups.php">View Site Leaders</a></li>
+								
+							</ul>
+						</li>
+					
+				
+			</ul>
+		
+
+<!-- END TEMPLATE: navbar_tabs -->
+		
+	</ul>
+	
+		<div id="globalsearch" class="globalsearch">
+			<form action="https://forum.pjrc.com/search.php?do=process" method="post" id="navbar_search" class="navbar_search">
+				
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="process">
+				<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"></span></span>
+				<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/search.png" name="submit" onclick="document.getElementById(&#39;navbar_search&#39;).submit;" tabindex="100"></span></span>
+			</form>
+			<ul class="navbar_advanced_search">
+				<li><a href="https://forum.pjrc.com/search.php" accesskey="4">Advanced Search</a></li>
+				
+			</ul>
+		</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="https://forum.pjrc.com/index.php" accesskey="1"><img src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/navbit-home.png" alt="Home" title="Home"></a></li>
+		<!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forum.php">Forum</a></li>
+
+<!-- END TEMPLATE: navbar_link --><!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forums/1-Main-Category">Main Category</a></li>
+
+<!-- END TEMPLATE: navbar_link --><!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forums/3-Technical-Support-amp-Questions">Technical Support &amp; Questions</a></li>
+
+<!-- END TEMPLATE: navbar_link -->
+		<!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit lastnavbit"><span> LIN network - how do use LINbreak detect interrupt in receiving LIN Message.</span></li>
+
+<!-- END TEMPLATE: navbar_link -->
+	</ul>
+	<hr>
+</div>
+
+<!-- BEGIN TEMPLATE: ad_navbar_below -->
+
+<!-- END TEMPLATE: ad_navbar_below -->
+<!-- BEGIN TEMPLATE: ad_global_below_navbar -->
+<div style="padding-top:15px; padding-bottom:15px; padding-left:30px; font-size: 1.25em">
+<b>Forum Rule</b>: Always post <span style="color:#C00000">complete source code</span> &amp; details to reproduce any issue!
+</div>
+<!-- END TEMPLATE: ad_global_below_navbar -->
+
+
+	<form action="https://forum.pjrc.com/profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice">
+		<input type="hidden" name="s" value="">
+		<input type="hidden" name="securitytoken" value="guest">
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="">
+		<input type="hidden" name="url" value="">
+		<ol>
+			<!-- BEGIN TEMPLATE: navbar_noticebit -->
+<li class="restore" id="navbar_notice_1">
+	
+	If this is your first visit, be sure to
+		check out the <a href="https://forum.pjrc.com/faq.php" target="_blank"><b>FAQ</b></a> by clicking the
+		link above. You may have to <a href="https://forum.pjrc.com/register.php" target="_blank"><b>register</b></a>
+		before you can post: click the register link above to proceed. To start viewing messages,
+		select the forum that you want to visit from the selection below.
+</li>
+<!-- END TEMPLATE: navbar_noticebit -->
+		</ol>
+	</form>
+
+
+<!-- END TEMPLATE: navbar -->
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				Results 1 to 7 of 7
+			</div>
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle">
+		<h1>
+			Thread: <span class="threadtitle"><a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message" title="Reload this Page">LIN network - how do use LINbreak detect interrupt in receiving LIN Message.</a></span>
+		</h1>
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen7">Thread Tools</a></h6>
+				<ul class="popupbody" id="yui-gen6">
+					<li><a href="https://forum.pjrc.com/printthread.php?t=26063&pp=25&page=1" accesskey="3" rel="nofollow">Show Printable Version</a></li>
+					
+						<li><a href="https://forum.pjrc.com/sendmessage.php?do=sendtofriend&t=26063" rel="nofollow">Email this Page…</a></li>
+					
+					<li>
+						
+							<a href="https://forum.pjrc.com/subscription.php?do=addsubscription&t=26063" rel="nofollow">Subscribe to this Thread…</a>
+						
+					</li>
+					
+				</ul>
+			</li>
+
+			
+
+			
+				<li class="popupmenu searchthread menusearch" id="searchthread">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen9">Search Thread</a></h6>
+					<form action="https://forum.pjrc.com/search.php" method="post">
+						<ul class="popupbody" id="yui-gen8">
+							<li>
+								<input type="text" name="query" class="searchbox" value="Search..." tabindex="13">
+								<input type="submit" class="button" value="Search" tabindex="14">
+							</li>
+							<li class="formsubmit" id="popupsearch">
+								<div class="submitoptions">&nbsp;</div>
+								<div class="advancedsearchlink"><a href="https://forum.pjrc.com/search.php?search_type=1&searchthreadid=26063&contenttype=vBForum_Post">Advanced Search</a></div>
+							</li>
+						</ul>
+						<input type="hidden" name="s" value="">
+						<input type="hidden" name="securitytoken" value="guest">
+						<input type="hidden" name="do" value="process">
+						<input type="hidden" name="searchthreadid" value="26063">
+						<input type="hidden" name="search_type" value="1">
+						<input type="hidden" name="contenttype" value="vBForum_Post">
+					</form>
+				</li>
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen11">Display</a></h6>
+					<ul class="popupbody" id="yui-gen10">
+						<li><label>Linear Mode</label></li>
+						<li><a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?mode=hybrid&highlight=linbus"> Switch to Hybrid Mode</a></li>
+						<li><a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50103&mode=threaded&highlight=linbus#post50103"> Switch to Threaded Mode</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			<!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_50103">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">06-28-2014,&nbsp;<span class="time">08:49 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post50103" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50103&viewfull=1#post50103" class="postcounter">#1</a><a id="postcount50103" name="1"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen12">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37493-Franky_74" title="Franky_74 is offline" id="yui-gen14"><strong>Franky_74</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen13">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37493-Franky_74" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=37493&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=37493" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Franky_74 is offline" border="0" title="Franky_74 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Jun 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>4</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					LIN network - how do use LINbreak detect interrupt in receiving LIN Message.
+				</h2>
+				
+
+
+						
+							
+							
+						
+						
+				<div class="content">
+					<div id="post_message_50103">
+						<blockquote class="postcontent restore ">
+							Hello - i have a big topic an i need help.<br>
+<br>
+* Background<br>
+At my work we have some trouble with our electronics and we get some suspect error message reported from our customer as reported from field tests.<br>
+Our electronics component are coupled by a Lin network together.<br>
+One electronic component which bring the error send some internal data out in classical serial data.<br>
+<br>
+Because we want to have this data i search for a method and suggest the OPEN LOG tool.<br>
+<br>
+As our customer send more detailed error reports i know we also need the LIN data.  (19200)<br>
+<br>
+So i try to port the software of the OPEN Log device to Teensy 3.1 base.<br>
+At this time the Openlog is ported more or less to teensy - if i'm sure i will make this version public.<br>
+But as i say i also want to Log the raw Lin data.<br>
+Principially it should an easy task - but i need some help, because this project need to be finishd in one week - the customer waits for a possibility to log the data.<br>
+It's not a offical project because we did'nt have software writer capacity for it and it's normally not my task to write SW so i try to solve this topic in my freetime. But my girlfriend di'nt like it because we will marry in two weeks and this too need some preparations.<br>
+At this time i did'nt have a plan how to detect the LIN break by interrupt and to read out one ID data sequence.<br>
+<br>
+Could someone show me a way how to use a serial interrupt and how it is possible to use the Linbreak detect function.<br>
+<br>
+<br>
+My system setting:<br>
+<br>
+Uart 1 - LIN data.<br>
+Uart 3 - serial data from test device<br>
+Spi   - Micro SD Card Adapter<br>
+<br>
+I hope someone can show me the way to solve this topic - because i ordered 30 Teensy 3.1 and 30 Micro SD Card adapters.<br>
+I try to read the documentation but at this time it's neccesary to RFM but - as i say my time to my weeding day is not so long.<br>
+<br>
+Best regards,<br>
+Frank
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_50103" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_50103" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=50103" rel="nofollow" title="Reply With Quote"><img id="quoteimg_50103" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_50123">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">06-29-2014,&nbsp;<span class="time">02:49 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post50123" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50123&viewfull=1#post50123" class="postcounter">#2</a><a id="postcount50123" name="2"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen15">
+	<a class="username online popupctrl" href="https://forum.pjrc.com/members/22287-Headroom" title="Headroom is online now" id="yui-gen17"><strong>Headroom</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen16">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/22287-Headroom" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=22287&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=22287" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-online.png" alt="Headroom is online now" border="0" title="Headroom is online now">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Jan 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>774</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_50123">
+						<blockquote class="postcontent restore ">
+							Post some code if you want help fast ;-)
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_50123" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_50123" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=50123" rel="nofollow" title="Reply With Quote"><img id="quoteimg_50123" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_50143">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">06-29-2014,&nbsp;<span class="time">02:31 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post50143" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50143&viewfull=1#post50143" class="postcounter">#3</a><a id="postcount50143" name="3"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen18">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/35300-Markus_L811" title="Markus_L811 is offline" id="yui-gen20"><strong>Markus_L811</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen19">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/35300-Markus_L811" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=35300&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=35300" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Markus_L811 is offline" border="0" title="Markus_L811 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Apr 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>72</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_50143">
+						<blockquote class="postcontent restore ">
+							An easy way to detect the Lin Line-Break is to check for the Framing-Error on the UART there is surely something similar in the Teensy3 with that you can modify the code templates below.<br>
+<br>
+Look at this document K20P64M72SF1RM.pdf the Chip from the Teensy under 47.3.5 UART Status Register 1 (UART_S1) the Teensy can native handle LIN communication. So far some reading is necessary, sorry.<br>
+<br>
+Some hints for you, for the comminication look there.<br>
+<br>
+<a href="https://github.com/gandrewstone/LIN" target="_blank">https://github.com/gandrewstone/LIN</a> and<br>
+<br>
+<a href="https://github.com/MarkusLange/LIN_for_Arduino_AVR" target="_blank">https://github.com/MarkusLange/LIN_for_Arduino_AVR</a>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				<!-- edit note -->
+				<blockquote class="postcontent lastedited">
+					
+						Last edited by Markus_L811; 06-29-2014 at <span class="time">02:48 PM</span>.
+					
+					
+						<span class="reason">Reason:</span> additional informations
+					
+				</blockquote>
+				<!-- / edit note -->
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_50143" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_50143" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=50143" rel="nofollow" title="Reply With Quote"><img id="quoteimg_50143" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_50188">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">06-30-2014,&nbsp;<span class="time">07:20 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post50188" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50188&viewfull=1#post50188" class="postcounter">#4</a><a id="postcount50188" name="4"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen21">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37493-Franky_74" title="Franky_74 is offline" id="yui-gen23"><strong>Franky_74</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen22">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37493-Franky_74" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=37493&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=37493" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Franky_74 is offline" border="0" title="Franky_74 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Jun 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>4</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_50188">
+						<blockquote class="postcontent restore ">
+							Thanks for your answer.<br>
+<br>
+Makus - many thanks for your Link to your code and for sharing - it is really usefull<br>
+<br>
+If i understand your code correct - than it is necessary to check (poll for Framing Error bit (Uart_S1[1] - clear it - and then read the Lin frame<br>
+<br>
+Its a nice solution - but I'm not sure about the timing aspects<br>
+<br>
+If i read and write only small ammounts to sd-card it should work fine.<br>
+<br>
+But in my case i have a buffer of 8k which is written to SD - - therefore i prefer ISR methode - so i should be sure that no frame is missed.....<br>
+<br>
+the reason for this is that the maximum acces time if i write to a SD card is in a range of 520 ms (deponds on sd card size and type in this case 64GB intenso)   thatswhy i prefer to have a big buffer size.<br>
+Also the teensys will be used in hot and EMC noisy enviroment.<br>
+All this factors can influence the write time.<br>
+<br>
+<br>
+At this time i modify different files to use the ISR variant - but at this time i don't know what i'm done wrong.<br>
+<br>
+Schema :<br>
+in the setup routine i  initiallise the serial port.<br>
+<br>
+ins the configuration routine i set in Uart0_S2<br>
+<br>
+<br>
+Linbreak detection enable Bit <br>
+Breaktransmit bit <br>
+<br>
+then i activate the <br>
+<br>
+NVIC_ENABLE_IRQ(IRQ_UART0_STATUS);<br>
+<br>
+ every time i get an interrupt the routine uart0_status_isr is called<br>
+<br>
+if the Linbreakdetectflag is set i increase Lincounter and reset the  Linbreakdetectflag by writing a 1 to it...<br>
+<br>
+this is the idea behind:<br>
+<br>
+if this work in irq mode the rx transmit buffer should be filled by the isr .<br>
+<br>
+but at this time - i can set the register<br>
+if i connect external <span class="highlight">Linbus</span> devices: than triggers this Linpackets the Linbreakdetect flag<br>
+<br>
+my Linpacketcounter is not increased<br>
+ Linbreakdetectflag seems not to trigger because the ISR seems not to be processed<br>
+<br>
+Something wron happens with Linstatus counter because the value of     Serial.LINSTATUS() = -1 but i set in serial1.c the startvalue to 20<br>
+<br>
+<br>
+I'm sure something is wrong with my ISR but i did'nt find why it di'dnt work ;-(<br>
+<br>
+<br>
+<br>
+I post the code and the file whicjh are modified by my. modification is in boldI hope it is ok if i post the comlete files with modification....<br>
+<br>
+Many thanks for reading and helping....<br>
+<br>
+<br>
+I will split it in 3 Parts because file limits<br>
+<br>
+Frank<br>
+0. my test sketch<br>
+<br>
+<br>
+<br>
+// set this to the hardware serial port you wish to use<br>
+#define HWSERIAL Serial1<br>
+<br>
+<br>
+#define Serial_MODE	        0<br>
+#define LIN_MODE	        1<br>
+#define UART_MODE		LIN_MODE<br>
+<br>
+<br>
+#define LEDPIN 13<br>
+<br>
+char        ledVal = 0;<br>
+int Lincounter= 0;<br>
+int LoopCounter= 0;<br>
+<br>
+<br>
+void setup() {<br>
+	Serial.begin(57600);<br>
+        HWSERIAL.begin(19200);<br>
+        pinMode(LEDPIN, OUTPUT);<br>
+        ledVal = 0;<br>
+        digitalWrite(LEDPIN, ledVal);  // Start the LED off<br>
+        NVIC_ENABLE_IRQ(IRQ_UART0_STATUS);<br>
+}<br>
+<br>
+void loop() {<br>
+        int incomingByte;<br>
+        digitalWrite(LEDPIN, ledVal ^= 1);<br>
+        delay(200);<br>
+        <br>
+        <br>
+        <br>
+	//	incomingByte = Serial.read();<br>
+		Serial.print("Linstatus_t: ");<br>
+	//	Serial.println(incomingByte, DEC);<br>
+                <br>
+                Serial.println(Serial.LINSTATUS(), DEC);<br>
+                <br>
+                Serial.print("UART_S2: ");<br>
+	//	Serial.println(incomingByte, DEC);<br>
+   <br>
+                Serial.println(UART0_S2, BIN);<br>
+                <br>
+                Serial.print("Loop_counter : ");<br>
+<br>
+                Serial.println(LoopCounter, DEC);<br>
+                <br>
+                <br>
+                <br>
+         //       HWSERIAL.print("USB received:");<br>
+         //       HWSERIAL.println(incomingByte, DEC);<br>
+	<br>
+	if (HWSERIAL.available() &gt; 0) {<br>
+		incomingByte = HWSERIAL.read();<br>
+		Serial.print("UART received: ");<br>
+		Serial.println(incomingByte, DEC);<br>
+                HWSERIAL.print("UART received:");<br>
+                HWSERIAL.println(incomingByte, DEC);<br>
+	}<br>
+<br>
+      if (LoopCounter &lt; 1000) LoopCounter++;<br>
+      else LoopCounter = 0;<br>
+<br>
+}<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+1. modify the mk20dx128.h because some bit definitions for registers are missing:<br>
+<br>
+<b><i><br>
+#define UART_S2_LBKDIF		(uint8_t)0x80			// Lin Break Detect Interrupt Flag<br>
+#define UART_S2_RXEDGIF		(uint8_t)0x40			// RxD Pin Active Edge Interrupt Flag<br>
+#define UART_S2_MSBF		(uint8_t)0x20			// Most significant Byte First<br>
+#define UART_S2_RXINV		(uint8_t)0x10			// Receive Data Inversion<br>
+#define UART_S2_RWUID		(uint8_t)0x08			// Receiver Wakeup Idle Detect<br>
+#define UART_S2_BRK13		(uint8_t)0x04			// Break Transmit Character Lenght<br>
+#define UART_S2_LBKDE		(uint8_t)0x02			// LIN Break detection Enable<br>
+#define UART_S2_RAF			(uint8_t)0x01			// Receiver Active Flag</i></b><br>
+<br>
+<br>
+2. modify. serial1.c<br>
+<br>
+/* Teensyduino Core Library<br>
+ * <a href="http://www.pjrc.com/teensy/" target="_blank">http://www.pjrc.com/teensy/</a><br>
+ * Copyright (c) 2013 PJRC.COM, LLC.<br>
+ *<br>
+ * Permission is hereby granted, free of charge, to any person obtaining<br>
+ * a copy of this software and associated documentation files (the<br>
+ * "Software"), to deal in the Software without restriction, including<br>
+ * without limitation the rights to use, copy, modify, merge, publish,<br>
+ * distribute, sublicense, and/or sell copies of the Software, and to<br>
+ * permit persons to whom the Software is furnished to do so, subject to<br>
+ * the following conditions:<br>
+ *<br>
+ * 1. The above copyright notice and this permission notice shall be <br>
+ * included in all copies or substantial portions of the Software.<br>
+ *<br>
+ * 2. If the Software is incorporated into a build system that allows <br>
+ * selection among a list of target devices, then similar target<br>
+ * devices manufactured by PJRC.COM must be included in the list of<br>
+ * target devices and selectable in the same manner.RX<br>
+ *<br>
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,<br>
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND<br>
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS<br>
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN<br>
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN<br>
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>
+ * SOFTWARE.<br>
+ */<br>
+<br>
+#include "mk20dx128.h"<br>
+#include "core_pins.h"<br>
+#include "HardwareSerial.h"<br>
+<br>
+<b><i><br>
+// at this time useless i a prior version i try to use a definition like this in my sketch to change the mod of uart by this defines<br>
+//#define Serial_MODE	        0<br>
+//#define LIN_MODE	        1<br>
+//#define UART_MODE		LIN_MODE<br>
+///////<br>
+#define Serial_MODE	        0<br>
+#define LIN_MODE	        1<br>
+#define UART_MODE		LIN_MODE<br>
+</i></b><br>
+<br>
+////////////////////////////////////////////////////////////////<br>
+// Tunable parameters (relatively safe to edit these numbers)<br>
+////////////////////////////////////////////////////////////////<br>
+<br>
+#define TX_BUFFER_SIZE 64 // number of outgoing bytes to buffer<br>
+#define RX_BUFFER_SIZE 2048// number of incoming bytes to buffer<br>
+#define IRQ_PRIORITY  64  // 0 = highest priority, 255 = lowest<br>
+<br>
+<br>
+////////////////////////////////////////////////////////////////<br>
+// changes not recommended below this point....<br>
+////////////////////////////////////////////////////////////////<br>
+<br>
+#ifdef SERIAL_9BIT_SUPPORT<br>
+static uint8_t use9Bits = 0;<br>
+#define BUFTYPE uint16_t<br>
+#else<br>
+#define BUFTYPE uint8_t<br>
+#define use9Bits 0<br>
+#endif<br>
+<br>
+static volatile BUFTYPE tx_buffer[TX_BUFFER_SIZE];<br>
+static volatile BUFTYPE rx_buffer[RX_BUFFER_SIZE];<br>
+static volatile uint8_t transmitting = 0;<br>
+static volatile uint8_t *transmit_pin=NULL;<br>
+<br>
+<b><i>//#if UART_MODE	== LIN_MODE<br>
+	static volatile uint16_t  lin_break_count = 20;  // set it for test to 20 because in terminal program i see a value of -1<br>
+//#endif</i></b><br>
+<br>
+#if TX_BUFFER_SIZE &gt; 255<br>
+static volatile uint16_t tx_buffer_head = 0;<br>
+static volatile uint16_t tx_buffer_tail = 0;<br>
+#else<br>
+static volatile uint8_t tx_buffer_head = 0;<br>
+static volatile uint8_t tx_buffer_tail = 0;<br>
+#endif<br>
+#if RX_BUFFER_SIZE &gt; 255<br>
+static volatile uint16_t rx_buffer_head = 0;<br>
+static volatile uint16_t rx_buffer_tail = 0;<br>
+#else<br>
+static volatile uint8_t rx_buffer_head = 0;<br>
+static volatile uint8_t rx_buffer_tail = 0;<br>
+#endif<br>
+<br>
+// UART0 and UART1 are clocked by F_CPU, UART2 is clocked by F_BUS<br>
+// UART0 has 8 byte fifo, UART1 and UART2 have 1 byte buffer<br>
+<br>
+#define C2_ENABLE		UART_C2_TE | UART_C2_RE | UART_C2_RIE | UART_C2_ILIE<br>
+#define C2_TX_ACTIVE		C2_ENABLE | UART_C2_TIE<br>
+#define C2_TX_COMPLETING	C2_ENABLE | UART_C2_TCIE<br>
+#define C2_TX_INACTIVE		C2_ENABLE<br>
+<br>
+void serial_begin(uint32_t divisor)<br>
+{<br>
+	SIM_SCGC4 |= SIM_SCGC4_UART0;	// turn on clock, TODO: use bitband<br>
+	rx_buffer_head = 0;<br>
+	rx_buffer_tail = 0;<br>
+	tx_buffer_head = 0;<br>
+	tx_buffer_tail = 0;<br>
+	transmitting = 0;<br>
+	CORE_PIN0_CONFIG = PORT_PCR_PE | PORT_PCR_PS | PORT_PCR_PFE | PORT_PCR_MUX(3);<br>
+	CORE_PIN1_CONFIG = PORT_PCR_DSE | PORT_PCR_SRE | PORT_PCR_MUX(3);<br>
+	UART0_BDH = (divisor &gt;&gt; 13) &amp; 0x1F;<br>
+	UART0_BDL = (divisor &gt;&gt; 5) &amp; 0xFF;<br>
+	UART0_C4 = divisor &amp; 0x1F;<br>
+	//UART0_C1 = 0;<br>
+	UART0_C1 = UART_C1_ILT;<br>
+	UART0_TWFIFO = 2; // tx watermark, causes S1_TDRE to set<br>
+	UART0_RWFIFO = 4; // rx watermark, causes S1_RDRF to set<br>
+	UART0_PFIFO = UART_PFIFO_TXFE | UART_PFIFO_RXFE;<br>
+	UART0_C2 = C2_TX_INACTIVE;<br>
+<b><i>//	#if UART_MODE	== LIN_MODE<br>
+    UART0_S2 = UART0_S2 | UART_S2_BRK13 | UART_S2_LBKDE;<br>
+//	#endif</i></b><br>
+	<br>
+	NVIC_SET_PRIORITY(IRQ_UART0_STATUS, IRQ_PRIORITY);<br>
+	NVIC_ENABLE_IRQ(IRQ_UART0_STATUS);<br>
+}<br>
+<br>
+void serial_format(uint32_t format)<br>
+{<br>
+        uint8_t c;<br>
+<br>
+        c = UART0_C1;<br>
+        c = (c &amp; ~0x13) | (format &amp; 0x03);      // configure parity<br>
+        if (format &amp; 0x04) c |= 0x10;           // 9 bits (might include parity)<br>
+        UART0_C1 = c;<br>
+        if ((format &amp; 0x0F) == 0x04) UART0_C3 |= 0x40; // 8N2 is 9 bit with 9th bit always 1<br>
+        c = UART0_S2 &amp; ~0x10;<br>
+        if (format &amp; 0x10) c |= 0x10;           // rx invert<br>
+        UART0_S2 = c;<br>
+        c = UART0_C3 &amp; ~0x10;<br>
+        if (format &amp; 0x20) c |= 0x10;           // tx invert<br>
+        UART0_C3 = c;<br>
+#ifdef SERIAL_9BIT_SUPPORT<br>
+        c = UART0_C4 &amp; 0x1F;<br>
+        if (format &amp; 0x08) c |= 0x20;           // 9 bit mode with parity (requires 10 bits)<br>
+        UART0_C4 = c;<br>
+        use9Bits = format &amp; 0x80;<br>
+#endif<br>
+}<br>
+<br>
+void serial_end(void)<br>
+{<br>
+	if (!(SIM_SCGC4 &amp; SIM_SCGC4_UART0)) return;<br>
+	while (transmitting) yield();  // wait for buffered data to send<br>
+	NVIC_DISABLE_IRQ(IRQ_UART0_STATUS);<br>
+	UART0_C2 = 0;<br>
+	CORE_PIN0_CONFIG = PORT_PCR_PE | PORT_PCR_PS | PORT_PCR_MUX(1);<br>
+	CORE_PIN1_CONFIG = PORT_PCR_PE | PORT_PCR_PS | PORT_PCR_MUX(1);<br>
+	rx_buffer_head = 0;<br>
+	rx_buffer_tail = 0;<br>
+}<br>
+<br>
+void serial_set_transmit_pin(uint8_t pin)<br>
+{<br>
+	while (transmitting) ;<br>
+	pinMode(pin, OUTPUT);<br>
+	digitalWrite(pin, LOW);<br>
+	transmit_pin = portOutputRegister(pin);<br>
+}<br>
+<br>
+void serial_putchar(uint32_t c)<br>
+{<br>
+	uint32_t head, n;<br>
+<br>
+	if (!(SIM_SCGC4 &amp; SIM_SCGC4_UART0)) return;<br>
+	if (transmit_pin) *transmit_pin = 1;<br>
+	head = tx_buffer_head;<br>
+	if (++head &gt;= TX_BUFFER_SIZE) head = 0;<br>
+	while (tx_buffer_tail == head) {<br>
+		int priority = nvic_execution_priority();<br>
+		if (priority &lt;= IRQ_PRIORITY) {<br>
+			if ((UART0_S1 &amp; UART_S1_TDRE)) {<br>
+				uint32_t tail = tx_buffer_tail;<br>
+				if (++tail &gt;= TX_BUFFER_SIZE) tail = 0;<br>
+				n = tx_buffer[tail];<br>
+				if (use9Bits) UART0_C3 = (UART0_C3 &amp; ~0x40) | ((n &amp; 0x100) &gt;&gt; 2);<br>
+				UART0_D = n;<br>
+				tx_buffer_tail = tail;<br>
+			}<br>
+		} else if (priority &gt;= 256) {<br>
+			yield();<br>
+		}<br>
+	}<br>
+	tx_buffer[head] = c;<br>
+	transmitting = 1;<br>
+	tx_buffer_head = head;<br>
+	UART0_C2 = C2_TX_ACTIVE;<br>
+}<br>
+<br>
+void serial_write(const void *buf, unsigned int count)<br>
+{<br>
+	const uint8_t *p = (const uint8_t *)buf;<br>
+	const uint8_t *end = p + count;<br>
+        uint32_t head, n;<br>
+<br>
+        if (!(SIM_SCGC4 &amp; SIM_SCGC4_UART0)) return;<br>
+	if (transmit_pin) *transmit_pin = 1;<br>
+	while (p &lt; end) {<br>
+        	head = tx_buffer_head;<br>
+        	if (++head &gt;= TX_BUFFER_SIZE) head = 0;<br>
+		if (tx_buffer_tail == head) {<br>
+        		UART0_C2 = C2_TX_ACTIVE;<br>
+			do {<br>
+				int priority = nvic_execution_priority();<br>
+				if (priority &lt;= IRQ_PRIORITY) {<br>
+					if ((UART0_S1 &amp; UART_S1_TDRE)) {<br>
+						uint32_t tail = tx_buffer_tail;<br>
+						if (++tail &gt;= TX_BUFFER_SIZE) tail = 0;<br>
+						n = tx_buffer[tail];<br>
+						if (use9Bits) UART0_C3 = (UART0_C3 &amp; ~0x40) | ((n &amp; 0x100) &gt;&gt; 2);<br>
+						UART0_D = n;<br>
+						tx_buffer_tail = tail;<br>
+					}<br>
+				} else if (priority &gt;= 256) {<br>
+					yield();<br>
+				}<br>
+			} while (tx_buffer_tail == head);<br>
+		}<br>
+        	tx_buffer[head] = *p++;<br>
+        	transmitting = 1;<br>
+        	tx_buffer_head = head;<br>
+	}<br>
+        UART0_C2 = C2_TX_ACTIVE;<br>
+}<br>
+<br>
+void serial_flush(void)<br>
+{<br>
+	while (transmitting) yield(); // wait<br>
+}<br>
+<br>
+int serial_available(void)<br>
+{<br>
+	uint32_t head, tail;<br>
+<br>
+	head = rx_buffer_head;<br>
+	tail = rx_buffer_tail;<br>
+	if (head &gt;= tail) return head - tail;<br>
+	return RX_BUFFER_SIZE + head - tail;<br>
+}<br>
+<br>
+<b><i><br>
+int LIN_detected()<br>
+{<br>
+<br>
+<br>
+	<br>
+	return lin_break_count;<br>
+}<br>
+</i></b><br>
+int serial_getchar(void)<br>
+{<br>
+	uint32_t head, tail;<br>
+	int c;<br>
+<br>
+	head = rx_buffer_head;<br>
+	tail = rx_buffer_tail;<br>
+	if (head == tail) return -1;<br>
+	if (++tail &gt;= RX_BUFFER_SIZE) tail = 0;<br>
+	c = rx_buffer[tail];<br>
+	rx_buffer_tail = tail;<br>
+	return c;<br>
+}<br>
+<br>
+int serial_peek(void)<br>
+{<br>
+	uint32_t head, tail;<br>
+<br>
+	head = rx_buffer_head;<br>
+	tail = rx_buffer_tail;<br>
+	if (head == tail) return -1;<br>
+	if (++tail &gt;= RX_BUFFER_SIZE) tail = 0;<br>
+	return rx_buffer[tail];<br>
+}<br>
+<br>
+void serial_clear(void)<br>
+{<br>
+	if (!(SIM_SCGC4 &amp; SIM_SCGC4_UART0)) return;<br>
+	UART0_C2 &amp;= ~(UART_C2_RE | UART_C2_RIE | UART_C2_ILIE);<br>
+	UART0_CFIFO = UART_CFIFO_RXFLUSH;<br>
+	UART0_C2 |= (UART_C2_RE | UART_C2_RIE | UART_C2_ILIE);<br>
+	rx_buffer_head = rx_buffer_tail;<br>
+}<br>
+<br>
+// status interrupt combines <br>
+//   Transmit data below watermark  UART_S1_TDRE<br>
+//   Transmit complete              UART_S1_TC<br>
+//   Idle line                      UART_S1_IDLE<br>
+//   Receive data above watermark   UART_S1_RDRF<br>
+//   LIN break detect               UART_S2_LBKDIF<br>
+//   RxD pin active edge            UART_S2_RXEDGIF<br>
+<br>
+void uart0_status_isr(void)<br>
+{<br>
+	uint32_t head, newhead, tail, n;<br>
+	uint8_t avail, c;<br>
+<b><i><br>
+	if (UART0_S2 &amp; UART_S2_LBKDIF)<br>
+			{<br>
+				__disable_irq();<br>
+				if (lin_break_count &lt; 100)<br>
+				{<br>
+					lin_break_count++;<br>
+					UART0_S2 = UART0_S2 | UART_S2_LBKDIF;  // to clear the LIN Flag write it<br>
+				}<br>
+				else lin_break_count = 0;<br>
+				__enable_irq();<br>
+<br>
+			}<br>
+</i></b><br>
+<br>
+<br>
+	<br>
+	if (UART0_S1 &amp; (UART_S1_RDRF | UART_S1_IDLE)) {<br>
+		__disable_irq();<br>
+		avail = UART0_RCFIFO;<br>
+		if (avail == 0) {<br>
+			// The only way to clear the IDLE interrupt flag is<br>
+			// to read the data register.  But reading with no<br>
+			// data causes a FIFO underrun, which causes the<br>
+			// FIFO to return corrupted data.  If anyone from<br>
+			// Freescale reads this, what a poor design!  There<br>
+			// write should be a write-1-to-clear for IDLE.<br>
+			c = UART0_D;<br>
+			// flushing the fifo recovers from the underrun,<br>
+			// but there's a possible race condition where a<br>
+			// new character could be received between reading<br>
+			// RCFIFO == 0 and flushing the FIFO.  To minimize<br>
+			// the chance, interrupts are disabled so a higher<br>
+			// priority interrupt (hopefully) doesn't delay.<br>
+			// TODO: change this to disabling the IDLE interrupt<br>
+			// which won't be simple, since we already manage<br>
+			// which transmit interrupts are enabled.<br>
+			UART0_CFIFO = UART_CFIFO_RXFLUSH;<br>
+			__enable_irq();<br>
+		} else {<br>
+			__enable_irq();<br>
+			head = rx_buffer_head;<br>
+			tail = rx_buffer_tail;<br>
+			do {<br>
+				n = UART0_D;<br>
+				if (use9Bits &amp;&amp; (UART0_C3 &amp; 0x80)) n |= 0x100;<br>
+				newhead = head + 1;<br>
+				if (newhead &gt;= RX_BUFFER_SIZE) newhead = 0;<br>
+				if (newhead != tail) {<br>
+					head = newhead;<br>
+					rx_buffer[head] = n;<br>
+				}<br>
+			} while (--avail &gt; 0);<br>
+			rx_buffer_head = head;<br>
+		}<br>
+	}<br>
+	c = UART0_C2;<br>
+	if ((c &amp; UART_C2_TIE) &amp;&amp; (UART0_S1 &amp; UART_S1_TDRE)) {<br>
+		head = tx_buffer_head;<br>
+		tail = tx_buffer_tail;<br>
+		do {<br>
+			if (tail == head) break;<br>
+			if (++tail &gt;= TX_BUFFER_SIZE) tail = 0;<br>
+			avail = UART0_S1;<br>
+			n = tx_buffer[tail];<br>
+			if (use9Bits) UART0_C3 = (UART0_C3 &amp; ~0x40) | ((n &amp; 0x100) &gt;&gt; 2);<br>
+			UART0_D = n;<br>
+		} while (UART0_TCFIFO &lt; 8);<br>
+		tx_buffer_tail = tail;<br>
+		if (UART0_S1 &amp; UART_S1_TDRE) UART0_C2 = C2_TX_COMPLETING;<br>
+	}<br>
+	if ((c &amp; UART_C2_TCIE) &amp;&amp; (UART0_S1 &amp; UART_S1_TC)) {<br>
+		transmitting = 0;<br>
+		if (transmit_pin) *transmit_pin = 0;<br>
+		UART0_C2 = C2_TX_INACTIVE;<br>
+	}<br>
+}<br>
+<br>
+<br>
+<br>
+void serial_print(const char *p)<br>
+{<br>
+	while (*p) {<br>
+		char c = *p++;<br>
+		if (c == '\n') serial_putchar('\r');<br>
+		serial_putchar(c);<br>
+	}<br>
+}<br>
+<br>
+static void serial_phex1(uint32_t n)<br>
+{<br>
+	n &amp;= 15;<br>
+	if (n &lt; 10) {<br>
+		serial_putchar('0' + n);<br>
+	} else {<br>
+		serial_putchar('A' - 10 + n);<br>
+	}<br>
+}<br>
+<br>
+void serial_phex(uint32_t n)<br>
+{<br>
+	serial_phex1(n &gt;&gt; 4);<br>
+	serial_phex1(n);<br>
+}<br>
+<br>
+void serial_phex16(uint32_t n)<br>
+{<br>
+	serial_phex(n &gt;&gt; 8);<br>
+	serial_phex(n);<br>
+}<br>
+<br>
+void serial_phex32(uint32_t n)<br>
+{<br>
+	serial_phex(n &gt;&gt; 24);<br>
+	serial_phex(n &gt;&gt; 16);<br>
+	serial_phex(n &gt;&gt; 8);<br>
+	serial_phex(n);<br>
+}<br>
+<br>
+<br>
+3. in HardwareSerial_h i modify  and public HardwareSerial<br>
+<br>
+/* Teensyduino Core Library<br>
+ * <a href="http://www.pjrc.com/teensy/" target="_blank">http://www.pjrc.com/teensy/</a><br>
+ * Copyright (c) 2013 PJRC.COM, LLC.<br>
+ *<br>
+ * Permission is hereby granted, free of charge, to any person obtaining<br>
+ * a copy of this software and associated documentation files (the<br>
+ * "Software"), to deal in the Software without restriction, including<br>
+ * without limitation the rights to use, copy, modify, merge, publish,<br>
+ * distribute, sublicense, and/or sell copies of the Software, and to<br>
+ * permit persons to whom the Software is furnished to do so, subject to<br>
+ * the following conditions:<br>
+ *<br>
+ * 1. The above copyright notice and this permission notice shall be<br>
+ * included in all copies or substantial portions of the Software.<br>
+ *<br>
+ * 2. If the Software is incorporated into a build system that allows<br>
+ * selection among a list of target devices, then similar target<br>
+ * devices manufactured by PJRC.COM must be included in the list of<br>
+ * target devices and selectable in the same manner.<br>
+ *<br>
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,<br>
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND<br>
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS<br>
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN<br>
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN<br>
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>
+ * SOFTWARE.<br>
+ */<br>
+<br>
+#ifndef HardwareSerial_h<br>
+#define HardwareSerial_h<br>
+<br>
+#include "mk20dx128.h"<br>
+#include &lt;inttypes.h&gt;<br>
+<br>
+// uncomment to enable 9 bit formats<br>
+//#define SERIAL_9BIT_SUPPORT<br>
+<br>
+<br>
+<br>
+<br>
+#define SERIAL_7E1 0x02<br>
+#define SERIAL_7O1 0x03<br>
+#define SERIAL_8N1 0x00<br>
+#define SERIAL_8N2 0x04<br>
+#define SERIAL_8E1 0x06<br>
+#define SERIAL_8O1 0x07<br>
+#define SERIAL_7E1_RXINV 0x12<br>
+#define SERIAL_7O1_RXINV 0x13<br>
+#define SERIAL_8N1_RXINV 0x10<br>
+#define SERIAL_8N2_RXINV 0x14<br>
+#define SERIAL_8E1_RXINV 0x16<br>
+#define SERIAL_8O1_RXINV 0x17<br>
+#define SERIAL_7E1_TXINV 0x22<br>
+#define SERIAL_7O1_TXINV 0x23<br>
+#define SERIAL_8N1_TXINV 0x20<br>
+#define SERIAL_8N2_TXINV 0x24<br>
+#define SERIAL_8E1_TXINV 0x26<br>
+#define SERIAL_8O1_TXINV 0x27<br>
+#define SERIAL_7E1_RXINV_TXINV 0x32<br>
+#define SERIAL_7O1_RXINV_TXINV 0x33<br>
+#define SERIAL_8N1_RXINV_TXINV 0x30<br>
+#define SERIAL_8N2_RXINV_TXINV 0x34<br>
+#define SERIAL_8E1_RXINV_TXINV 0x36<br>
+#define SERIAL_8O1_RXINV_TXINV 0x37<br>
+#ifdef SERIAL_9BIT_SUPPORT<br>
+#define SERIAL_9N1 0x84<br>
+#define SERIAL_9E1 0x8E<br>
+#define SERIAL_9O1 0x8F<br>
+#define SERIAL_9N1_RXINV 0x94<br>
+#define SERIAL_9E1_RXINV 0x9E<br>
+#define SERIAL_9O1_RXINV 0x9F<br>
+#define SERIAL_9N1_TXINV 0xA4<br>
+#define SERIAL_9E1_TXINV 0xAE<br>
+#define SERIAL_9O1_TXINV 0xAF<br>
+#define SERIAL_9N1_RXINV_TXINV 0xB4<br>
+#define SERIAL_9E1_RXINV_TXINV 0xBE<br>
+#define SERIAL_9O1_RXINV_TXINV 0xBF<br>
+#endif<br>
+// bit0: parity, 0=even, 1=odd<br>
+// bit1: parity, 0=disable, 1=enable<br>
+// bit2: mode, 1=9bit, 0=8bit<br>
+// bit3: mode10: 1=10bit, 0=8bit<br>
+// bit4: rxinv, 0=normal, 1=inverted<br>
+// bit5: txinv, 0=normal, 1=inverted<br>
+// bit6: unused<br>
+// bit7: actual data goes into 9th bit<br>
+<br>
+<br>
+#define BAUD2DIV(baud)  (((F_CPU * 2) + ((baud) &gt;&gt; 1)) / (baud))<br>
+#define BAUD2DIV3(baud) (((F_BUS * 2) + ((baud) &gt;&gt; 1)) / (baud))<br>
+<br>
+// C language implementation<br>
+//<br>
+#ifdef __cplusplus<br>
+extern "C" {<br>
+#endif<br>
+void serial_begin(uint32_t divisor);<br>
+void serial_format(uint32_t format);<br>
+void serial_end(void);<br>
+void serial_set_transmit_pin(uint8_t pin);<br>
+void serial_putchar(uint32_t c);<br>
+void serial_write(const void *buf, unsigned int count);<br>
+void serial_flush(void);<br>
+int serial_available(void);<br>
+<b><i>int LIN_detected(void);</i></b><br>
+int serial_getchar(void);<br>
+int serial_peek(void);<br>
+void serial_clear(void);<br>
+void serial_print(const char *p);<br>
+void serial_phex(uint32_t n);<br>
+void serial_phex16(uint32_t n);<br>
+void serial_phex32(uint32_t n);<br>
+<br>
+void serial2_begin(uint32_t divisor);<br>
+void serial2_format(uint32_t format);<br>
+void serial2_end(void);<br>
+void serial2_putchar(uint32_t c);<br>
+void serial2_write(const void *buf, unsigned int count);<br>
+void serial2_flush(void);<br>
+int serial2_available(void);<br>
+int serial2_getchar(void);<br>
+int serial2_peek(void);<br>
+void serial2_clear(void);<br>
+<br>
+void serial3_begin(uint32_t divisor);<br>
+void serial3_format(uint32_t format);<br>
+void serial3_end(void);<br>
+void serial3_putchar(uint32_t c);<br>
+void serial3_write(const void *buf, unsigned int count);<br>
+void serial3_flush(void);<br>
+int serial3_available(void);<br>
+int serial3_getchar(void);<br>
+int serial3_peek(void);<br>
+void serial3_clear(void);<br>
+<br>
+#ifdef __cplusplus<br>
+}<br>
+#endif<br>
+<br>
+<br>
+// C++ interface<br>
+//<br>
+#ifdef __cplusplus<br>
+#include "Stream.h"<br>
+class HardwareSerial : public Stream<br>
+{<br>
+public:<br>
+	virtual void begin(uint32_t baud) { serial_begin(BAUD2DIV(baud)); }<br>
+	virtual void begin(uint32_t baud, uint32_t format) {<br>
+					  serial_begin(BAUD2DIV(baud));<br>
+					  serial_format(format); }<br>
+	virtual void end(void)		{ serial_end(); }<br>
+	virtual void transmitterEnable(uint8_t pin) { serial_set_transmit_pin(pin); }<br>
+	virtual int available(void)     { return serial_available(); }<br>
+	virtual int peek(void)          { return serial_peek(); }<br>
+	virtual int read(void)          { return serial_getchar(); }<br>
+<b><i>	virtual int LINSTATUS(void)     { return LIN_detected(); }//LIN_detected(); }</i></b><br>
+	virtual void flush(void)        { serial_flush(); }<br>
+	virtual void clear(void)	{ serial_clear(); }<br>
+	virtual size_t write(uint8_t c) { serial_putchar(c); return 1; }<br>
+	virtual size_t write(unsigned long n)   { return write((uint8_t)n); }<br>
+	virtual size_t write(long n)            { return write((uint8_t)n); }<br>
+	virtual size_t write(unsigned int n)    { return write((uint8_t)n); }<br>
+	virtual size_t write(int n)             { return write((uint8_t)n); }<br>
+	virtual size_t write(const uint8_t *buffer, size_t size)<br>
+					{ serial_write(buffer, size); return size; }<br>
+        virtual size_t write(const char *str)	{ size_t len = strlen(str);<br>
+					  serial_write((const uint8_t *)str, len);<br>
+					  return len; }<br>
+	virtual size_t write9bit(uint32_t c)	{ serial_putchar(c); return 1; }<br>
+};<br>
+extern HardwareSerial Serial1;<br>
+<br>
+class HardwareSerial2 : public HardwareSerial<br>
+{<br>
+public:<br>
+	virtual void begin(uint32_t baud) { serial2_begin(BAUD2DIV(baud)); }<br>
+	virtual void begin(uint32_t baud, uint32_t format) {<br>
+					  serial2_begin(BAUD2DIV(baud));<br>
+					  serial2_format(format); }<br>
+	virtual void end(void)		{ serial2_end(); }<br>
+	virtual int available(void)     { return serial2_available(); }<br>
+	virtual int peek(void)          { return serial2_peek(); }<br>
+	virtual int read(void)          { return serial2_getchar(); }<br>
+<b><i>	virtual int LINSTATUS(void)     { return LIN_detected(); }//LIN_detected(); }</i></b><br>
+	virtual void flush(void)        { serial2_flush(); }<br>
+	virtual void clear(void)	{ serial2_clear(); }<br>
+	virtual size_t write(uint8_t c) { serial2_putchar(c); return 1; }<br>
+	virtual size_t write(unsigned long n)   { return write((uint8_t)n); }<br>
+	virtual size_t write(long n)            { return write((uint8_t)n); }<br>
+	virtual size_t write(unsigned int n)    { return write((uint8_t)n); }<br>
+	virtual size_t write(int n)             { return write((uint8_t)n); }<br>
+	virtual size_t write(const uint8_t *buffer, size_t size)<br>
+					{ serial2_write(buffer, size); return size; }<br>
+        virtual size_t write(const char *str)	{ size_t len = strlen(str);<br>
+					  serial2_write((const uint8_t *)str, len);<br>
+					  return len; }<br>
+	virtual size_t write9bit(uint32_t c)	{ serial2_putchar(c); return 1; }<br>
+};<br>
+extern HardwareSerial2 Serial2;<br>
+<br>
+class HardwareSerial3 : public HardwareSerial<br>
+{<br>
+public:<br>
+	virtual void begin(uint32_t baud) { serial3_begin(BAUD2DIV3(baud)); }<br>
+	virtual void begin(uint32_t baud, uint32_t format) {<br>
+					  serial3_begin(BAUD2DIV3(baud));<br>
+					  serial3_format(format); }<br>
+	virtual void end(void)          { serial3_end(); }<br>
+	virtual int available(void)     { return serial3_available(); }<br>
+	virtual int peek(void)          { return serial3_peek(); }<br>
+	virtual int read(void)          { return serial3_getchar(); }<br>
+	<b><i>virtual int LINSTATUS(void)     { return LIN_detected();}//LIN_detected(); }</i></b><br>
+	virtual void flush(void)        { serial3_flush(); }<br>
+	virtual void clear(void)	{ serial3_clear(); }<br>
+	virtual size_t write(uint8_t c) { serial3_putchar(c); return 1; }<br>
+	virtual size_t write(unsigned long n)   { return write((uint8_t)n); }<br>
+	virtual size_t write(long n)            { return write((uint8_t)n); }<br>
+	virtual size_t write(unsigned int n)    { return write((uint8_t)n); }<br>
+	virtual size_t write(int n)             { return write((uint8_t)n); }<br>
+	virtual size_t write(const uint8_t *buffer, size_t size)<br>
+					{ serial3_write(buffer, size); return size; }<br>
+        virtual size_t write(const char *str)	{ size_t len = strlen(str);<br>
+					  serial3_write((const uint8_t *)str, len);<br>
+					  return len; }<br>
+	virtual size_t write9bit(uint32_t c)	{ serial3_putchar(c); return 1; }<br>
+};<br>
+extern HardwareSerial3 Serial3;<br>
+<br>
+#endif<br>
+#endif<br>
+4. in usb_serial.h<br>
+<br>
+i also do the same modification.... it its wrong to do something like this but without i can't compile it.... onlyfor test<br>
+<br>
+/* Teensyduino Core Library<br>
+ * <a href="http://www.pjrc.com/teensy/" target="_blank">http://www.pjrc.com/teensy/</a><br>
+ * Copyright (c) 2013 PJRC.COM, LLC.<br>
+ *<br>
+ * Permission is hereby granted, free of charge, to any person obtaining<br>
+ * a copy of this software and associated documentation files (the<br>
+ * "Software"), to deal in the Software without restriction, including<br>
+ * without limitation the rights to use, copy, modify, merge, publish,<br>
+ * distribute, sublicense, and/or sell copies of the Software, and to<br>
+ * permit persons to whom the Software is furnished to do so, subject to<br>
+ * the following conditions:<br>
+ *<br>
+ * 1. The above copyright notice and this permission notice shall be<br>
+ * included in all copies or substantial portions of the Software.<br>
+ *<br>
+ * 2. If the Software is incorporated into a build system that allows<br>
+ * selection among a list of target devices, then similar target<br>
+ * devices manufactured by PJRC.COM must be included in the list of<br>
+ * target devices and selectable in the same manner.<br>
+ *<br>
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,<br>
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND<br>
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS<br>
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN<br>
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN<br>
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>
+ * SOFTWARE.<br>
+ */<br>
+<br>
+#ifndef USBserial_h_<br>
+#define USBserial_h_<br>
+<br>
+#if defined(USB_SERIAL) || defined(USB_SERIAL_HID)<br>
+<br>
+#include &lt;inttypes.h&gt;<br>
+<br>
+#if F_CPU &gt;= 20000000<br>
+<br>
+// C language implementation<br>
+#ifdef __cplusplus<br>
+extern "C" {<br>
+#endif<br>
+int usb_serial_getchar(void);<br>
+int usb_serial_peekchar(void);<br>
+int usb_serial_available(void);<br>
+int usb_serial_read(void *buffer, uint32_t size);<br>
+void usb_serial_flush_input(void);<br>
+int usb_serial_putchar(uint8_t c);<br>
+int usb_serial_write(const void *buffer, uint32_t size);<br>
+void usb_serial_flush_output(void);<br>
+extern uint32_t usb_cdc_line_coding[2];<br>
+extern volatile uint8_t usb_cdc_line_rtsdtr;<br>
+extern volatile uint8_t usb_cdc_transmit_flush_timer;<br>
+extern volatile uint8_t usb_configuration;<br>
+#ifdef __cplusplus<br>
+}<br>
+#endif<br>
+<br>
+#define USB_SERIAL_DTR  0x01<br>
+#define USB_SERIAL_RTS  0x02<br>
+<br>
+// C++ interface<br>
+#ifdef __cplusplus<br>
+#include "Stream.h"<br>
+class usb_serial_class : public Stream<br>
+{<br>
+public:<br>
+        void begin(long) { /* TODO: call a function that tries to wait for enumeration */ };<br>
+        void end() { /* TODO: flush output and shut down USB port */ };<br>
+        virtual int available() { return usb_serial_available(); }<br>
+        virtual int read() { return usb_serial_getchar(); }<br>
+<b><i>		virtual int LINSTATUS(void)     { return usb_serial_getchar(); }//LIN_detected(); }</i></b><br>
+        virtual int peek() { return usb_serial_peekchar(); }<br>
+        virtual void flush() { usb_serial_flush_output(); }  // TODO: actually wait for data to leave USB...<br>
+        virtual size_t write(uint8_t c) { return usb_serial_putchar(c); }<br>
+        virtual size_t write(const uint8_t *buffer, size_t size) { return usb_serial_write(buffer, size); }<br>
+	size_t write(unsigned long n) { return write((uint8_t)n); }<br>
+	size_t write(long n) { return write((uint8_t)n); }<br>
+	size_t write(unsigned int n) { return write((uint8_t)n); }<br>
+	size_t write(int n) { return write((uint8_t)n); }<br>
+	using Print::write;<br>
+        void send_now(void) { usb_serial_flush_output(); }<br>
+        uint32_t baud(void) { return usb_cdc_line_coding[0]; }<br>
+        uint8_t stopbits(void) { uint8_t b = usb_cdc_line_coding[1]; if (!b) b = 1; return b; }<br>
+        uint8_t paritytype(void) { return usb_cdc_line_coding[1] &gt;&gt; 8; } // 0=none, 1=odd, 2=even<br>
+        uint8_t numbits(void) { return usb_cdc_line_coding[1] &gt;&gt; 16; }<br>
+        uint8_t dtr(void) { return (usb_cdc_line_rtsdtr &amp; USB_SERIAL_DTR) ? 1 : 0; }<br>
+        uint8_t rts(void) { return (usb_cdc_line_rtsdtr &amp; USB_SERIAL_RTS) ? 1 : 0; }<br>
+        operator bool() { return usb_configuration &amp;&amp; (usb_cdc_line_rtsdtr &amp; (USB_SERIAL_DTR | USB_SERIAL_RTS)); }<br>
+	size_t readBytes(char *buffer, size_t length) {<br>
+		size_t count=0;<br>
+		unsigned long startMillis = millis();<br>
+		do {<br>
+			count += usb_serial_read(buffer + count, length - count);<br>
+			if (count &gt;= length) return count;<br>
+		} while(millis() - startMillis &lt; _timeout);<br>
+		setReadError();<br>
+		return count;<br>
+	}<br>
+<br>
+};<br>
+extern usb_serial_class Serial;<br>
+#endif // __cplusplus<br>
+<br>
+<br>
+#else  // F_CPU &lt; 20 MHz<br>
+<br>
+// Allow Arduino programs using Serial to compile, but Serial will do nothing.<br>
+#ifdef __cplusplus<br>
+#include "Stream.h"<br>
+class usb_serial_class : public Stream<br>
+{<br>
+public:<br>
+        void begin(long) { };<br>
+        void end() { };<br>
+        virtual int available() { return 0; }<br>
+        virtual int read() { return -1; }<br>
+        virtual int peek() { return -1; }<br>
+        virtual void flush() { }<br>
+        virtual size_t write(uint8_t c) { return 1; }<br>
+        virtual size_t write(const uint8_t *buffer, size_t size) { return size; }<br>
+	size_t write(unsigned long n) { return 1; }<br>
+	size_t write(long n) { return 1; }<br>
+	size_t write(unsigned int n) { return 1; }<br>
+	size_t write(int n) { return 1; }<br>
+	using Print::write;<br>
+        void send_now(void) { }<br>
+        uint32_t baud(void) { return 0; }<br>
+        uint8_t stopbits(void) { return 1; }<br>
+        uint8_t paritytype(void) { return 0; }<br>
+        uint8_t numbits(void) { return 8; }<br>
+        uint8_t dtr(void) { return 1; }<br>
+        uint8_t rts(void) { return 1; }<br>
+        operator bool() { return true; }<br>
+};<br>
+<br>
+extern usb_serial_class Serial;<br>
+#endif // __cplusplus<br>
+<br>
+#endif // F_CPU<br>
+<br>
+#endif // USB_SERIAL || USB_SERIAL_HID<br>
+<br>
+#endif // USBserial_H
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_50188" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_50188" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=50188" rel="nofollow" title="Reply With Quote"><img id="quoteimg_50188" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_50444">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">07-04-2014,&nbsp;<span class="time">09:27 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post50444" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=50444&viewfull=1#post50444" class="postcounter">#5</a><a id="postcount50444" name="5"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen24">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/35300-Markus_L811" title="Markus_L811 is offline" id="yui-gen26"><strong>Markus_L811</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen25">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/35300-Markus_L811" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=35300&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=35300" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Markus_L811 is offline" border="0" title="Markus_L811 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Apr 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>72</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_50444">
+						<blockquote class="postcontent restore ">
+							Impressiv what you done so far, I'm not sure but I think the <!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				int frameerrordelay = ((breakfield + breakdelimiter) - uartlenght)*Tbit;
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote --> I added is not nessesary the Linbreak inside the T3 should repeat the right moment so it pass direct the time for the 0x55 sync-part. May Paul can help
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_50444" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_50444" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=50444" rel="nofollow" title="Reply With Quote"><img id="quoteimg_50444" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_53741">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">08-29-2014,&nbsp;<span class="time">10:38 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post53741" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=53741&viewfull=1#post53741" class="postcounter">#6</a><a id="postcount53741" name="6"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen27">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37493-Franky_74" title="Franky_74 is offline" id="yui-gen29"><strong>Franky_74</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen28">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37493-Franky_74" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=37493&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=37493" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Franky_74 is offline" border="0" title="Franky_74 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Jun 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>4</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_53741">
+						<blockquote class="postcontent restore ">
+							state documentation....<br>
+at the end all is working fine...<br>
+my code at this time is some quick and dirty adaptation of the openlog source to teensy.<br>
+<br>
+At this time i can log to an SD card:<br>
+LIN communication - (sniffer mode)<br>
+RS232 <br>
+<br>
+The Teensy serial1 is modified to recognise also Errors like FE.....<br>
+This is also how i implemented at the end as  Markus_L811 recommend....<br>
+Markus - you have done such a nice job ;-)<br>
+<br>
+Sometimes i will relese the clean code or if someone want the "dirt" adaptation - i can share it...<br>
+<br>
+Best regard,<br>
+Frank
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_53741" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_53741" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=53741" rel="nofollow" title="Reply With Quote"><img id="quoteimg_53741" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_53749">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">08-29-2014,&nbsp;<span class="time">01:02 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post53749" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?p=53749&viewfull=1#post53749" class="postcounter">#7</a><a id="postcount53749" name="7"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen30">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/35300-Markus_L811" title="Markus_L811 is offline" id="yui-gen32"><strong>Markus_L811</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen31">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/35300-Markus_L811" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?do=finduser&userid=35300&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?do=newpm&u=35300" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/user-offline.png" alt="Markus_L811 is offline" border="0" title="Markus_L811 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Apr 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>72</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+							
+						
+				<div class="content">
+					<div id="post_message_53749">
+						<blockquote class="postcontent restore ">
+							Thanks. Anytime again,<br>
+<br>
+I would love to see it even in the raw adoption.<br>
+<br>
+BR<br>
+<br>
+Markus
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_53749" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_53749" class="newreply" href="https://forum.pjrc.com/newreply.php?do=newreply&p=53749" rel="nofollow" title="Reply With Quote"><img id="quoteimg_53749" src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper -->
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		<!-- BEGIN TEMPLATE: forumjump -->
+<div class="clear"></div>
+<div class="navpopupmenu popupmenu nohovermenu" id="showthread_navpopup">
+	
+		<span class="shade">Quick Navigation</span>
+		<a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message" class="popupctrl" id="yui-gen34"><span class="ctrlcontainer">Technical Support &amp; Questions</span></a>
+		<a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus#top" class="textcontrol" onclick="document.location.hash=&#39;top&#39;;return false;">Top</a>
+	
+	<ul class="navpopupbody popupbody" id="yui-gen33">
+		
+		<li class="optionlabel">Site Areas</li>
+		<li><a href="https://forum.pjrc.com/usercp.php">Settings</a></li>
+		<li><a href="https://forum.pjrc.com/private.php">Private Messages</a></li>
+		<li><a href="https://forum.pjrc.com/subscription.php">Subscriptions</a></li>
+		<li><a href="https://forum.pjrc.com/online.php">Who's Online</a></li>
+		<li><a href="https://forum.pjrc.com/search.php">Search Forums</a></li>
+		<li><a href="https://forum.pjrc.com/forum.php">Forums Home</a></li>
+		
+			<li class="optionlabel">Forums</li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/1-Main-Category">Main Category</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/6-Announcements">Announcements</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/5-General-Discussion">General Discussion</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/2-Project-Guidance">Project Guidance</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/3-Technical-Support-amp-Questions">Technical Support &amp; Questions</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/4-Suggestions-amp-Bug-Reports">Suggestions &amp; Bug Reports</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+		
+	</ul>
+</div>
+<div class="clear"></div>
+<!-- END TEMPLATE: forumjump -->
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>«</strong>
+			<a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?goto=nextnewest" rel="nofollow">Next Thread</a>
+			<strong>»</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block">
+			<h4 class="collapse blockhead options_correct">
+				<a class="collapse" id="collapse_posting_rules" href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus#top"><img src="./LIN network - how do use LINbreak detect interrupt in receiving LIN Message._files/collapse_40b.png" alt=""></a>
+				Posting Permissions
+			</h4>
+			<div id="posting_rules" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				<!-- BEGIN TEMPLATE: forumrules -->
+
+<div id="forumrules" class="info_subblock">
+
+	<ul class="youcandoblock">
+		<li>You <strong>may not</strong> post new threads</li>
+		<li>You <strong>may not</strong> post replies</li>
+		<li>You <strong>may not</strong> post attachments</li>
+		<li>You <strong>may not</strong> edit your posts</li>
+		<li>&nbsp;</li>
+	</ul>
+	<div class="bbcodeblock">
+		<ul>
+			<li><a href="https://forum.pjrc.com/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?do=bbcode#videocode" target="_blank">[VIDEO]</a> code is <strong>On</strong></li>
+			<li>HTML code is <strong>Off</strong></li>
+		</ul>
+	</div>
+	<p class="rules_link"><a href="https://forum.pjrc.com/misc.php?do=showrules" target="_blank">Forum Rules</a></p>
+
+</div>
+
+<!-- END TEMPLATE: forumrules -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<!-- BEGIN TEMPLATE: footer -->
+
+<div style="clear: left">
+  <!-- BEGIN TEMPLATE: ad_footer_start -->
+
+<!-- END TEMPLATE: ad_footer_start -->
+  <!-- BEGIN TEMPLATE: ad_global_above_footer -->
+
+<!-- END TEMPLATE: ad_global_above_footer -->
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="https://forum.pjrc.com/forum.php" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, &#39;style&#39;)">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label=" Standard Styles">
+									
+					<!-- BEGIN TEMPLATE: option -->
+
+	<option value="1" class="" selected="selected">-- Default Style</option>
+
+<!-- END TEMPLATE: option -->
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label=" Mobile Styles">
+					
+					<!-- BEGIN TEMPLATE: option -->
+
+	<option value="2" class="">-- Default Mobile Style</option>
+
+<!-- END TEMPLATE: option -->
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		
+		<li><a href="http://www.pjrc.com/">PJRC Electronic Projects</a></li>
+		
+		
+		<li><a href="https://forum.pjrc.com/archive/index.php">Archive</a></li>
+		
+		
+		
+		<li><a href="https://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus#top" onclick="document.location.hash=&#39;top&#39;; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT. The time now is <span class="time">10:04 PM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	Powered by <a href="https://www.vbulletin.com/" id="vbulletinlink">vBulletin®</a> Version 4.2.2 <br>Copyright © 2015 vBulletin Solutions, Inc. All rights reserved. 
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	
+</div>
+<!-- BEGIN TEMPLATE: ad_footer_end -->
+
+<!-- END TEMPLATE: ad_footer_end --> 
+
+</div>
+<!-- END TEMPLATE: footer -->
+
+
+<!-- END TEMPLATE: SHOWTHREAD --></body></html>

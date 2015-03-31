@@ -1,0 +1,743 @@
+/* Normal, standard links. */
+a:link
+{
+	color:#cc8700;
+	text-decoration: none;
+}
+a:visited
+{
+	color:#cc8700;
+	text-decoration: none;
+}
+a:hover
+{
+	color:#dba02d;
+	text-decoration: none;
+}
+
+span.navlink
+{
+	background-image:url(images/block_half_red.png);
+	font-size:11px;
+	font-weight:bold;
+	padding:5px 10px;
+}
+
+/* Navigation links - for the link tree. */
+.nav, .nav:link, .nav:visited
+{
+	text-decoration: none;
+	color: #555;
+	font-style:italic;
+	font-size:11px;
+}
+
+/* Tables should show empty cells. */
+table
+{
+	empty-cells: show;
+}
+
+/* By default (td, body..) use verdana in black. */
+body, td, th , tr
+{
+	color: #ddd;
+	font-size: 13px;
+	font-family: verdana, sans-serif;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* The main body of the entire forum. */
+body
+{
+	background:#000;
+	margin: 0px;
+	padding: 0px;
+}
+
+body.main
+{
+	background:#000 url("images/bkg.jpg") no-repeat left top;
+}
+
+/* Input boxes - just a bit smaller than normal so they align well. */
+input, textarea, button
+{
+	font-family: verdana, sans-serif;
+}
+input, button
+{
+}
+
+textarea
+{
+	font-size: 100%;
+	font-family: verdana, sans-serif;
+}
+
+/* All input elements that are checkboxes or radio buttons. */
+input.check
+{
+}
+
+/* Selects are a bit smaller, because it makes them look even better 8). */
+select
+{
+	font-weight: normal;
+	font-family: verdana, sans-serif;
+}
+
+/* Standard horizontal rule.. ([hr], etc.) */
+hr, .hrcolor
+{
+	height: 0px;
+	border: 0;
+	color: #666666;
+	background-color: #666666;
+}
+
+/* No image should have a border when linked */
+a img
+{
+	border: 0;
+}
+/* A quote, perhaps from another post. */
+.quote
+{
+	color:#888888;
+	font-size:11px;
+	line-height:1.4em;
+	margin:10px 1px 10px 20px;
+	padding:5px 5px 5px 10px;
+	background-color:#222;
+	border:1px dotted;
+}
+
+/* A code block - maybe even PHP ;). */
+.code
+{
+	background-color: #dddddd;
+	font-family: 'Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+	font-size: x-small;
+	line-height: 1.3em;
+	/* Put a nice border around it. */
+	margin: 1px auto 1px auto;
+	padding: 1px;
+	width: 99%;
+	/* Don't wrap its contents, and show scrollbars. */
+	white-space: nowrap;
+	overflow: auto;
+	/* Stop after about 24 lines, and just show a scrollbar. */
+	max-height: 24em;
+  color: #444;
+}
+
+/* The "Quote:" and "Code:" header parts... */
+.quoteheader, .codeheader
+{
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 1.2em;
+}
+
+/* Generally, those [?] icons.  This makes your cursor a help icon. */
+.help
+{
+	cursor: help;
+}
+
+/* /me uses this a lot. (emote, try typing /me in a post.) */
+.meaction
+{
+	color: red;
+}
+
+/* The main post box - this makes it as wide as possible. */
+.editor
+{
+	width: 96%;
+}
+
+/* Highlighted text - such as search results. */
+.highlight
+{
+	background-color: yellow;
+	font-weight: bold;
+}
+
+/* Alternating backgrounds for posts, and several other sections of the forum. */
+.windowbg, #preview_body
+{
+	vertical-align:top;
+	color: #777;
+}
+
+.windowbgprofile, #preview_body
+{
+	vertical-align:top;
+	padding-left:20px;
+}
+
+.windowbg2
+{
+	vertical-align:top;
+}
+
+.windowbg3
+{
+	vertical-align:top;
+}
+
+.windowbgpost, #preview_body
+{
+	vertical-align:top;
+	padding:10px;
+}
+.windowbg2post
+{
+	vertical-align:top;
+	background:#101010;
+	padding:10px;
+}
+
+.windowbgic, #preview_body
+{
+	vertical-align:top;
+}
+.windowbg2ic
+{
+	vertical-align:top;
+	padding-left:10px;
+	padding-bottom:10px;
+}
+
+
+/* the today container in calendar */
+.calendar_today
+{
+	background-color: #FFFFFF;
+}
+
+/* These are used primarily for titles, but also for headers (the row that says what everything in the table is.) */
+.titlebg, tr.titlebg th, tr.titlebg td, .titlebg2, tr.titlebg2 th, tr.titlebg2 td
+{
+	font-style: normal;
+	color:#777;
+}
+.titlebg, .titlebg a:link, .titlebg a:visited
+{
+	font-weight: normal;
+	font-style: normal;
+}
+
+.titlebg a:hover
+{
+	color: #dba02d;
+}
+/* same as titlebg, but used where bold text is not needed */
+.titlebg2 a:link, .titlebg2 a:visited
+{
+	font-style: normal;
+	text-decoration: underline;
+}
+
+.titlebg2 a:hover
+{
+	text-decoration: underline;
+}
+
+/* This is used for categories, page indexes, and several other areas in the forum.
+.catbg and .catbg2 is for boardindex, while .catbg3 is for messageindex and display headers*/
+.catbg , tr.catbg td , .catbg3 , tr.catbg3 td
+{
+	color: #ffffff;
+	padding-left: 0px;
+	padding-right: 10px;
+}
+.catbg2 , tr.catbg2 td
+{
+	color: #ffffff;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.catbg, .catbg2, .catbg3
+{
+	background-image:url(images/block_half_red.png);
+	padding:5px;
+	text-align:center;
+}
+
+.catbgheader
+{
+	color:#555555;
+	font-size:11px;
+	font-style:italic;
+}
+
+.catbgheader2
+{
+	color:#555555;
+	font-size:11px;
+	font-style:italic;
+}
+
+.catbgheader3
+{
+	color:#555555;
+	font-size:11px;
+	font-style:italic;
+padding-bottom:5px;
+padding-top:15px;
+}
+
+.catbg, .catbg2
+{
+	font-weight: bold;
+}
+.catbg3, tr.catbg3 td, .catbg3 a:link, .catbg3 a:visited
+{
+	color:#777777;
+	font-size:11px;
+	padding:2px 5px;
+	text-decoration:none;
+}
+.catbg a:link, .catbg a:visited , .catbg2 a:link, .catbg2 a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+.catbg a:hover, .catbg2 a:hover, .catbg3 a:hover
+{
+	color: #e0e0ff;
+}
+/* This is used for tables that have a grid/border background color (such as the topic listing.) */
+.bordercolor
+{
+	padding: 0px;
+}
+
+.bordercoloric
+{
+	padding: 10px;
+}
+
+/* This is used on tables that should just have a border around them. */
+.tborder
+{
+	clear:both;
+}
+
+.tborderinfocenter
+{
+	clear:both;
+	background:transparent url(images/block_half_red.png) no-repeat scroll 0 0;
+	padding:10px;
+	margin-bottom:20px;
+}
+
+/* Default font sizes: small (8pt), normal (10pt), and large (14pt). */
+.smalltext
+{
+	font-size: 11px;
+	font-family: verdana, sans-serif;
+	color:#777;
+}
+
+.smalltextprofile
+{
+	font-size: 11px;
+	font-family: verdana, sans-serif;
+	color:#777;
+	padding-left:10px;
+}
+
+.middletext
+{
+	color:#AAAAAA;
+	font-size:11px;
+}
+.middletextbs
+{
+	color:#AAAAAA;
+	font-size:11px;
+}
+.normaltext
+{
+	font-size: small;
+}
+.largetext
+{
+	font-size: large;
+}
+
+
+/* Posts and personal messages displayed throughout the forum. */
+.post, .personalmessage
+{
+	width: 100%;
+	overflow: auto;
+	line-height: 1.3em;
+}
+
+/* All the signatures used in the forum.  If your forum users use Mozilla, Opera, or Safari, you might add max-height here ;). */
+.signature
+{
+	width: 100%;
+	overflow: auto;
+	padding-bottom: 3px;
+	line-height: 1.3em;
+}
+
+/* Sometimes there will be an error when you post */
+.error
+{
+	color: red;
+}
+
+
+/* definitions for the main tab, active means the tab reflects which page is displayed */
+.maintab_first, .maintab_back, .maintab_last, .maintab_active_first, .maintab_active_back, .maintab_active_last
+{
+	vertical-align: top;
+}
+.maintab_back, .maintab_active_back
+{
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: top;
+	font-family: 'Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+}
+
+.maintab_first
+{
+	height: 0px;
+}
+.maintab_back
+{
+}
+.maintab_last
+{
+	height: 0px;
+}
+.maintab_active_first
+{
+
+	width: 6px;
+}
+.maintab_active_back
+{
+
+}
+.maintab_active_last
+{
+
+	width: 8px;
+}
+
+/* how links behave in main tab. */
+.maintab_back a:link , .maintab_back a:visited, .maintab_active_back a:link , .maintab_active_back a:visited
+{
+	color: #aaa;
+	text-decoration: none;
+}
+
+.maintab_back a:hover, .maintab_active_back a:hover
+{
+	color: #fff;
+	text-decoration: none;
+}
+/* definitions for the mirror tab */
+.mirrortab_first, .mirrortab_back, .mirrortab_last, .mirrortab_active_first, .mirrortab_active_back, .mirrortab_active_last
+{
+	vertical-align: top;
+}
+.mirrortab_back, .mirrortab_active_back
+{
+	text-decoration: none;
+	font-size:11px;
+	vertical-align: bottom;
+	font-family: 'Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+}
+
+.mirrortab_first
+{
+	
+	width: 10px;
+}
+.mirrortab_back
+{
+	
+}
+.mirrortab_last
+{
+	
+	width: 6px;
+}
+.mirrortab_active_first
+{
+	
+	width: 6px;
+}
+.mirrortab_active_back
+{
+	
+}
+.mirrortab_active_last
+{
+	
+	width: 8px;
+}
+
+/* how links behave in mirror tab. */
+.mirrortab_back a:link , .mirrortab_back a:visited, .mirrortab_active_back a:link , .mirrortab_active_back a:visited
+{
+	text-decoration: none;
+}
+
+.mirrortab_back a:hover, .mirrortab_active_back a:hover
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+/* The AJAX notifier */
+#ajax_in_progress
+{
+	background: #32CD32;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18pt;
+	padding: 3px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+
+/* nefmoto specific */
+
+div.wrapper {
+  height: 100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: left;
+}
+
+#global-nav-wrapper {
+	float:right;
+	margin-top:150px;
+	margin-bottom:20px;
+}
+
+a.global-nav {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	font-size:16pt;
+	text-decoration:none;
+	line-height:38px;
+	display:block;
+	float:left;
+	padding-right:6px;
+	color:#aaa;
+}
+
+a.global-nav span {
+	display:block;
+	text-align:center;
+	padding-left:15px;
+	padding-right:9px;
+}
+
+a.global-nav:hover {
+	background: transparent url('images/nav-right.png') no-repeat top right;
+	color:#fff;
+}
+
+a.global-nav:hover span {
+  background: transparent url('images/nav-left.png') no-repeat;
+}
+
+div.global-nav {
+  float:left;
+	padding-left:5px;
+}
+
+a.global-nav-selected {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	font-size:16pt;
+	text-decoration:none;
+	background: transparent url('images/nav-right-selected.png') no-repeat top right;
+	line-height:38px;
+	display:block;
+	float:left;
+	padding-right:6px;
+	color:#aaa;
+}
+
+a.global-nav-selected span {
+	display:block;
+	text-align:center;
+	background: transparent url('images/nav-left-selected.png') no-repeat;
+	padding-left:15px;
+	padding-right:9px;
+}
+
+a.global-nav-selected:hover {
+	background: transparent url('images/nav-right.png') no-repeat top right;
+	color:#fff;
+}
+
+a.global-nav-selected:hover span {
+  background: transparent url('images/nav-left.png') no-repeat;
+}
+
+div.global-nav-selected {
+  float:left;
+	padding-left:5px;
+}
+
+#bodyarea {
+margin-left:180px;
+padding:14px 0 0;
+}
+
+div.menu {
+position:absolute;
+top:207px;
+left: 7px;
+}
+
+#footerarea {
+clear:both;
+margin-top:10px;
+color:#555;
+}
+
+.portlet {
+    border: none;
+    float: none;
+    margin-top: 10px;
+    width: 165px;
+    overflow: hidden;
+    background-image:url("images/block_half_red.png");
+	padding-left:5px;
+	padding-top:10px;
+}
+
+ul {
+	padding:0 0 0 12px;
+	margin:0 12px 8px 0;
+}
+
+li {
+	line-height:16px;
+	list-style-type:none;
+}
+
+input.text {
+	background:#EEEEEE none repeat scroll 0 0;
+	border:1px solid #999999;
+	color:#000000;
+	width:140px;
+	margin-bottom:2px;
+}
+
+input.button {
+	margin-top:5px;
+}
+
+form.inner-portlet {
+	font-size:11px;
+	margin-bottom:10px;
+	margin-left:12px;
+	margin-top:6px;
+}
+
+div.footer {
+	border-top:1px solid #555555;
+	clear:both;
+	margin-top:40px;
+	padding-top:5px;
+	text-align:center;
+	color:#555555;
+	font-size:12px;
+}
+
+a.footer {
+	font-size:14px;
+	margin:5px;
+	text-decoration:none;
+	color:#aaa;
+}
+
+a.footer:hover {
+	color:#fff;
+}
+
+a.logohotspot {
+	height:150px;
+	width:400px;
+	float:left;
+}
+
+h5 {
+	font-family:'Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+	font-style:italic;
+	color:#555555;
+	font-size:11px;
+	font-weight:normal;
+	padding:0 1em 0 0.5em;
+	margin-bottom:5px;
+	margin-top:0;
+}
+
+a.boardheader {
+	color:#aaa;
+}
+
+a.boardheader:visited {
+	color:#aaa;
+}
+
+a.boardheader:hover {
+	color:#fff;}
+
+a.messagelink {
+	color:#aaa;
+}
+
+a.messagelink:visited {
+	color:#aaa;
+}
+
+a.messagelink:hover {
+	color:#fff;
+}
+
+a.nav {
+	color:#777;
+	font-style:italic;
+	font-weight:bold;
+}
+
+a.nav:visited {
+	color:#777;
+}
+
+a.nav:hover {
+	color:#fff;
+}
+
+.boarddesc {
+	color:#777777;
+	font-size:11px;
+}
+
+.postcontainer {
+}
+

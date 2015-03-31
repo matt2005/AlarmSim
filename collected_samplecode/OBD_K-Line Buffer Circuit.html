@@ -1,0 +1,4402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0062)https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" id="vbulletin_html"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<!-- BEGIN TEMPLATE: headinclude -->
+
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="https://forum.pjrc.com">
+<!--<base href="https://forum.pjrc.com/">--><base href="."><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<link rel="Shortcut Icon" href="https://forum.pjrc.com/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "s=0ac12cd53078651cc5cc4dd988dbcaeb&";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "https://forum.pjrc.com";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "threads/24549-OBD-K-Line-Buffer-Circuit";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "https://forum.pjrc.com/";
+// -->
+</script><script type="text/javascript" src="./OBD_K-Line Buffer Circuit_files/yuiloader-dom-event.js"></script><script type="text/javascript" src="./OBD_K-Line Buffer Circuit_files/connection-min.js"></script>
+<script type="text/javascript" src="./OBD_K-Line Buffer Circuit_files/vbulletin-core.js"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="PJRC (Teensy) Forum RSS Feed" href="https://forum.pjrc.com/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="PJRC (Teensy) Forum - Project Guidance - RSS Feed" href="https://forum.pjrc.com/external.php?type=RSS2&forumids=2">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="./OBD_K-Line Buffer Circuit_files/css.php">
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;langid=1&amp;d=1410308075&amp;td=ltr&amp;sheet=popupmenu-ie.css,vbulletin-ie.css,vbulletin-chrome-ie.css,vbulletin-formcontrols-ie.css,editor-ie.css" />
+	<![endif]-->
+
+
+<!-- END TEMPLATE: headinclude -->
+	<meta name="keywords" content="pull-up, bat85, resistor, circuit, series, 3,3v, master, pull, tested, uart, teensy, bytessync, looses, 1,2r, circuits, 1,2k, properly, 2.0++, monitor, oscilloscope, requires, chip, additional, solution, good, worked, troubleshooting, mcp201, t2.0++, zener, don,t, tduino, receive, ohms, diode, data, ground, bytes, initial, level, 1,2kohms, 0,7v, buffer, allowing, pulling, current, summary, modifications, 1.05, arduino">
+	<meta name="description" content="Hi guys, 
+ 
+I&#39;m currently using the microcontroller buffer/interface circuit off this site with a 5V arduino: 
+ 
+http://blog.perquin.com/blog/category/odbii/ 
+ 
+I&#39;m wondering what I would need to change (if anything) to interface the RX line with the 3.3V Teensy 3.0 ?  
+ 
+Any ideas/suggestions welcome.">
+
+	<title> OBD/K-Line Buffer Circuit</title>
+	<link rel="canonical" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<script type="text/javascript" src="./OBD_K-Line Buffer Circuit_files/vbulletin_lightbox.js"></script>
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="./OBD_K-Line Buffer Circuit_files/css(1).php">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;langid=1&amp;d=1410308075&amp;td=ltr&amp;sheet=toolsmenu-ie.css,postlist-ie.css,showthread-ie.css,postbit-ie.css,poll-ie.css" /><![endif]-->
+<!-- BEGIN TEMPLATE: headinclude_bottom -->
+<link rel="stylesheet" type="text/css" href="./OBD_K-Line Buffer Circuit_files/css(2).php">
+
+<!-- END TEMPLATE: headinclude_bottom -->
+</head>
+
+<body>
+
+<!-- BEGIN TEMPLATE: header -->
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	<div><a name="top" href="https://forum.pjrc.com/forum.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="logo-image"><img src="./OBD_K-Line Buffer Circuit_files/vbulletin4_logo.png" alt="PJRC (Teensy) Forum - Powered by vBulletin" title="PJRC (Teensy) Forum - Powered by vBulletin"></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="https://forum.pjrc.com/register.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" rel="nofollow">Register</a></li>
+			
+				<li><a rel="help" href="https://forum.pjrc.com/faq.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Help</a></li>
+				<li>
+			<script type="text/javascript" src="./OBD_K-Line Buffer Circuit_files/vbulletin_md5.js"></script>
+			<form id="navbar_loginform" action="https://forum.pjrc.com/login.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input type="text" class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name">
+					<input type="password" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" style="display: none;">
+					<input type="text" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Password" style="display: inline;">
+					<input type="submit" class="loginbutton" tabindex="104" value="Log in" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s">
+						</div>
+					</div>
+				</fieldset>
+				<div id="remember" class="remember">
+					<label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser_navbar" class="cb_cookieuser_navbar" accesskey="c" tabindex="103"> Remember Me?</label>
+				</div>
+
+				<input type="hidden" name="s" value="0ac12cd53078651cc5cc4dd988dbcaeb">
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="login">
+				<input type="hidden" name="vb_login_md5password">
+				<input type="hidden" name="vb_login_md5password_utf">
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'User Name')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='#000000';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='User Name';
+					textbox.style.color='#777777';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		<!-- BEGIN TEMPLATE: ad_global_header1 -->
+
+<!-- END TEMPLATE: ad_global_header1 -->
+		<!-- BEGIN TEMPLATE: ad_global_header2 -->
+
+<!-- END TEMPLATE: ad_global_header2 -->
+	</div>
+	<hr>
+</div>
+<!-- END TEMPLATE: header -->
+<!-- BEGIN TEMPLATE: navbar -->
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		<!-- BEGIN TEMPLATE: navbar_tabs -->
+
+	
+		<li id="vbtab_whatsnew">
+			<a class="navtab" href="https://forum.pjrc.com/activity.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">What's New?</a>
+		</li>
+		
+		
+
+	
+		<li class="selected" id="vbtab_forum">
+			<a class="navtab" href="https://forum.pjrc.com/forum.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Forum</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						
+							<li id="vbflink_newposts"><a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=getnew&contenttype=vBForum_Post">New Posts</a></li>
+						
+					
+				
+					
+						
+							<li id="vbflink_faq"><a href="https://forum.pjrc.com/faq.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">FAQ</a></li>
+						
+					
+				
+					
+						
+							<li id="vbflink_calendar"><a href="https://forum.pjrc.com/calendar.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Calendar</a></li>
+						
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_community">
+							<a href="javascript://" class="popupctrl" id="yui-gen1">Community</a>
+							<ul class="popupbody" id="yui-gen0">
+								
+									<li id="vbclink_members"><a href="https://forum.pjrc.com/memberlist.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Member List</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_actions">
+							<a href="javascript://" class="popupctrl" id="yui-gen3">Forum Actions</a>
+							<ul class="popupbody" id="yui-gen2">
+								
+									<li id="vbalink_mfr"><a href="https://forum.pjrc.com/forumdisplay.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=markread&markreadhash=guest">Mark Forums Read</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_qlinks">
+							<a href="javascript://" class="popupctrl" id="yui-gen5">Quick Links</a>
+							<ul class="popupbody" id="yui-gen4">
+								
+									<li id="vbqlink_posts"><a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=getdaily&contenttype=vBForum_Post">Today's Posts</a></li>
+								
+									<li id="vbqlink_leaders"><a href="https://forum.pjrc.com/showgroups.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">View Site Leaders</a></li>
+								
+							</ul>
+						</li>
+					
+				
+			</ul>
+		
+
+<!-- END TEMPLATE: navbar_tabs -->
+		
+	</ul>
+	
+		<div id="globalsearch" class="globalsearch">
+			<form action="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=process" method="post" id="navbar_search" class="navbar_search">
+				
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="process">
+				<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"></span></span>
+				<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="./OBD_K-Line Buffer Circuit_files/search.png" name="submit" onclick="document.getElementById(&#39;navbar_search&#39;).submit;" tabindex="100"></span></span>
+			</form>
+			<ul class="navbar_advanced_search">
+				<li><a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" accesskey="4">Advanced Search</a></li>
+				
+			</ul>
+		</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="https://forum.pjrc.com/index.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" accesskey="1"><img src="./OBD_K-Line Buffer Circuit_files/navbit-home.png" alt="Home" title="Home"></a></li>
+		<!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forum.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Forum</a></li>
+
+<!-- END TEMPLATE: navbar_link --><!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forums/1-Main-Category?s=0ac12cd53078651cc5cc4dd988dbcaeb">Main Category</a></li>
+
+<!-- END TEMPLATE: navbar_link --><!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit"><a href="https://forum.pjrc.com/forums/2-Project-Guidance?s=0ac12cd53078651cc5cc4dd988dbcaeb">Project Guidance</a></li>
+
+<!-- END TEMPLATE: navbar_link -->
+		<!-- BEGIN TEMPLATE: navbar_link -->
+
+	<li class="navbit lastnavbit"><span> OBD/K-Line Buffer Circuit</span></li>
+
+<!-- END TEMPLATE: navbar_link -->
+	</ul>
+	<hr>
+</div>
+
+<!-- BEGIN TEMPLATE: ad_navbar_below -->
+
+<!-- END TEMPLATE: ad_navbar_below -->
+<!-- BEGIN TEMPLATE: ad_global_below_navbar -->
+<div style="padding-top:15px; padding-bottom:15px; padding-left:30px; font-size: 1.25em">
+<b>Forum Rule</b>: Always post <span style="color:#C00000">complete source code</span> &amp; details to reproduce any issue!
+</div>
+<!-- END TEMPLATE: ad_global_below_navbar -->
+
+
+	<form action="https://forum.pjrc.com/profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice">
+		<input type="hidden" name="s" value="s=0ac12cd53078651cc5cc4dd988dbcaeb&amp;">
+		<input type="hidden" name="securitytoken" value="guest">
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="">
+		<input type="hidden" name="url" value="">
+		<ol>
+			<!-- BEGIN TEMPLATE: navbar_noticebit -->
+<li class="restore" id="navbar_notice_1">
+	
+	If this is your first visit, be sure to
+		check out the <a href="https://forum.pjrc.com/faq.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" target="_blank"><b>FAQ</b></a> by clicking the
+		link above. You may have to <a href="https://forum.pjrc.com/register.php?s=0ac12cd53078651cc5cc4dd988dbcaeb" target="_blank"><b>register</b></a>
+		before you can post: click the register link above to proceed. To start viewing messages,
+		select the forum that you want to visit from the selection below.
+</li>
+<!-- END TEMPLATE: navbar_noticebit -->
+		</ol>
+	</form>
+
+
+<!-- END TEMPLATE: navbar -->
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				Results 1 to 22 of 22
+			</div>
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle">
+		<h1>
+			Thread: <span class="threadtitle"><a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Reload this Page">OBD/K-Line Buffer Circuit</a></span>
+		</h1>
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen7">Thread Tools</a></h6>
+				<ul class="popupbody" id="yui-gen6">
+					<li><a href="https://forum.pjrc.com/printthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&t=24549&pp=25&page=1" accesskey="3" rel="nofollow">Show Printable Version</a></li>
+					
+						<li><a href="https://forum.pjrc.com/sendmessage.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=sendtofriend&t=24549" rel="nofollow">Email this Page…</a></li>
+					
+					<li>
+						
+							<a href="https://forum.pjrc.com/subscription.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=addsubscription&t=24549" rel="nofollow">Subscribe to this Thread…</a>
+						
+					</li>
+					
+				</ul>
+			</li>
+
+			
+
+			
+				<li class="popupmenu searchthread menusearch" id="searchthread">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen9">Search Thread</a></h6>
+					<form action="https://forum.pjrc.com/search.php" method="post">
+						<ul class="popupbody" id="yui-gen8">
+							<li>
+								<input type="text" name="query" class="searchbox" value="Search..." tabindex="13">
+								<input type="submit" class="button" value="Search" tabindex="14">
+							</li>
+							<li class="formsubmit" id="popupsearch">
+								<div class="submitoptions">&nbsp;</div>
+								<div class="advancedsearchlink"><a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&search_type=1&searchthreadid=24549&contenttype=vBForum_Post">Advanced Search</a></div>
+							</li>
+						</ul>
+						<input type="hidden" name="s" value="0ac12cd53078651cc5cc4dd988dbcaeb">
+						<input type="hidden" name="securitytoken" value="guest">
+						<input type="hidden" name="do" value="process">
+						<input type="hidden" name="searchthreadid" value="24549">
+						<input type="hidden" name="search_type" value="1">
+						<input type="hidden" name="contenttype" value="vBForum_Post">
+					</form>
+				</li>
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen11">Display</a></h6>
+					<ul class="popupbody" id="yui-gen10">
+						<li><label>Linear Mode</label></li>
+						<li><a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&mode=hybrid"> Switch to Hybrid Mode</a></li>
+						<li><a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37703&mode=threaded#post37703"> Switch to Threaded Mode</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			<!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37703">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-21-2013,&nbsp;<span class="time">09:14 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37703" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37703&viewfull=1#post37703" class="postcounter">#1</a><a id="postcount37703" name="1"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen12">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="aijii is offline" id="yui-gen14"><strong>aijii</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen13">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=36233&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=36233" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="aijii is offline" border="0" title="aijii is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					OBD/K-Line Buffer Circuit
+				</h2>
+				
+
+
+						
+							
+							
+						
+						
+				<div class="content">
+					<div id="post_message_37703">
+						<blockquote class="postcontent restore ">
+							Hi guys,<br>
+<br>
+I'm currently using the microcontroller buffer/interface circuit off this site with a 5V arduino:<br>
+<br>
+<a href="http://blog.perquin.com/blog/category/odbii/" target="_blank">http://blog.perquin.com/blog/category/odbii/</a><br>
+<br>
+I'm wondering what I would need to change (if anything) to interface the RX line with the 3.3V Teensy 3.0 ? <br>
+<br>
+Any ideas/suggestions welcome.<br>
+<br>
+Cheers,<br>
+<br>
+Adrian
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37703" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37703" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37703" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37703" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37705">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-21-2013,&nbsp;<span class="time">09:19 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37705" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37705&viewfull=1#post37705" class="postcounter">#2</a><a id="postcount37705" name="2"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen15">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="aijii is offline" id="yui-gen17"><strong>aijii</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen16">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=36233&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=36233" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="aijii is offline" border="0" title="aijii is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37705">
+						<blockquote class="postcontent restore ">
+							I'm also wondering if i need to change the resistor values used in the TX portion of the circuit...
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37705" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37705" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37705" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37705" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37707">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-21-2013,&nbsp;<span class="time">09:25 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37707" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37707&viewfull=1#post37707" class="postcounter">#3</a><a id="postcount37707" name="3"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen18">
+	<a class="username online popupctrl" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now" id="yui-gen20"><strong>PaulStoffregen</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen19">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=632&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-online.png" alt="PaulStoffregen is online now" border="0" title="PaulStoffregen is online now">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now">
+				<img src="./OBD_K-Line Buffer Circuit_files/image.php" alt="PaulStoffregen&#39;s Avatar" title="PaulStoffregen&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>6,841</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37707">
+						<blockquote class="postcontent restore ">
+							I believe that circuit will work.  When the line is high (at 12V), the 10K resistor will pull the Teensy3 pin to approx 3.9 volts, and inject about 0.81 mA.  The Teensy 3.0 pins can handle up to 10 mA of injected current, so 0.81 mA should be fine.<br>
+<br>
+If you're feeling really cautious, you could increase R2 to 47K and probably still receive the data.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37707" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37707" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37707" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37707" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37708">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-21-2013,&nbsp;<span class="time">09:27 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37708" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37708&viewfull=1#post37708" class="postcounter">#4</a><a id="postcount37708" name="4"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen21">
+	<a class="username online popupctrl" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now" id="yui-gen23"><strong>PaulStoffregen</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen22">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=632&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-online.png" alt="PaulStoffregen is online now" border="0" title="PaulStoffregen is online now">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now">
+				<img src="./OBD_K-Line Buffer Circuit_files/image.php" alt="PaulStoffregen&#39;s Avatar" title="PaulStoffregen&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>6,841</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37708">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>aijii</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37705#post37705" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">I'm also wondering if i need to change the resistor values used in the TX portion of the circuit...</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->We're talking about this circuit, right?<br>
+<br>
+<a href="https://forum.pjrc.com/attachment.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&attachmentid=1126&d=1385029604" id="attachment1126" rel="Lightbox_37708"><img src="./OBD_K-Line Buffer Circuit_files/attachment.php" border="0" alt="Click image for larger version. 
+
+Name:	obdii_avr.gif 
+Views:	721 
+Size:	9.1 KB 
+ID:	1126" class="thumbnail" style="float:CONFIG" title="Click image for larger version. 
+
+Name:	obdii_avr.gif 
+Views:	721 
+Size:	9.1 KB 
+ID:	1126"></a><br>
+<br>
+The TX part looks fine.  The 3.3V output from Teensy 3.0 will result in less current through R1 and Q1's base, but it should still be plenty.  If you're really concerned, you could lower R1 to 4.7K.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37708" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37708" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37708" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37708" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37722">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-21-2013,&nbsp;<span class="time">06:12 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37722" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37722&viewfull=1#post37722" class="postcounter">#5</a><a id="postcount37722" name="5"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen24">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="aijii is offline" id="yui-gen26"><strong>aijii</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen25">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/36233-aijii?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=36233&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=36233" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="aijii is offline" border="0" title="aijii is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37722">
+						<blockquote class="postcontent restore ">
+							yep thats the one.<br>
+<br>
+Okay cool, thanks for the guidance!<br>
+<br>
+And thanks for putting together such an awesome little dev board!
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37722" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37722" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37722" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37722" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37739">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-22-2013,&nbsp;<span class="time">04:46 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37739" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37739&viewfull=1#post37739" class="postcounter">#6</a><a id="postcount37739" name="6"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen27">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen29"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen28">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37739">
+						<blockquote class="postcontent restore ">
+							The transistors are not critical -- if you are in the US, 2N2222's from Radio Shack will work -- nearly any NPN will do, but consider one with BVCEO (breakdown votlage) above 40 V (you get nasty spikes in a car). For more robustness, break the 10k R2 into two 4.7k's and connect a 4.7 V zener between the junction and GND.<br>
+<br>
+If you want the most robust implementation, this does work well: <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=MC33662" target="_blank">http://www.freescale.com/webapp/sps/...p?code=MC33662</a> -- you can interface directly from the Teensy's 3.3 V inputs and ouptuts by driving its EN pin also from a T3 output !
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				<!-- edit note -->
+				<blockquote class="postcontent lastedited">
+					
+						Last edited by Jp3141; 11-22-2013 at <span class="time">06:56 PM</span>.
+					
+					
+						<span class="reason">Reason:</span> refer to MC33662 instead of MC33660
+					
+				</blockquote>
+				<!-- / edit note -->
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37739" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37739" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37739" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37739" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37772">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-23-2013,&nbsp;<span class="time">01:21 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37772" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37772&viewfull=1#post37772" class="postcounter">#7</a><a id="postcount37772" name="7"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen30">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="jakim is offline" id="yui-gen32"><strong>jakim</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen31">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=19318&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=19318" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="jakim is offline" border="0" title="jakim is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Dec 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37772">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>PaulStoffregen</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37707#post37707" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">I believe that circuit will work.  When the line is high (at 12V), the 10K resistor will pull the Teensy3 pin to approx 3.9 volts, and inject about 0.81 mA.  The Teensy 3.0 pins can handle up to 10 mA of injected current, so 0.81 mA should be fine.<br>
+<br>
+If you're feeling really cautious, you could increase R2 to 47K and probably still receive the data.</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->Hey  Paul,<br>
+<br>
+ I have very similar problem to solve:<br>
+<br>
+Currently on teensy 2.0++ I have the Lin bus connected to Teensy Uart RX via diode and with 10k pull up resistor from Teensy 5v pin. The Uart is used for receiving only and the diode is connected so that it pulls down the UART so no 12v positive will be injected. It works very well on Teensy 2.0. Now when I use the same circuit on teensy 3.0 and the pull up is connected to 3V the Uart receiving stops after few seconds. When debugging with Serial1.print it just does not send any data. When I unplug the Lin bus and reconnect it it continues to work and freezes again. Is this problem related to hardware or it could be software(teensyduino  and arduino related)?<br>
+UART speed is 9600 and the code is frome Teensy examples:<br>
+<br>
+if (Uart.available() &gt; 0) {<br>
+		incomingByte = Uart.read();<br>
+		Serial1.print("UART received: ");<br>
+		Serial1.println(incomingByte, DEC);<br>
+<br>
+<br>
+Second question is about detecting uart  frame error on Teensy 3.0:<br>
+<br>
+On teensy 2.0++ I can use following code:<br>
+<br>
+  if (1&lt;&lt;FE1) {<br>
+<br>
+    delayMicroseconds(frameerrordelay);               //after Frame Error Tbit to Sync Field<br>
+<br>
+ while(!Uart.available()) { delayMicroseconds(1);}<br>
+    if (Uart.available()) sync= Uart.read(); <br>
+<br>
+<br>
+On teenys 3.0 this obviously does not compile because FE1 is for ATMEGA chip. Is there an alternative for Teensy 3.0?<br>
+<br>
+Regards,<br>
+<br>
+Jaanus
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				<!-- edit note -->
+				<blockquote class="postcontent lastedited">
+					
+						Last edited by jakim; 11-23-2013 at <span class="time">01:23 PM</span>.
+					
+					
+				</blockquote>
+				<!-- / edit note -->
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37772" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37772" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37772" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37772" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37774">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-23-2013,&nbsp;<span class="time">03:47 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37774" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37774&viewfull=1#post37774" class="postcounter">#8</a><a id="postcount37774" name="8"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen33">
+	<a class="username online popupctrl" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now" id="yui-gen35"><strong>PaulStoffregen</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen34">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=632&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-online.png" alt="PaulStoffregen is online now" border="0" title="PaulStoffregen is online now">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now">
+				<img src="./OBD_K-Line Buffer Circuit_files/image.php" alt="PaulStoffregen&#39;s Avatar" title="PaulStoffregen&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>6,841</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37774">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>jakim</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37772#post37772" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">Is this problem related to hardware or it could be software(teensyduino  and arduino related)?</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->I'm not getting a clear picture of the way you've wired this.  Any chance you could post a schematic or photo?
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37774" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37774" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37774" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37774" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37775">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-23-2013,&nbsp;<span class="time">07:42 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37775" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37775&viewfull=1#post37775" class="postcounter">#9</a><a id="postcount37775" name="9"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen36">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen38"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen37">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37775">
+						<blockquote class="postcontent restore ">
+							It's probably like this:<br>
+<a href="https://forum.pjrc.com/attachment.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&attachmentid=1131&d=1385239091" id="attachment1131" rel="Lightbox_37775"><img src="./OBD_K-Line Buffer Circuit_files/attachment(1).php" border="0" alt="Click image for larger version. 
+
+Name:	LIN.PNG 
+Views:	106 
+Size:	6.0 KB 
+ID:	1131" class="thumbnail" style="float:CONFIG" title="Click image for larger version. 
+
+Name:	LIN.PNG 
+Views:	106 
+Size:	6.0 KB 
+ID:	1131"></a><br>
+<br>
+That might be OK, although I assume you really connected the R to 3.3 V, not 3 V ? With a diode your logic '0' is only 0.7 V, but this should be OK<br>
+Note this circuit could damage the T3 if qrounds are not good -- best to also add at least 100 ohm in series with the LIN bus line. Use ~ 1k for the pullup.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37775" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37775" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37775" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37775" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37784">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-24-2013,&nbsp;<span class="time">08:07 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37784" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37784&viewfull=1#post37784" class="postcounter">#10</a><a id="postcount37784" name="10"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen39">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="jakim is offline" id="yui-gen41"><strong>jakim</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen40">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=19318&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=19318" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="jakim is offline" border="0" title="jakim is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Dec 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37784">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>Jp3141</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37775#post37775" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">It's probably like this:<br>
+<a href="https://forum.pjrc.com/attachment.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&attachmentid=1131&d=1385239091" id="attachment1131" rel="Lightbox_37784"><img src="./OBD_K-Line Buffer Circuit_files/attachment(1).php" border="0" alt="Click image for larger version. 
+
+Name:	LIN.PNG 
+Views:	106 
+Size:	6.0 KB 
+ID:	1131" class="thumbnail" style="float:CONFIG" title="Click image for larger version. 
+
+Name:	LIN.PNG 
+Views:	106 
+Size:	6.0 KB 
+ID:	1131"></a><br>
+<br>
+That might be OK, although I assume you really connected the R to 3.3 V, not 3 V ? With a diode your logic '0' is only 0.7 V, but this should be OK<br>
+Note this circuit could damage the T3 if qrounds are not good -- best to also add at least 100 ohm in series with the LIN bus line. Use ~ 1k for the pullup.</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->The circuit is the same as on picture. The R is connected to pin which is next to teensy 3.0 GND pin and it is marked as 3v. So i should choose 1k pull-up not the 10k i am using?<br>
+<br>
+Jaanus
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37784" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37784" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37784" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37784" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37789">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-24-2013,&nbsp;<span class="time">04:47 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37789" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37789&viewfull=1#post37789" class="postcounter">#11</a><a id="postcount37789" name="11"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen42">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen44"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen43">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37789">
+						<blockquote class="postcontent restore ">
+							10k should be OK.<br>
+<br>
+That pin is 3.3 V -- <a href="http://www.pjrc.com/teensy/pinout.html" target="_blank">http://www.pjrc.com/teensy/pinout.html</a> -- no problem with that.<br>
+<br>
+Is there any way you could be pulling the bus line below ground level on the T3 ?
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37789" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37789" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37789" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37789" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37797">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-24-2013,&nbsp;<span class="time">07:37 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37797" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37797&viewfull=1#post37797" class="postcounter">#12</a><a id="postcount37797" name="12"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen45">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="jakim is offline" id="yui-gen47"><strong>jakim</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen46">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=19318&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=19318" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="jakim is offline" border="0" title="jakim is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Dec 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37797">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>Jp3141</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37789#post37789" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">10k should be OK.<br>
+<br>
+That pin is 3.3 V -- <a href="http://www.pjrc.com/teensy/pinout.html" target="_blank">http://www.pjrc.com/teensy/pinout.html</a> -- no problem with that.<br>
+<br>
+Is there any way you could be pulling the bus line below ground level on the T3 ?</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->So i did some modifications:<br>
+<br>
+Now i have the  pull-up from 3,3v pin with the value 1,2Kohms and series resistor before BAT85 diode is 120 ohms.<br>
+I receive data but some two initial bytes sent by Lin master are missing...<br>
+<br>
+Is the pull-up now two strong and the master won´t pull it down or the series resistor is not allowing it to pull down to 0,7V?<br>
+<br>
+<br>
+So the current summary:<br>
+Arduino 1.05 and Tduino 1.16<br>
+<br>
+Teensy 2.0++<br>
+Pull-up from 5v pin and Lin to Uart RX via BAT85<br>
+is able to monitor the bus properly<br>
+<br>
+Teensy 3.0<br>
+1,2K Pull-up from 3,3V pin and Lin to Uart RX via BAT85 and 1,2R <br>
+looses two first bytes(Sync and PID) - <br>
+<br>
+<br>
+Both circuits are tested with same bus. Unfortunately I don,t have the oscilloscope to do the troubleshooting. May be I should try the circuit with resistor and zener...<br>
+<br>
+I have tested the circuit with T2.0++ and MCP201 and it worked well but the additional chip requires another pcb which is not a good solution.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				<!-- edit note -->
+				<blockquote class="postcontent lastedited">
+					
+						Last edited by jakim; 11-24-2013 at <span class="time">07:40 PM</span>.
+					
+					
+				</blockquote>
+				<!-- / edit note -->
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37797" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37797" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37797" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37797" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37805">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-25-2013,&nbsp;<span class="time">04:05 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37805" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37805&viewfull=1#post37805" class="postcounter">#13</a><a id="postcount37805" name="13"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen48">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen50"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen49">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37805">
+						<blockquote class="postcontent restore ">
+							Those values should be OK. The BAT85 is a schottky diode, so the voltage drop is only about 0.3 V which is even better.<br>
+<br>
+If you don't have a 'scope, just program the pin to be a standard input, and write a small loop to read and print the value. Then adjust the V on the bus (manually &amp; read with a voltmeter) and see that you can easily get '1's and '0's. The T3 has a small amount of hysteresis on the input pin, so the voltage required to change from a 0 to a 1 is a little higher than tant required from a 1 to a 0.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37805" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37805" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37805" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37805" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37811">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-25-2013,&nbsp;<span class="time">07:50 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37811" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37811&viewfull=1#post37811" class="postcounter">#14</a><a id="postcount37811" name="14"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen51">
+	<a class="username online popupctrl" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now" id="yui-gen53"><strong>PaulStoffregen</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen52">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=632&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-online.png" alt="PaulStoffregen is online now" border="0" title="PaulStoffregen is online now">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/632-PaulStoffregen?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="PaulStoffregen is online now">
+				<img src="./OBD_K-Line Buffer Circuit_files/image.php" alt="PaulStoffregen&#39;s Avatar" title="PaulStoffregen&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>6,841</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37811">
+						<blockquote class="postcontent restore ">
+							As nearly as I can tell, LIN bus signal levels are zero to Vbat (12V), with the recommended detection threshold at 50% (6V) with 0.1V hysteresis.<br>
+<br>
+Here's what I'd recommend to try receiving this signal: just 2 resistors.<br>
+<br>
+<a href="https://forum.pjrc.com/attachment.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&attachmentid=1134&d=1385369100" id="attachment1134" rel="Lightbox_37811"><img src="./OBD_K-Line Buffer Circuit_files/attachment(2).php" border="0" alt="Click image for larger version. 
+
+Name:	lin_receive.png 
+Views:	78 
+Size:	110.0 KB 
+ID:	1134" class="thumbnail" style="float:CONFIG" title="Click image for larger version. 
+
+Name:	lin_receive.png 
+Views:	78 
+Size:	110.0 KB 
+ID:	1134"></a><br>
+<br>
+Do not use less than 22K between the RX1 pin and the LIN bus.  Teensy3 can handle a small current injected into the pin, so 22K should limit the current to a save level.  You might try experimenting with the 10K resistor.  A slightly lower value might work better, perhaps 8.2K or 6.8K?<br>
+<br>
+I would NOT recommend using the diode circuit above.  If there is a negative spike on the LIN bus, it will probably destroy the Teensy3.  Automotive systems are terribly noisy, so I wouldn't risk connecting such a signal to any pin on Teensy through anything other than a fairly high value resistor (like 22K) or a proper transceiver chip, like that MCP201.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37811" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37811" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37811" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37811" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37812">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-25-2013,&nbsp;<span class="time">10:01 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37812" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37812&viewfull=1#post37812" class="postcounter">#15</a><a id="postcount37812" name="15"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen54">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="jakim is offline" id="yui-gen56"><strong>jakim</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen55">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=19318&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=19318" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="jakim is offline" border="0" title="jakim is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Dec 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37812">
+						<blockquote class="postcontent restore ">
+							I will try this circuit. The teensy 20++ has survived the diode circuit 6 months now<img src="./OBD_K-Line Buffer Circuit_files/smile.png" border="0" alt="" title="Smile" class="inlineimg"><br>
+<br>
+One more questions is related to teensy bootloader - does it completely protects the code inside the chip? If would like to make a small production with teensy and later provide firmware updates is it possible to write some id number to eeprom at first and later provide the firmware update so that it works only with these teensys which have the id in eeprom?
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37812" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37812" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37812" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37812" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_37814">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">11-25-2013,&nbsp;<span class="time">11:19 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post37814" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37814&viewfull=1#post37814" class="postcounter">#16</a><a id="postcount37814" name="16"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen57">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="jakim is offline" id="yui-gen59"><strong>jakim</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen58">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/19318-jakim?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=19318&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=19318" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="jakim is offline" border="0" title="jakim is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Junior Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Dec 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>7</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_37814">
+						<blockquote class="postcontent restore ">
+							What about Lin break detection in Teensyduino?  Freescale datasheet even mentions that it is possible to sed the FE and Lin break detection:<br>
+<i>Framing Error Flag<br>
+FE is set when a logic 0 is accepted as the stop bit. FE does not set in the case of an overrun or while the<br>
+LIN break detect feature is enabled (S2[LBKDE] = 1). FE inhibits further data reception until it is cleared.<br>
+To clear FE, read S1 with FE set and then read D. The last data in the receive buffer represents the data<br>
+that was received with the frame error enabled. Framing errors are not supported when 7816E is set/<br>
+enabled. However, if this flag is set, data is still not received in 7816 mode.Framing errors are not<br>
+supported in 709 mode.<br>
+0 No framing error detected.<br>
+1 Framing error.<br>
+</i>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_37814" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_37814" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=37814" rel="nofollow" title="Reply With Quote"><img id="quoteimg_37814" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_55469">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-01-2014,&nbsp;<span class="time">10:02 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post55469" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=55469&viewfull=1#post55469" class="postcounter">#17</a><a id="postcount55469" name="17"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen60">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="humjaba is offline" id="yui-gen62"><strong>humjaba</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen61">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=37936&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=37936" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="humjaba is offline" border="0" title="humjaba is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Sep 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>20</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_55469">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>Jp3141</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=37739#post37739" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">The transistors are not critical -- if you are in the US, 2N2222's from Radio Shack will work -- nearly any NPN will do, but consider one with BVCEO (breakdown votlage) above 40 V (you get nasty spikes in a car). For more robustness, break the 10k R2 into two 4.7k's and connect a 4.7 V zener between the junction and GND.<br>
+<br>
+If you want the most robust implementation, this does work well: <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=MC33662" target="_blank">http://www.freescale.com/webapp/sps/...p?code=MC33662</a> -- you can interface directly from the Teensy's 3.3 V inputs and ouptuts by driving its EN pin also from a T3 output !</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->Necrothreading a bit, but I'm pretty new to all this and I'm trying to do something similar to what OP did by interfacing the teensy with the iso k-line in my subaru. I have it working with the circuit shown in post 4 but would like to use the IC you mention in case there's any interest from friends in me building these for them.<br>
+<br>
+Reading the datasheet for this, I'm a bit confused about what should be hooked up where (as I said, I'm new). I would want to attach the teensy tx to the mc33662 rxd pin, but the datasheet for the mc33662 has that pin labeled as an output. Do I connect tx-txd and rx-rxd (teensy-mc33662)? <br>
+<br>
+Thanks
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_55469" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_55469" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=55469" rel="nofollow" title="Reply With Quote"><img id="quoteimg_55469" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_55479">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-02-2014,&nbsp;<span class="time">02:41 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post55479" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=55479&viewfull=1#post55479" class="postcounter">#18</a><a id="postcount55479" name="18"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen63">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen65"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen64">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_55479">
+						<blockquote class="postcontent restore ">
+							On the MC33662, RXD (pin 1) is LIN received data -- connect that pin (output on MC33662) to an input on Teensy. Similarly, TXD on the MC33662 (pin 4) is an input on that IC -- drive it with an output on Teensy.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_55479" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_55479" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=55479" rel="nofollow" title="Reply With Quote"><img id="quoteimg_55479" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_55523">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-03-2014,&nbsp;<span class="time">01:19 AM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post55523" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=55523&viewfull=1#post55523" class="postcounter">#19</a><a id="postcount55523" name="19"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen66">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="humjaba is offline" id="yui-gen68"><strong>humjaba</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen67">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=37936&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=37936" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="humjaba is offline" border="0" title="humjaba is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Sep 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>20</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_55523">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>Jp3141</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=55479#post55479" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">On the MC33662, RXD (pin 1) is LIN received data -- connect that pin (output on MC33662) to an input on Teensy. Similarly, TXD on the MC33662 (pin 4) is an input on that IC -- drive it with an output on Teensy.</div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->Thanks for the quick response, and for helping instead of telling me to RTFM (too many forums out there with that attitude towards newbies...). So the Teensy will be powered through a 5v regulator hooked up to the car's acc circuit (on when car is acc+run). 12v comes from the car, 3.3v comes from teensy output. Does this seem correct?<br>
+<img src="./OBD_K-Line Buffer Circuit_files/bH7jCJQ.png" border="0" alt="">
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_55523" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_55523" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=55523" rel="nofollow" title="Reply With Quote"><img id="quoteimg_55523" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_56083">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-11-2014,&nbsp;<span class="time">06:27 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post56083" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=56083&viewfull=1#post56083" class="postcounter">#20</a><a id="postcount56083" name="20"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen69">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="humjaba is offline" id="yui-gen71"><strong>humjaba</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen70">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/37936-humjaba?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=37936&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=37936" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="humjaba is offline" border="0" title="humjaba is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Sep 2014</dd>
+					
+					
+					<dt>Posts</dt> <dd>20</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_56083">
+						<blockquote class="postcontent restore ">
+							Anyone? <img src="./OBD_K-Line Buffer Circuit_files/frown.png" border="0" alt="" title="Frown" class="inlineimg">
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_56083" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_56083" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=56083" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56083" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_56097">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-11-2014,&nbsp;<span class="time">10:31 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post56097" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=56097&viewfull=1#post56097" class="postcounter">#21</a><a id="postcount56097" name="21"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen72">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline" id="yui-gen74"><strong>Jp3141</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen73">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=138&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=138" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Jp3141 is offline" border="0" title="Jp3141 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Senior Member
+			</span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://forum.pjrc.com/members/138-Jp3141?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Jp3141 is offline">
+				<img src="./OBD_K-Line Buffer Circuit_files/image(1).php" alt="Jp3141&#39;s Avatar" title="Jp3141&#39;s Avatar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Nov 2012</dd>
+					
+					
+					<dt>Posts</dt> <dd>373</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_56097">
+						<blockquote class="postcontent restore ">
+							<!-- BEGIN TEMPLATE: bbcode_quote -->
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./OBD_K-Line Buffer Circuit_files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>humjaba</strong>
+					<a href="https://forum.pjrc.com/showthread.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=56083#post56083" rel="nofollow"><img class="inlineimg" src="./OBD_K-Line Buffer Circuit_files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">Anyone? <img src="./OBD_K-Line Buffer Circuit_files/frown.png" border="0" alt="" title="Frown" class="inlineimg"></div>
+			
+		</div>
+	</div>
+</div>
+<!-- END TEMPLATE: bbcode_quote -->Yes, that's correct.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_56097" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_56097" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=56097" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56097" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper --><!-- BEGIN TEMPLATE: postbit_wrapper -->
+<!-- BEGIN TEMPLATE: postbit_legacy -->
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_56129">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">10-12-2014,&nbsp;<span class="time">08:40 PM</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post56129" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&p=56129&viewfull=1#post56129" class="postcounter">#22</a><a id="postcount56129" name="22"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<!-- BEGIN TEMPLATE: memberaction_dropdown -->
+<div class="popupmenu memberaction" id="yui-gen75">
+	<a class="username offline popupctrl" href="https://forum.pjrc.com/members/35300-Markus_L811?s=0ac12cd53078651cc5cc4dd988dbcaeb" title="Markus_L811 is offline" id="yui-gen77"><strong>Markus_L811</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen76">
+		<li class="left">
+			<a href="https://forum.pjrc.com/members/35300-Markus_L811?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=finduser&userid=35300&contenttype=vBForum_Post&showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newpm&u=35300" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+<!-- END TEMPLATE: memberaction_dropdown -->
+				<!-- BEGIN TEMPLATE: postbit_onlinestatus -->
+<img class="inlineimg onlinestatus" src="./OBD_K-Line Buffer Circuit_files/user-offline.png" alt="Markus_L811 is offline" border="0" title="Markus_L811 is offline">
+
+<!-- END TEMPLATE: postbit_onlinestatus -->
+			
+			</div>
+			<span class="usertitle">
+				Member
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>Join Date</dt> <dd>Apr 2013</dd>
+					
+					
+					<dt>Posts</dt> <dd>72</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+
+
+						
+						
+							
+						
+				<div class="content">
+					<div id="post_message_56129">
+						<blockquote class="postcontent restore ">
+							Take a look at this:<br>
+<br>
+<a href="http://forum.pjrc.com/threads/26063-LIN-network-how-do-use-LINbreak-detect-interrupt-in-receiving-LIN-Message?highlight=linbus" target="_blank">http://forum.pjrc.com/threads/26063-...ghlight=linbus</a>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_56129" src="./OBD_K-Line Buffer Circuit_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_56129" class="newreply" href="https://forum.pjrc.com/newreply.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=newreply&p=56129" rel="nofollow" title="Reply With Quote"><img id="quoteimg_56129" src="./OBD_K-Line Buffer Circuit_files/clear.gif" alt="Reply With Quote" title="Reply With Quote">  Reply With Quote</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<!-- END TEMPLATE: postbit_legacy -->
+<!-- END TEMPLATE: postbit_wrapper -->
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		<!-- BEGIN TEMPLATE: forumjump -->
+<div class="clear"></div>
+<div class="navpopupmenu popupmenu nohovermenu" id="showthread_navpopup">
+	
+		<span class="shade">Quick Navigation</span>
+		<a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb" class="popupctrl" id="yui-gen79"><span class="ctrlcontainer">Project Guidance</span></a>
+		<a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit#top" class="textcontrol" onclick="document.location.hash=&#39;top&#39;;return false;">Top</a>
+	
+	<ul class="navpopupbody popupbody" id="yui-gen78">
+		
+		<li class="optionlabel">Site Areas</li>
+		<li><a href="https://forum.pjrc.com/usercp.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Settings</a></li>
+		<li><a href="https://forum.pjrc.com/private.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Private Messages</a></li>
+		<li><a href="https://forum.pjrc.com/subscription.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Subscriptions</a></li>
+		<li><a href="https://forum.pjrc.com/online.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Who's Online</a></li>
+		<li><a href="https://forum.pjrc.com/search.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Search Forums</a></li>
+		<li><a href="https://forum.pjrc.com/forum.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Forums Home</a></li>
+		
+			<li class="optionlabel">Forums</li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/1-Main-Category?s=0ac12cd53078651cc5cc4dd988dbcaeb">Main Category</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/6-Announcements?s=0ac12cd53078651cc5cc4dd988dbcaeb">Announcements</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/5-General-Discussion?s=0ac12cd53078651cc5cc4dd988dbcaeb">General Discussion</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/2-Project-Guidance?s=0ac12cd53078651cc5cc4dd988dbcaeb">Project Guidance</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/3-Technical-Support-amp-Questions?s=0ac12cd53078651cc5cc4dd988dbcaeb">Technical Support &amp; Questions</a></li>
+			
+		
+			
+				<li><a href="https://forum.pjrc.com/forums/4-Suggestions-amp-Bug-Reports?s=0ac12cd53078651cc5cc4dd988dbcaeb">Suggestions &amp; Bug Reports</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+		
+	</ul>
+</div>
+<div class="clear"></div>
+<!-- END TEMPLATE: forumjump -->
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>«</strong>
+			<a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit?s=0ac12cd53078651cc5cc4dd988dbcaeb&goto=nextnewest" rel="nofollow">Next Thread</a>
+			<strong>»</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block">
+			<h4 class="collapse blockhead options_correct">
+				<a class="collapse" id="collapse_posting_rules" href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit#top"><img src="./OBD_K-Line Buffer Circuit_files/collapse_40b.png" alt=""></a>
+				Posting Permissions
+			</h4>
+			<div id="posting_rules" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				<!-- BEGIN TEMPLATE: forumrules -->
+
+<div id="forumrules" class="info_subblock">
+
+	<ul class="youcandoblock">
+		<li>You <strong>may not</strong> post new threads</li>
+		<li>You <strong>may not</strong> post replies</li>
+		<li>You <strong>may not</strong> post attachments</li>
+		<li>You <strong>may not</strong> edit your posts</li>
+		<li>&nbsp;</li>
+	</ul>
+	<div class="bbcodeblock">
+		<ul>
+			<li><a href="https://forum.pjrc.com/misc.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=bbcode" target="_blank">BB code</a> is <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></li>
+			<li><a href="https://forum.pjrc.com/misc.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=bbcode#videocode" target="_blank">[VIDEO]</a> code is <strong>Off</strong></li>
+			<li>HTML code is <strong>Off</strong></li>
+		</ul>
+	</div>
+	<p class="rules_link"><a href="https://forum.pjrc.com/misc.php?s=0ac12cd53078651cc5cc4dd988dbcaeb&do=showrules" target="_blank">Forum Rules</a></p>
+
+</div>
+
+<!-- END TEMPLATE: forumrules -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+<!-- BEGIN TEMPLATE: footer -->
+
+<div style="clear: left">
+  <!-- BEGIN TEMPLATE: ad_footer_start -->
+
+<!-- END TEMPLATE: ad_footer_start -->
+  <!-- BEGIN TEMPLATE: ad_global_above_footer -->
+
+<!-- END TEMPLATE: ad_global_above_footer -->
+</div>
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="https://forum.pjrc.com/forum.php" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, &#39;style&#39;)">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label=" Standard Styles">
+									
+					<!-- BEGIN TEMPLATE: option -->
+
+	<option value="1" class="" selected="selected">-- Default Style</option>
+
+<!-- END TEMPLATE: option -->
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label=" Mobile Styles">
+					
+					<!-- BEGIN TEMPLATE: option -->
+
+	<option value="2" class="">-- Default Mobile Style</option>
+
+<!-- END TEMPLATE: option -->
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		
+		<li><a href="http://www.pjrc.com/">PJRC Electronic Projects</a></li>
+		
+		
+		<li><a href="https://forum.pjrc.com/archive/index.php?s=0ac12cd53078651cc5cc4dd988dbcaeb">Archive</a></li>
+		
+		
+		
+		<li><a href="https://forum.pjrc.com/threads/24549-OBD-K-Line-Buffer-Circuit#top" onclick="document.location.hash=&#39;top&#39;; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT. The time now is <span class="time">10:02 PM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	Powered by <a href="https://www.vbulletin.com/" id="vbulletinlink">vBulletin®</a> Version 4.2.2 <br>Copyright © 2015 vBulletin Solutions, Inc. All rights reserved. 
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	
+</div>
+<!-- BEGIN TEMPLATE: ad_footer_end -->
+
+<!-- END TEMPLATE: ad_footer_end --> 
+
+</div>
+<!-- END TEMPLATE: footer -->
+
+
+<!-- END TEMPLATE: SHOWTHREAD --></body></html>
