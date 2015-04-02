@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://forum.arduino.cc/index.php?topic=226474.0 -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./K-Line iso9141 to Arduino help_files/index.css">
+	<link rel="stylesheet" type="text/css" href="./K-Line iso9141 to Arduino help_files/responsive.css">
+	<link rel="stylesheet" type="text/css" href="./K-Line iso9141 to Arduino help_files/jquery.sceditor.css">
+	<style>
+img.avatar { max-width: 65px; max-height: 65px; }</style>
+	<script type="text/javascript" async="" src="./K-Line iso9141 to Arduino help_files/ga.js"></script><script><!-- // --><![CDATA[
+		var smf_theme_url = "http://forum.arduino.cc/Themes/default";
+		var smf_default_theme_url = "http://forum.arduino.cc/Themes/default";
+		var smf_images_url = "http://forum.arduino.cc/Themes/default/images";
+		var smf_smileys_url = "http://forum.arduino.cc/Smileys";
+		var smf_scripturl = "http://forum.arduino.cc/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var smf_session_id = "549a7980c63ad49ceafde99ab693a7ea";
+		var smf_session_var = "eda39d9";
+		var smf_member_id;
+		var ajax_notification_text = 'Loading...';
+		var help_popup_heading_text = 'A little lost? Let me explain:';
+	// ]]></script>
+	<script src="./K-Line iso9141 to Arduino help_files/jquery.min.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/smf_jquery_plugins.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/script.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/theme.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/editor.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/jquery.sceditor.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/jquery.sceditor.bbcode.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/jquery.sceditor.smf.js"></script>
+	<script src="./K-Line iso9141 to Arduino help_files/topic.js"></script>
+	<script><!-- // --><![CDATA[
+		var smf_smileys_url = 'http://forum.arduino.cc/Smileys/arduino';
+		var bbc_quote_from = 'Quote from';
+		var bbc_quote = 'Quote';
+		var bbc_search_on = 'on';
+	// ]]></script>
+	<meta name="description" content="K-Line iso9141 to Arduino help">
+	<title>K-Line iso9141 to Arduino help</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#557EA0">
+	<link rel="canonical" href="./K-Line iso9141 to Arduino help_files/K-Line iso9141 to Arduino help.html">
+	<link rel="help" href="http://forum.arduino.cc/index.php?action=help">
+	<link rel="contents" href="http://forum.arduino.cc/index.php">
+	<link rel="search" href="http://forum.arduino.cc/index.php?action=search">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - RSS" href="http://forum.arduino.cc/index.php?type=rss2;action=.xml">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - Atom" href="http://forum.arduino.cc/index.php?type=atom;action=.xml">
+	<link rel="index" href="http://forum.arduino.cc/index.php?board=3.0">
+</head>
+<body id="chrome" class="action_messageindex board_3" style="padding-top: 40px;"><link rel="stylesheet" href="./K-Line iso9141 to Arduino help_files/foundation2.css" type="text/css"><link rel="stylesheet" href="./K-Line iso9141 to Arduino help_files/common-hacked.css" type="text/css"><link rel="stylesheet" href="./K-Line iso9141 to Arduino help_files/new_style.css" type="text/css"><link rel="stylesheet" href="./K-Line iso9141 to Arduino help_files/fonts.css" type="text/css"><link rel="stylesheet" href="./K-Line iso9141 to Arduino help_files/arduino-icons.css" type="text/css">
+<script>
+  var userAgent = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+  if(userAgent.indexOf('mac')>0){
+    $("head").append('<style type="text/css">@-moz-document url-prefix() {h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, th a, th a:hover, h3 a:hover, h4 a:hover, h5 a:hover, #wikitext h2 a:hover, #wikitext h3 a:hover, #wikitext h4 a:hover {padding-bottom: 0.5em!important;} #pageheader .search input{font-family: "TyponineSans Regular 18";} #pagefooter .monospace{margin-top: -4px;} #navWrapper ul.left &gt; li{margin-top: -2px; padding-bottom: 2px;}#navWrapper ul.right &gt; li{margin-top: -5px; padding-bottom: 5px;}#navWrapper ul.right &gt; li ul{margin-top: 4px;} .slider-container .fixed-caption p{padding:8px 0 14px 0}}</style>');
+  }
+</script>
+
+<!--[if IE]>
+<link rel='stylesheet' href='https://id.arduino.cc//css/ie-monospace.css' type='text/css' />
+<![endif]-->
+
+<div id="menuWings" class="fixed" style="display: block;"></div>
+<div id="page">
+
+
+
+
+<!--[if IE 8]>
+<div class="alert-box panel ie8alert">
+  <p><strong>Arduino.cc offers limited compatibility for Internet Explorer 8. Get a modern browser as Chrome, Firefox or Safari.</strong></p>
+  <a href="" class="close">&times;</a>
+</div>
+<![endif]-->
+
+<div id="pageheader">
+  <div class="row">
+    <div class="small-6 large-8 eight columns">
+      <div class="title"><a href="http://arduino.cc/">Arduino</a></div>
+    </div>
+    <div class="small-6 large-4 four columns search">
+      <div class="row collapse">
+          <form method="GET" action="http://www.google.com/search">
+    <div class="small-12 twelve columns">
+      <i class="icon-search-2"></i>
+      <input type="hidden" name="ie" value="UTF-8">
+      <input type="hidden" name="oe" value="UTF-8">
+      <input type="text" name="q" size="25" maxlength="255" value="" placeholder="Search the Arduino Forum">
+      <input type="submit" name="btnG" value="search">
+      <input type="hidden" name="domains" value="http://forum.arduino.cc">
+      <input type="hidden" name="sitesearch" value="http://forum.arduino.cc">
+    </div>
+  </form>      </div>
+    </div>
+  </div>
+
+  <!--[if gte IE 9]><!-->
+  <div class="navWrapper">
+  <div class="small-12">
+  <div id="navWrapper" class="sticky fixed">
+  <!--[endif]-->
+  <!--[if IE 8]>
+    <div id="navWrapper">
+  <![endif]-->
+    <nav class="top-bar" data-options="is_hover:true">
+      <ul class="title-area">
+        <li class="name"></li>
+      </ul>
+
+      
+    <section class="top-bar-section">
+        <ul class="left">
+          <li id="navLogo" style="display: block;">
+            <a href="http://arduino.cc/">
+              <img src="./K-Line iso9141 to Arduino help_files/logo_46.png" alt="userpicture">
+            </a>
+          </li>
+          <li id="navHome" style="display: none;"><a href="http://arduino.cc/">Home</a></li>
+          <li><a href="http://store.arduino.cc/">Buy</a></li>
+          <li><a href="http://arduino.cc/en/Main/Software">Download</a></li>
+          <li class="has-dropdown not-click"><a href="http://arduino.cc/en/Main/Products">Products</a>
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="http://forum.arduino.cc/index.php?topic=226474.0#"><span class="backArrow">Back</span></a></h5></li><li><a class="parent-link js-generated" href="http://arduino.cc/en/Main/Products">Products</a></li>
+              <li><a href="http://arduino.cc/en/Main/Products">Arduino</a></li>
+              <li><a href="http://arduino.cc/en/ArduinoAtHeart/Products">AtHeart</a></li>
+              <li><a href="http://arduino.cc/en/ArduinoCertified/Products">Certified</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown not-click"><a href="http://forum.arduino.cc/index.php?topic=226474.0#">Learning</a>
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="http://forum.arduino.cc/index.php?topic=226474.0#"><span class="backArrow">Back</span></a></h5></li>
+              <li><a href="http://arduino.cc/en/Guide/HomePage">Getting started</a></li>
+              <li><a href="http://arduino.cc/en/Tutorial/HomePage">Examples</a></li>
+              <li><a href="http://arduino.cc/en/Reference/HomePage">Reference</a></li>
+              <li><a href="http://playground.arduino.cc/">Playground</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="http://forum.arduino.cc/">Forum</a></li>
+          <li class="has-dropdown not-click"><a href="http://forum.arduino.cc/index.php?topic=226474.0#">Support</a>
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="http://forum.arduino.cc/index.php?topic=226474.0#"><span class="backArrow">Back</span></a></h5></li>
+              <li><a href="http://arduino.cc/en/Main/FAQ">FAQ</a></li>
+              <li><a href="http://arduino.cc/en/ContactUs">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://blog.arduino.cc/">Blog</a></li>
+        </ul>
+
+                <ul class="right">
+          <li><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Fforum.arduino.cc%2Findex.php%3Ftopic%3D226474.0" class="cart">LOG IN</a></li>
+          <li><a href="https://id.arduino.cc/auth/signup" class="cart">SIGN UP</a></li>
+        </ul>
+              </section></nav>
+  </div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+				<div class="navigate_section" id="headerbread">
+          <div class="row" style="max-width: 960px!important;">
+          <div class="small-12">
+					<ul>
+          
+						<li>
+					<a href="http://forum.arduino.cc/index.php"><span>Arduino Forum</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="http://forum.arduino.cc/index.php#c2"><span>Using Arduino</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="http://forum.arduino.cc/index.php?board=3.0"><span>Project Guidance</span></a>
+						</li>
+						<li class="last">
+							<span class="dividers"> &gt; </span>
+					<a href="./K-Line iso9141 to Arduino help_files/K-Line iso9141 to Arduino help.html"><span>K-Line iso9141 to Arduino help</span></a>
+						</li>
+					</ul>
+        </div>
+				</div>
+				</div>
+  <div class="row collapse">
+  <div class="small-12 columns">
+	<div id="wrapper">
+    <div id="upper_section">
+			<div id="inner_section">
+				<div id="main_menu">
+					<ul class="dropmenu sf-js-enabled sf-arrows" id="menu_nav" style="touch-action: pan-y;">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content_section">
+			<div id="main_content_section">
+
+			<a id="msg1637954"></a>
+			<div class="pagesection top">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_print" href="http://forum.arduino.cc/index.php?action=printpage;topic=226474.0" rel="nofollow">Print</a>
+		</div>
+				 <a href="http://forum.arduino.cc/index.php?topic=226474.0#bot" class="topbottom floatleft">Go Down</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="forumposts">
+				<div class="cat_bar">
+					<h3 class="catbg">
+						<span id="top_subject" class="topic-icon topic-icon-">Topic: K-Line iso9141 to Arduino help&nbsp;<span>(Read 934 times)</span></span>
+						<span class="nextlinks floatright"><a href="http://forum.arduino.cc/index.php?topic=226474.0;prev_next=prev#new">previous topic</a> - <a href="http://forum.arduino.cc/index.php?topic=226474.0;prev_next=next#new">next topic</a></span>
+					</h3>
+				</div>
+				<form action="http://forum.arduino.cc/index.php?action=quickmod2;topic=226474.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return oQuickModify.bInEditMode ? oQuickModify.modifySave(&#39;549a7980c63ad49ceafde99ab693a7ea&#39;, &#39;eda39d9&#39;) : false">
+				<div class="windowbg">
+					<div class="post_wrapper">
+						<div class="poster">
+									<h4>
+								<span class="off" title="Offline"></span>
+								<a href="http://forum.arduino.cc/index.php?action=profile;u=246319" title="View the profile of agolds" class="pm_icon">agolds</a>
+									</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="http://forum.arduino.cc/index.php?action=profile;u=246319"><img class="avatar" src="./K-Line iso9141 to Arduino help_files/default.png" alt="avatar_agolds"></a>
+								</li>
+								<li class="icons"><img src="./K-Line iso9141 to Arduino help_files/star.gif" alt="*"></li>
+								<li class="postgroup">Newbie</li>
+								<li class="postcount">Posts: 1</li>
+									<li class="custom karma_labels">
+									<a href="http://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=246319;eda39d9=549a7980c63ad49ceafde99ab693a7ea">[add Karma]</a></li>
+									<li class="custom karma_labels">
+									<a href="http://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=246319;eda39d9=549a7980c63ad49ceafde99ab693a7ea">[add Karma]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./K-Line iso9141 to Arduino help_files/xx.png" alt="">
+								</div>
+								<div id="subject_1637954" class="subject_title"><a href="http://forum.arduino.cc/index.php?topic=226474.msg1637954#msg1637954" rel="nofollow">K-Line iso9141 to Arduino help</a></div>
+								<div class="page_number floatright">
+									 
+								</div>
+								<h5>
+									<a href="http://forum.arduino.cc/index.php?topic=226474.msg1637954#msg1637954" rel="nofollow" title=" - K-Line iso9141 to Arduino help" class="smalltext">Mar 17, 2014, 02:00 pm</a>
+									<span class="smalltext modified" id="modified_1637954"></span>
+								</h5>
+								<div id="msg_1637954_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_1637954">Morning all,<br><br>I am working on a project in which I want to communicate with a k-line module. I have been successful in communicating with it over k-line with an off the shelf tool, but now want to incorporate it into a larger project. I have the parameters for the communication, and they are definitely not standard. It seams that my go-to automotive all in one solution (Elm327) does not support all the features I need.<br><br>I was looking through the forums and online and found this to handle the physical layer. can anyone comment on what they think. I am not the strongest in hardware design but the logic of it makes me think it would work.<br><br><img src="./K-Line iso9141 to Arduino help_files/obdii_avr.gif" alt="" class="bbc_img"><br><br>these are the protocol requirements:<br><br>I need to set the baud rate to 9600 <br>I need to find a way to not append a checksum to the outbound message…. (think I got this easy)&nbsp; <br>I also need the P4 time (inter byte time) to be as low as possible (0)<br> Last thing is parity and frame length… needs to be 8 bits, even parity and 11 for frame length.<br><br>Thanks and any help/comments would be much appreciated. not sure if anyone has done something similar that I can use as reference from a hardware or program standpoint.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg1638639"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+									<h4>
+								<span class="off" title="Offline"></span>
+								<a href="http://forum.arduino.cc/index.php?action=profile;u=100837" title="View the profile of mrburnette" class="pm_icon">mrburnette</a>
+									</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="http://forum.arduino.cc/index.php?action=profile;u=100837"><img class="avatar" src="./K-Line iso9141 to Arduino help_files/mrburnette.jpg" alt="avatar_mrburnette"></a>
+								</li>
+								<li class="icons"><img src="./K-Line iso9141 to Arduino help_files/stargold.gif" alt="*"><img src="./K-Line iso9141 to Arduino help_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 2,578</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="http://www.hackster.io/rayburne" title="" target="_blank" class="new_win"><span class="generic_icons www centericon" title=""></span></a></li>
+									</ol>
+								</li>
+									<li class="custom karma_labels">
+									<a href="http://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=100837;eda39d9=549a7980c63ad49ceafde99ab693a7ea">[add Karma]</a></li>
+							<li class="blurb">AKA: Ray Burne</li>
+							<li class="link-profile"><a href="http://www.hackster.io/rayburne"></a></li>
+									<li class="custom karma_labels">
+									<a href="http://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=100837;eda39d9=549a7980c63ad49ceafde99ab693a7ea">[add Karma]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./K-Line iso9141 to Arduino help_files/xx.png" alt="">
+								</div>
+								<div id="subject_1638639" class="subject_title"><a href="http://forum.arduino.cc/index.php?topic=226474.msg1638639#msg1638639" rel="nofollow">Re: K-Line iso9141 to Arduino help</a></div>
+								<div class="page_number floatright">
+									 #1 
+								</div>
+								<h5>
+									<a href="http://forum.arduino.cc/index.php?topic=226474.msg1638639#msg1638639" rel="nofollow" title="Reply #1 - Re: K-Line iso9141 to Arduino help" class="smalltext">Mar 17, 2014, 10:33 pm</a>
+									<span class="smalltext modified" id="modified_1638639"></span>
+								</h5>
+								<div id="msg_1638639_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_1638639">We had a member last year asking about the protocols for OBD and he had a logic analyzer.&nbsp; Never got a response but you may try and send him a PM to see if he got it all working.<br><a href="http://forum.arduino.cc/index.php/topic,142299.0.html" class="bbc_link" target="_blank">http://forum.arduino.cc/index.php/topic,142299.0.html</a><br><br>Ray</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				</form>
+			</div>
+			<div class="pagesection">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_print" href="http://forum.arduino.cc/index.php?action=printpage;topic=226474.0" rel="nofollow">Print</a>
+		</div>
+				 <a href="http://forum.arduino.cc/index.php?topic=226474.0#main_content_section" class="topbottom floatleft" id="bot">Go Up</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="moderationbuttons">
+				
+			</div>
+			<div id="display_jump_to"><label class="smalltext" for="display_jump_to_select">Jump to:</label> <select name="display_jump_to_select" id="display_jump_to_select" onfocus="grabJumpToContent(this);"><option value="?board=3.0">=&gt; Project Guidance</option></select>&nbsp;<input type="button" class="button_submit" value="Go" onclick="window.location.href = &#39;http://forum.arduino.cc/index.php?board=3.0&#39;;"></div>
+			<br class="clear">
+				<script><!-- // --><![CDATA[
+					var oQuickReply = new QuickReply({
+						bDefaultCollapsed: false,
+						iTopicId: 226474,
+						iStart: 0,
+						sScriptUrl: smf_scripturl,
+						sImagesUrl: smf_images_url,
+						sContainerId: "quickReplyOptions",
+						sImageId: "quickReplyExpand",
+						sClassCollapsed: "toggle_up",
+						sClassExpanded: "toggle_down",
+						bIsFull: true
+					});
+					if ('XMLHttpRequest' in window)
+					{
+						var oQuickModify = new QuickModify({
+							sScriptUrl: smf_scripturl,
+							sClassName: 'quick_edit',
+							bShowModify: true,
+							iTopicId: 226474,
+							sTemplateBodyEdit: '\n\t\t\t\t\t\t\t\t<div id="quick_edit_body_container">\n\t\t\t\t\t\t\t\t\t<div id="error_box" class="error"><' + '/div>\n\t\t\t\t\t\t\t\t\t<textarea class="editor" name="message" rows="12" style="width: 100%; margin-bottom: 10px;" tabindex="1">%body%<' + '/textarea><br>\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="eda39d9" value="549a7980c63ad49ceafde99ab693a7ea">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="topic" value="226474">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="msg" value="%msg_id%">\n\t\t\t\t\t\t\t\t\t<div class="righttext">\n\t\t\t\t\t\t\t\t\t\t<input type="submit" name="post" value="Save" tabindex="2" onclick="return oQuickModify.modifySave(\'549a7980c63ad49ceafde99ab693a7ea\', \'eda39d9\');" accesskey="s" class="button_submit">&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" tabindex="3" onclick="return oQuickModify.modifyCancel();" class="button_submit">\n\t\t\t\t\t\t\t\t\t<' + '/div>\n\t\t\t\t\t\t\t\t<' + '/div>',
+							sTemplateSubjectEdit: '<input type="text" name="subject" value="%subject%" size="80" maxlength="80" tabindex="4" class="input_text">',
+							sTemplateBodyNormal: '%body%',
+							sTemplateSubjectNormal: '<a hr'+'ef="' + smf_scripturl + '?topic=226474.msg%msg_id%#msg%msg_id%" rel="nofollow">%subject%<' + '/a>',
+							sTemplateTopSubject: 'Topic: %subject% &nbsp;(Read 934 times)',
+							sTemplateReasonEdit: '<input type="text" name="modify_reason" value="%modify_reason%" size="80" maxlength="80" tabindex="5" class="input_text">)',
+							sTemplateReasonNormal: '%modify_text',
+							sErrorBorderStyle: '1px solid red'
+						});
+
+						aJumpTo[aJumpTo.length] = new JumpTo({
+							sContainerId: "display_jump_to",
+							sJumpToTemplate: "<label class=\"smalltext\" for=\"%select_id%\">Jump to:<" + "/label> %dropdown_list%",
+							iCurBoardId: 3,
+							iCurBoardChildLevel: 0,
+							sCurBoardName: "Project Guidance",
+							sBoardChildLevelIndicator: "==",
+							sBoardPrefix: "=> ",
+							sCatSeparator: "-----------------------------",
+							sCatPrefix: "",
+							sGoButtonLabel: "Go"
+						});
+
+						aIconLists[aIconLists.length] = new IconList({
+							sBackReference: "aIconLists[" + aIconLists.length + "]",
+							sIconIdPrefix: "msg_icon_",
+							sScriptUrl: smf_scripturl,
+							bShowModify: true,
+							iBoardId: 3,
+							iTopicId: 226474,
+							sSessionId: smf_session_id,
+							sSessionVar: smf_session_var,
+							sLabelIconList: "Message icon",
+							sBoxBackground: "transparent",
+							sBoxBackgroundHover: "#ffffff",
+							iBoxBorderWidthHover: 1,
+							sBoxBorderColorHover: "#adadad" ,
+							sContainerBackground: "#ffffff",
+							sContainerBorder: "1px solid #adadad",
+							sItemBorder: "1px solid #ffffff",
+							sItemBorderHover: "1px dotted gray",
+							sItemBackground: "transparent",
+							sItemBackgroundHover: "#e0e0f0"
+						});
+					}
+				// ]]></script>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+           <br><style>.pagefooter a { color: white !important; }</style>
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22581631-3']);
+		_gaq.push(['_setDomainName', 'arduino.cc']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script><link rel="stylesheet" type="text/css" href="./K-Line iso9141 to Arduino help_files/newsletter.css">
+<div id="newsletterModal" class="reveal-modal small">
+  <form action="http://arduino.cc/subscribe.php" method="post" name="sendy-subscribe-form" id="sendy-subscribe-form" class="form-popup">
+    <div class="modalHeader">
+      <h3 style="line-height: 1.8rem;" class="modal-header-alt">This link has expired. <br>Please re-subscribe to our Newsletters.</h3>
+      <h3 class="modal-header-main">Subscribe to our Newsletters</h3>
+    </div>
+    <div class="modalBody" id="newsletterModalBody">
+        <div id="newsletterEmailField" class="row" style="padding-left: 0">
+          <div class="large-2 columns">
+            <label for="email" class="newsletter-form-label inline">Email</label>
+          </div>
+          <div class="large-10 columns" style="padding-left: 0">
+            <input placeholder="Enter your email address" type="email" name="email" class="subscribe-form-input">
+            <p id="emailMissing" class="newsletterPopupError">Please enter a valid email to subscribe</p>
+          </div>
+        </div>
+        <div style="margin-left:20px">
+          <div style="margin-bottom:0.3em">
+            <input style="display:none" type="checkbox" checked="" name="list[]" value="arduino_newsletter_id" id="worldwide" class="newsletter-form-checkbox">
+            <label for="worldwide"></label>
+            <div style="display:inline-block" class="newsletter-form-label">Arduino Newsletter</div>
+          </div>
+          <div>
+            <input style="display:none" type="checkbox" checked="" name="list[]" value="arduino_store_newsletter_id" id="store" class="newsletter-form-checkbox">
+            <label for="store"></label>
+            <div style="display:inline-block" class="newsletter-form-label">Arduino Store Newsletter</div>
+          </div>
+        </div>
+        <div>
+          <p class="newsletterPopupError2" id="newsletterSubscribeStatus"></p>
+        </div>
+    </div>
+    <div class="row modalFooter">
+      <div class="form-buttons-row">
+        
+          <button type="button" value="Cancel" class="popup-form-button white cancel-modal close-reveal-modal">Cancel</button>
+          <button type="submit" name="Subscribe" id="subscribe-submit-btn" class="popup-form-button">Next</button>
+        
+      </div>
+    </div>
+  </form>
+
+  <!-- step 2, confirm popup -->
+  <div class="confirm-popup" style="margin-bottom:1em">
+    <div class="modalHeader">
+      <h3>Confirm your email address</h3>
+    </div>
+    <div class="modalBody" id="newsletterModalBody" style="padding-right:1em;margin-bottom:0">
+        <p style="margin-bottom:1em;font-size:15px">
+          We need to confirm your email address.<br>
+          To complete the subscription, please click the link in the
+          email we just sent you.
+        </p>
+        <p style="margin-bottom:1em;font-size:15px">
+          Thank you for subscribing!
+        </p>
+        <p style="margin-bottom:1em;font-size:15px">
+          Arduino<br>
+          via Egeo 16<br>
+          Torino, 10131<br>
+          Italy<br>
+        </p>
+    </div>
+    <div class="row modalFooter">
+      <div class="form-buttons-row">
+        
+          <button name="Ok" class="popup-form-button" id="close-confirm-popup">Ok</button>
+
+      </div>
+    </div>
+  </div>
+
+</div><script type="application/javascript">
+    $(document).ready(function() {
+    
+    function validateEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    } 
+
+    var openPopup = function() {
+
+      $('.confirm-popup').hide();
+      $('.form-popup').show();
+
+      var modalBody = $('#newsletterModalBody');
+      var emailInput = modalBody.find('#newsletterEmailField').find('input');
+      var subscribeButton = $('#subscribe-submit-btn');
+      var emailMissingP = modalBody.find('#emailMissing');
+      var formValid = false;
+      var confirmHtml = $('#newsletterModalConfirm').html();
+      var email = $('#sendy-EMAIL').val(); 
+
+      //reset popup values / appearance
+      $("#newsletterSubscribeStatus").hide();
+      $('#newsletterModal').find('.modal-header-main').show();
+      $('#newsletterModal').find('.modal-header-alt').hide();
+      emailMissingP.hide();
+      emailInput.val('');
+      modalBody.find('#store').prop('checked', true);
+      modalBody.find('#worldwide').prop('checked', true);
+
+      //both checkboxes checked at beginning 
+       
+      subscribeButton.removeAttr('disabled');
+
+      //If user didn't provide email by footer input box, show input box in the popup, else just checkboxes
+      if(validateEmail(email)) {
+        emailInput.val(email); 
+        formValid = true;
+      } else {
+        emailMissingP.show();  
+        subscribeButton.attr('disabled', 'disabled');
+        $('#sendy-EMAIL').val('');
+        formValid = false;
+      }
+
+      $('#newsletterModal').foundation('reveal', 'open');
+
+      emailInput.on('input propertychange paste', function(e) {
+           if(!validateEmail(emailInput.val())) {
+              emailMissingP.show();
+              subscribeButton.attr('disabled', 'disabled');
+              formValid = false;
+           } else {
+              formValid = true;
+              emailMissingP.hide();
+              subscribeButton.removeAttr('disabled');
+           }     
+      });
+    };
+
+    $('#sendy-EMAIL').on('keypress', function(e) {
+      if(e.keyCode == 13) {
+        openPopup();
+      }
+    });
+
+    $('#sendy-subscribe').on('click', function() {
+      openPopup();
+    });
+  
+    $("#sendy-subscribe-form").on('keypress', function(e) {
+        if(e.keyCode == 13 && formValid) {
+          e.preventDefault(); 
+          $(this).submit();
+        }
+    });
+
+    $('#subscribe-submit-btn').on('click', function(e){
+      e.preventDefault(); 
+      // disable 'NEXT' button to avoid multiple submits
+      $('#subscribe-submit-btn').attr('disabled', 'disabled');
+      $("#sendy-subscribe-form").submit();
+    });
+
+    $('#close-confirm-popup').on('click', function(e){
+      $('#newsletterModal').foundation('reveal', 'close');  
+    });
+
+    // trigger click on checkbox when clicking text label
+    $('.newsletter-form-label').on('click', function(e){
+      $(this).siblings("label").click();
+    });
+
+    $("#sendy-subscribe-form").on('submit', function(e){
+      e.preventDefault(); 
+      
+      var $form = $(this),
+      //name = $form.find('input[name="name"]').val(),
+      email = $form.find('input[name="email"]').val(),
+      lists = $form.find('input[name="list[]"]:checked'),
+      url = $form.attr('action');
+      
+      //reset
+      $("#newsletterSubscribeStatus").hide(); 
+
+      if(!lists.length) {
+        $("#newsletterSubscribeStatus").html("Please select at least <br> one newsletter.");
+        $("#newsletterSubscribeStatus").show(); 
+        //button 'NEXT' can be enabled
+        $('#subscribe-submit-btn').removeAttr('disabled');
+        return;
+      }
+
+      var listValues = [];
+      for(var i=0; i<lists.length; i++) {
+        listValues.push($(lists[i]).val());
+      }
+
+      $.post(url, {lists:listValues, email:email},
+        function(data) {
+            if(data)
+            {
+              if(data=="All fields are required.")
+              {
+                $("#newsletterSubscribeStatus").text("Please fill in your email.");
+                $("#newsletterSubscribeStatus").show(); 
+              }
+              else if(data=="Invalid email address.")
+              {
+                $("#newsletterSubscribeStatus").text("Your email address is invalid.");
+                $("#newsletterSubscribeStatus").show(); 
+              }
+              // else if(data=="Invalid list ID.")
+              // {
+              //   $("#newsletterSubscribeStatus").text("Your list ID is invalid.");
+              //   $("#newsletterSubscribeStatus").show(); 
+              // }
+              else if(data=="Already subscribed.")
+              {
+                $("#newsletterSubscribeStatus").text("You're already subscribed!");
+                $("#newsletterSubscribeStatus").show(); 
+              }
+              else if(data=="No list selected.")
+              {
+                $("#newsletterSubscribeStatus").text("Please select at least <br> one newsletter.");
+                $("#newsletterSubscribeStatus").show(); 
+              }
+              else
+              {
+                //$("#newsletterSubscribeStatus").text("You're subscribed!");
+                //change popup
+                $('.form-popup').hide();
+                $('.confirm-popup').show();
+                
+              }
+            }
+            else
+            {
+              alert("Sorry, unable to subscribe. Please try again later!");
+            }
+          //button 'NEXT' can be enabled now
+          $('#subscribe-submit-btn').removeAttr('disabled');
+        }
+      );
+    
+    });
+
+  });
+  </script>
+<div id="pagefooter" class="pagefooter">
+  <div class="row">
+    <div class="large-8 eight columns">
+      <div class="large-4 four columns newsletter-box">
+       <!-- Begin Sendy Signup Form -->
+       <h6>Newsletter</h6>
+        <div>
+          <input type="email" name="email" class="email" id="sendy-EMAIL" placeholder="Enter your email to sign up">
+          <i class="icon-right-small"></i>
+          <input value="Subscribe" name="subscribe" id="sendy-subscribe" class="newsletter-button">
+        </div>
+       <!--End sendy_embed_signup-->
+      </div>
+      <div style="clear:both;"></div>
+      <ul class="inline-list">
+        <li class="monospace">©2015 Arduino</li>
+        <li><a href="http://arduino.cc/en/Main/CopyrightNotice">Copyright Notice</a></li>
+        <li><a href="http://arduino.cc/en/Main/ContactUs">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="large-4 four columns">
+      <ul id="arduinoSocialLinks" class="arduino-social-links">
+        <li>
+          <a href="https://twitter.com/arduino">
+            <img src="./K-Line iso9141 to Arduino help_files/twitter.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/official.arduino">
+            <img src="./K-Line iso9141 to Arduino help_files/facebook.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+Arduino">
+            <img src="./K-Line iso9141 to Arduino help_files/gplus.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/arduino_cc">
+            <img src="./K-Line iso9141 to Arduino help_files/flickr.png">
+          </a>
+        </li>
+        <li>
+          <a href="http://youtube.com/arduinoteam">
+            <img src="./K-Line iso9141 to Arduino help_files/youtube.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <div id="ajax_in_progress" style="display: none;">Loading...</div>
+<script><!-- // --><![CDATA[
+	function triggerCron() {
+		var tempImage = new Image();
+		tempImage.src = 'http://forum.arduino.cc' + "/cron.php?ts=1428000090";
+	}
+	window.setTimeout(triggerCron, 1);
+// ]]></script>
+    <script src="./K-Line iso9141 to Arduino help_files/modernizr.js"></script>
+    <!--[if gte IE 9]><!-->
+    <script src="./K-Line iso9141 to Arduino help_files/foundation.min.js"></script>
+    <script src="./K-Line iso9141 to Arduino help_files/foundation.topbar.custom.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <!--<![endif]-->
+    <!--[if IE 8]>
+    <script src="http://arduino.cc/js/foundation_ie8.min.js"></script>
+    <script src="http://arduino.cc/js/ie8/jquery.foundation.alerts.js"></script>
+    <script src="http://arduino.cc/js/app.js"></script>
+    <![endif]-->
+
+</body></html>

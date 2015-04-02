@@ -1,0 +1,172 @@
+/* Newsletter Popup CSS */
+	input#sendy-EMAIL {
+		width: 100% !important;
+	}
+	.form-buttons-row {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+		-webkit-flex: 1 0 0;
+		-ms-flex: 1 0 0;
+		flex: 1 0 0;
+		padding-right: 24px;
+	}
+	
+	.popup-form-button {
+		border-radius: 2px 2px 0 0;
+		width: auto;
+		padding: 0px 8px;
+		margin-right: 8px;
+		min-width: 65px;
+		text-align: center;
+		outline: 0;
+		border: 0;
+		min-height: 40px
+	}
+	
+	.popup-form-button:focus.white, .popup-form-button.cancel-modal {
+		outline: 0;
+		background-color: #DAE3E3;
+		color: #868383;
+		font-size: 13px;
+		position: relative;
+		top: 0px;
+		box-shadow: 0px 4px #999;
+		right: 0;
+	}
+	
+	.popup-form-button.white:hover, .popup-form-button.white.cancel-modal:hover {
+		top: 2px;
+		background-color: #DAE3E3;
+		color: #868383;
+		box-shadow: 0px 2px #999;
+	
+	}
+	
+	.popup-form-button, .popup-form-button:focus, .popup-form-button.disabled, .popup-form-button[disabled], .popup-form-button.disabled, .popup-form-button[disabled] {
+		text-transform: uppercase;
+		background-color: #008184;
+		color: #7FCBCD;
+		border: 0;
+		box-shadow: 0 4px #005c5f;
+		top: 0px;
+		position: relative;
+		font-size: 13px;
+		-webkit-transition: all ease-out .1s;
+		-moz-transition: all ease-out .1s;
+		-o-transition: all ease-out .1s;
+		transition: all ease-out .1s;
+	}
+	
+	.popup-form-button:hover, .popup-form-button:focus:hover, .popup-form-button.disabled:hover, .popup-form-button[disabled]:hover, .popup-form-button.disabled:hover, .popup-form-button[disabled]:hover {
+		top: 2px;
+		box-shadow: 0 2px #005c5f;
+		background-color: #008184;
+		color: #7FCBCD;
+	}
+	
+	#newsletterModal .modalHeader > h3 {
+		font-size: 1.2em;
+		margin: 0;
+		font-family: "TyponineSans Regular 18";
+		font-style: normal;
+		font-weight: 500;
+		font-stretch: normal;
+		letter-spacing: .02em;
+	}
+	
+	#newsletterModal .modalBody {
+		margin: 1em;
+		margin-bottom: 2em;
+		line-height: 1;
+	}
+	
+	#newsletterModal .modalHeader {
+		border-top: 10px solid #00979D;
+		padding: 0.5375em 0.9375em 0.5375em 0.9375em;
+		color: #00979D;
+		margin-bottom: 1em;
+	}
+	
+	#newsletterModal {
+		padding: 0;
+	}
+	
+	.modalFooter.row {
+		padding: 0 !important;
+	}
+	
+	.newsletterPopupError {
+		color: #DA5B4A;
+		font-size: 14px;
+		font-style: italic;
+		display: none;
+		margin: 0;
+	}
+	
+	.newsletterPopupError2 {
+		color: #DA5B4A;
+		position: absolute;
+		bottom: 30px;
+		font-size:15px;
+		margin-left: 20px;
+	}
+	
+	#newsletterEmailField {
+		margin-bottom: 1em;
+		padding: 0;
+	}
+	
+	.newsletter-form-checkbox:checked + label {
+		background-image: url("../images/Checkbox_checked.svg");
+		background-position: center top;
+	}
+	
+	.newsletter-form-checkbox + label {
+		background-image: url("../images/Checkbox_checked.svg");
+		background-position: center bottom;
+		padding: 12px;
+		border-radius: 3px;
+		display: inline-block;
+		position: relative;
+		margin-right: 0.5em;
+		vertical-align: middle;
+	}
+	
+	.confirm-popup {
+		display: none;
+	}
+	
+	.reveal-modal {
+		border: none !important;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		background-color: #ecf1f1;
+	}
+	
+	.newsletter-form-label {
+		font-size: 15px;
+		color: #374146;
+	}
+	
+	.subscribe-form-input {
+		border: none !important;
+		margin-bottom: 5px !important;
+		font-size: 15px !important;
+		outline: none;
+		width: 100% !important;
+	}
+	
+	input:-webkit-autofill {
+	    -webkit-box-shadow: 0 0 0px 1000px white inset;
+	}
+	
+	.modal-header-alt {
+		display: none;
+	}
