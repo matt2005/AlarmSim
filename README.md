@@ -10,8 +10,10 @@ Possibly use an esp8266/esp32 instead of attiny85
 
 # BOM
 
-ATTiny85 - purchased in 2015
-MCP2025-330E - purchased in 2015
+| Qty  | Item         | Purchased         |
+| ---- | ------------ | ----------------- |
+| 1    | ATTiny85     | purchased in 2015 |
+| 1    | MCP2025-330E | purchased in 2015 |
 
 # Todo
 
