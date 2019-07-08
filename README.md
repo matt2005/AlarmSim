@@ -14,8 +14,8 @@ Possibly use an esp8266/esp32 instead of attiny85
 | ---- | ------------ | ---------------- |------------------ |
 | 1    | ATTiny85     |                  | purchased in 2015 |
 | 1    | MCP2025-330E |                  | purchased in 2015 |
-| 2    | 1J0 973 703  |  plug for alarm  |                   |                       |
-
+| 1    | 1J0 973 703  | female plug for alarm  |                   |                       |
+| 1    | 1J0 973 803  | male for above   |      |
 # Todo
 
 - [ ] Need to get working alarm
