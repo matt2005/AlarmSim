@@ -10,10 +10,11 @@ Possibly use an esp8266/esp32 instead of attiny85
 
 # BOM
 
-| Qty  | Item         | Purchased         |
-| ---- | ------------ | ----------------- |
-| 1    | ATTiny85     | purchased in 2015 |
-| 1    | MCP2025-330E | purchased in 2015 |
+| Qty  | Item         |  notes           | Purchased         |
+| ---- | ------------ | ---------------- |------------------ |
+| 1    | ATTiny85     |                  | purchased in 2015 |
+| 1    | MCP2025-330E |                  | purchased in 2015 |
+| 2    | 1J0 973 703  |  plug for alarm  |                   |                       |
 
 # Todo
 
