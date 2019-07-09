@@ -7,6 +7,10 @@ Audi TT mk1 alarm module failure due to corrosion casused by leaked battery.
 My idea is to use an ATTiny85 linked to a MCP2025 to replace the alarm module and possibly add additional intelligence and alerting via other methods (MQTT,SMS,Email, etc)
 ## Update
 Possibly use an esp8266/esp32 instead of attiny85
+Prototype will use uno
+
+# schematic
+![alt text](./images/scheme_bb.png "Uno MCP2004 sample schematic")
 
 # BOM
 
@@ -16,6 +20,8 @@ Possibly use an esp8266/esp32 instead of attiny85
 | 1    | MCP2025-330E |                  | purchased in 2015 |
 | 1    | 1J0 973 703  | female plug for alarm  |                   |                       |
 | 1    | 1J0 973 803  | male for above   |      |
+
+
 # Todo
 
 - [ ] Need to get working alarm
